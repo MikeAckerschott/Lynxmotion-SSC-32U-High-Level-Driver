@@ -5,12 +5,12 @@ Dit project bestaat uit 2 packages, namelijk msg_srv (de custom service en messa
 <h1> Builden van het project</h1>
 
 * Voer het volgende commando uit in de directory /Beroepsproduct1
-sudo chmod +x ./build_first_time.sh
+colcon build
 
-* Voer nu het script uit als volgt:
-./build_first_time.sh
+* Als dit niet werkt, bouw dan de packages apart:
 
-Dit build eerst de msg_srv package en daarna de robo_driver
+colcon build --packages-select msg_srv
+colcon build --packages-select robo_driver
 
 <h1> Uitvoeren van het project</h1>
 
