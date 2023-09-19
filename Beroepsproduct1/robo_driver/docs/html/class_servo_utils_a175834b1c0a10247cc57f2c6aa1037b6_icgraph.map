@@ -1,0 +1,6 @@
+<map id="ServoUtils::degreesToPwm" name="ServoUtils::degreesToPwm">
+<area shape="rect" id="node1" title="converts the degrees to pwm duration" alt="" coords="513,46,708,73"/>
+<area shape="rect" id="node2" href="$class_low_level_server.html#a38f341f3ba3c3a9b60eb05f21c8952cb" title="Handles client request for a multi servo command and moves the selected servos if the request is vali..." alt="" coords="251,5,462,47"/>
+<area shape="rect" id="node4" href="$class_low_level_server.html#a5564f239ddb2ffb5fc2325fd5c6b5e5e" title="Handles client request for a single servo command and moves the selected servo if the request is vali..." alt="" coords="248,71,465,112"/>
+<area shape="rect" id="node3" href="$class_low_level_server.html#a624d619c255127a32cb68ee8d69c416b" title="Constructor." alt="" coords="5,39,200,80"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="LowLevelServer::handleEmergencyStop" name="LowLevelServer::handleEmergencyStop">
+<area shape="rect" id="node1" title="Handles client request for an emergency stop and stops all servos." alt="" coords="5,5,284,32"/>
+<area shape="rect" id="node2" href="$class_command.html#a911de585d69707fce024dcbdd7bba32f" title="Sends the command over the serial port." alt="" coords="332,5,527,32"/>
+</map>

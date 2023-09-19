@@ -1,0 +1,114 @@
+\hypertarget{class_multi_servo_command}{}\doxysection{Multi\+Servo\+Command Class Reference}
+\label{class_multi_servo_command}\index{MultiServoCommand@{MultiServoCommand}}
+
+
+Inheritance diagram for Multi\+Servo\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{class_multi_servo_command__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Multi\+Servo\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{class_multi_servo_command__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_multi_servo_command_a1b88200e8a9b2c8332f92a2368664a32}{Multi\+Servo\+Command}} (std\+::vector$<$ Single\+Servo\+Command $>$ commands, boost\+::asio\+::serial\+\_\+port \&serial)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_multi_servo_command_ad525aa7fc64843297cbfc7e25d88c4c6}\label{class_multi_servo_command_ad525aa7fc64843297cbfc7e25d88c4c6}} 
+\mbox{\hyperlink{class_multi_servo_command_ad525aa7fc64843297cbfc7e25d88c4c6}{$\sim$\+Multi\+Servo\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_multi_servo_command_ac1f1c38c1e6a5bfc666a93daab924d3d}{get\+Command\+String}} (std\+::vector$<$ Single\+Servo\+Command $>$ commands)
+\begin{DoxyCompactList}\small\item\em Gets the command string from the vector of single\+Servo\+Commands. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_multi_servo_command_ac6bc16bb843a991a6d31ed9bc7ab1cdd}{get\+Command\+String}} ()
+\begin{DoxyCompactList}\small\item\em Gets the command string from the vector of single\+Servo\+Commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 16 of file multi\+Servo\+Command.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_multi_servo_command_a1b88200e8a9b2c8332f92a2368664a32}\label{class_multi_servo_command_a1b88200e8a9b2c8332f92a2368664a32}} 
+\index{MultiServoCommand@{MultiServoCommand}!MultiServoCommand@{MultiServoCommand}}
+\index{MultiServoCommand@{MultiServoCommand}!MultiServoCommand@{MultiServoCommand}}
+\doxysubsubsection{\texorpdfstring{MultiServoCommand()}{MultiServoCommand()}}
+{\footnotesize\ttfamily Multi\+Servo\+Command\+::\+Multi\+Servo\+Command (\begin{DoxyParamCaption}\item[{std\+::vector$<$ Single\+Servo\+Command $>$}]{commands,  }\item[{boost\+::asio\+::serial\+\_\+port \&}]{serial }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em commands} & The commands to send over the serial port, syntaxed as an array of multiple Single\+Servo\+Commands \\
+\hline
+{\em serial} & The serial port to send the command over \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 5 of file multi\+Servo\+Command.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_multi_servo_command_ac6bc16bb843a991a6d31ed9bc7ab1cdd}\label{class_multi_servo_command_ac6bc16bb843a991a6d31ed9bc7ab1cdd}} 
+\index{MultiServoCommand@{MultiServoCommand}!getCommandString@{getCommandString}}
+\index{getCommandString@{getCommandString}!MultiServoCommand@{MultiServoCommand}}
+\doxysubsubsection{\texorpdfstring{getCommandString()}{getCommandString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string Multi\+Servo\+Command\+::get\+Command\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the command string from the vector of single\+Servo\+Commands. 
+
+\begin{DoxyReturn}{Returns}
+The command string that can be sent over the serial port 
+\end{DoxyReturn}
+
+
+Definition at line 22 of file multi\+Servo\+Command.\+cpp.
+
+\mbox{\Hypertarget{class_multi_servo_command_ac1f1c38c1e6a5bfc666a93daab924d3d}\label{class_multi_servo_command_ac1f1c38c1e6a5bfc666a93daab924d3d}} 
+\index{MultiServoCommand@{MultiServoCommand}!getCommandString@{getCommandString}}
+\index{getCommandString@{getCommandString}!MultiServoCommand@{MultiServoCommand}}
+\doxysubsubsection{\texorpdfstring{getCommandString()}{getCommandString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string Multi\+Servo\+Command\+::get\+Command\+String (\begin{DoxyParamCaption}\item[{std\+::vector$<$ Single\+Servo\+Command $>$}]{commands }\end{DoxyParamCaption})}
+
+
+
+Gets the command string from the vector of single\+Servo\+Commands. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em commands} & The commands to send over the serial port, syntaxed as an array of multiple Single\+Servo\+Commands \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The command string that can be sent over the serial port 
+\end{DoxyReturn}
+
+
+Definition at line 11 of file multi\+Servo\+Command.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/low\+Level/\mbox{\hyperlink{multi_servo_command_8hpp}{multi\+Servo\+Command.\+hpp}}\item 
+src/low\+Level/multi\+Servo\+Command.\+cpp\end{DoxyCompactItemize}

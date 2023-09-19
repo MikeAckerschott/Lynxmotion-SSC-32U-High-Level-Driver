@@ -1,0 +1,119 @@
+\hypertarget{class_high_level_node}{}\doxysection{High\+Level\+Node Class Reference}
+\label{class_high_level_node}\index{HighLevelNode@{HighLevelNode}}
+
+
+Inheritance diagram for High\+Level\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{class_high_level_node__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for High\+Level\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{class_high_level_node__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_high_level_node_aa27678104d27de84f3b27f4a9d5f0f22}\label{class_high_level_node_aa27678104d27de84f3b27f4a9d5f0f22}} 
+\mbox{\hyperlink{class_high_level_node_aa27678104d27de84f3b27f4a9d5f0f22}{High\+Level\+Node}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_high_level_node_a26e7d8039dd62cc87a8ea156710d7ea7}\label{class_high_level_node_a26e7d8039dd62cc87a8ea156710d7ea7}} 
+\mbox{\hyperlink{class_high_level_node_a26e7d8039dd62cc87a8ea156710d7ea7}{$\sim$\+High\+Level\+Node}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_high_level_node_aaee47f75423427e72d4481c0f87c0cf9}{send\+Single\+Servo\+Command}} (short servo, unsigned long long angle, unsigned long long speed, unsigned long long time)
+\begin{DoxyCompactList}\small\item\em Sends a single\+Servo\+Command to the low level driver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_high_level_node_a9d285ac85902eea5c9e188b8734883d3}{send\+Multi\+Servo\+Command}} (std\+::vector$<$ std\+::vector$<$ long long $>$$>$ arguments)
+\begin{DoxyCompactList}\small\item\em Sends a multi\+Servo\+Command to the low level driver. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_high_level_node_af95cdc988212383941ad462e5228b68c}\label{class_high_level_node_af95cdc988212383941ad462e5228b68c}} 
+void \mbox{\hyperlink{class_high_level_node_af95cdc988212383941ad462e5228b68c}{send\+Stop\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Sends a stop\+Command to the low level driver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_high_level_node_a3da9cce86829b598dff198c55954e647}{send\+Programmed\+Position\+Command}} (std\+::string programmed\+Position)
+\begin{DoxyCompactList}\small\item\em Sends a programmed\+Position\+Command to the low level driver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 27 of file high\+Level\+Node.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_high_level_node_a9d285ac85902eea5c9e188b8734883d3}\label{class_high_level_node_a9d285ac85902eea5c9e188b8734883d3}} 
+\index{HighLevelNode@{HighLevelNode}!sendMultiServoCommand@{sendMultiServoCommand}}
+\index{sendMultiServoCommand@{sendMultiServoCommand}!HighLevelNode@{HighLevelNode}}
+\doxysubsubsection{\texorpdfstring{sendMultiServoCommand()}{sendMultiServoCommand()}}
+{\footnotesize\ttfamily void High\+Level\+Node\+::send\+Multi\+Servo\+Command (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ long long $>$$>$}]{arguments }\end{DoxyParamCaption})}
+
+
+
+Sends a multi\+Servo\+Command to the low level driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arguments} & A vector of vectors containing the servo, angle, speed and time for each servo \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 60 of file high\+Level\+Node.\+cpp.
+
+\mbox{\Hypertarget{class_high_level_node_a3da9cce86829b598dff198c55954e647}\label{class_high_level_node_a3da9cce86829b598dff198c55954e647}} 
+\index{HighLevelNode@{HighLevelNode}!sendProgrammedPositionCommand@{sendProgrammedPositionCommand}}
+\index{sendProgrammedPositionCommand@{sendProgrammedPositionCommand}!HighLevelNode@{HighLevelNode}}
+\doxysubsubsection{\texorpdfstring{sendProgrammedPositionCommand()}{sendProgrammedPositionCommand()}}
+{\footnotesize\ttfamily void High\+Level\+Node\+::send\+Programmed\+Position\+Command (\begin{DoxyParamCaption}\item[{std\+::string}]{programmed\+Position }\end{DoxyParamCaption})}
+
+
+
+Sends a programmed\+Position\+Command to the low level driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em programmed\+Position} & The programmed position to move to (park, ready, straight-\/up) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 126 of file high\+Level\+Node.\+cpp.
+
+\mbox{\Hypertarget{class_high_level_node_aaee47f75423427e72d4481c0f87c0cf9}\label{class_high_level_node_aaee47f75423427e72d4481c0f87c0cf9}} 
+\index{HighLevelNode@{HighLevelNode}!sendSingleServoCommand@{sendSingleServoCommand}}
+\index{sendSingleServoCommand@{sendSingleServoCommand}!HighLevelNode@{HighLevelNode}}
+\doxysubsubsection{\texorpdfstring{sendSingleServoCommand()}{sendSingleServoCommand()}}
+{\footnotesize\ttfamily void High\+Level\+Node\+::send\+Single\+Servo\+Command (\begin{DoxyParamCaption}\item[{short}]{servo,  }\item[{unsigned long long}]{angle,  }\item[{unsigned long long}]{speed,  }\item[{unsigned long long}]{time }\end{DoxyParamCaption})}
+
+
+
+Sends a single\+Servo\+Command to the low level driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em servo} & The servo to move \\
+\hline
+{\em angle} & The angle to move to \\
+\hline
+{\em speed} & The speed to move at in in microseconds per second (See Lynxmotion SSC-\/32U USB user guide page 24) \\
+\hline
+{\em time} & The time to move in milliseconds \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 34 of file high\+Level\+Node.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/high\+Level/\mbox{\hyperlink{high_level_node_8hpp}{high\+Level\+Node.\+hpp}}\item 
+src/high\+Level/high\+Level\+Node.\+cpp\end{DoxyCompactItemize}
