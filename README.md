@@ -4,7 +4,8 @@ Dit project bestaat uit 2 packages, namelijk msg_srv (de custom service en messa
 
 <h1> Builden van het project</h1>
 
-* Voer het volgende commando uit in de directory /Beroepsproduct1
+* Voer het volgende commando uit in de directory /Beroepsproduct1:
+
 colcon build
 
 * Als dit niet werkt, bouw dan de packages apart:
