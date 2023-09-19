@@ -11,6 +11,7 @@ colcon build
 * Als dit niet werkt, bouw dan de packages apart:
 
 colcon build --packages-select msg_srv
+
 colcon build --packages-select robo_driver
 
 <h1> Uitvoeren van het project</h1>
