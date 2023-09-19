@@ -28,16 +28,29 @@ ros2 run robo_driver low_level_client
 <b> Op dit moment zijn de volgende commando's supported:
 
 * singleServoCommand int servo int degrees int speed int time
+
 voorbeeld:
 singleServoCommand 0 45 0 5000
+
 * multiServoCommand {int servo int degrees int speed int time} {int servo int degrees int speed int time} 
+
 voorbeeld:
+
 multiServoCommand {0 45 0 5000} {1 90 0 5000}
+
 * stop
+
 voorbeeld:
+
 stop
+
 * programmedPosition string position
+
 voorbeeld:
+
 programmedPosition park
+
 programmedPosition ready
+
 programmedPosition straight-up
+
