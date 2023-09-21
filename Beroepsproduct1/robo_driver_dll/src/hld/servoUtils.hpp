@@ -99,13 +99,7 @@ static double degreesToPwm(int servo, double degrees);
  */
 static bool verifyServoConstraints(short servo, double degrees);
 
-/**
- * @brief verifies if the duration and speed are valid
- * @param duration The duration to move to the position
- * @param speed The speed to move to the position
- * @returns true if the duration and speed are valid, false if not
- */
-static bool verifyMovementType(SingleServoCommand::movementType* movementType, long long movement, std::string movementTypeAsString);
+static SingleServoCommand::movementType getMovementType(std::string movementType);
 }
 ;
 

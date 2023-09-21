@@ -75,28 +75,25 @@ bool ServoUtils::verifyServoConstraints(short servo, double degrees)
     return true;
 }
 
-bool ServoUtils::verifyMovementType(SingleServoCommand::movementType *movementType, long long movement, std::string movementTypeAsString)
+SingleServoCommand::movementType ServoUtils::getMovementType(std::string movementType)
 {
-    if (movementTypeAsString == "duration")
+
+    if (movementType == "duration")
     {
-        *movementType = SingleServoCommand::MOVE_WITH_TIME;
+        return SingleServoCommand::MOVE_WITH_TIME;
     }
-    else if (movementTypeAsString == "speed")
+    else if (movementType == "speed")
     {
-        *movementType = SingleServoCommand::MOVE_WITH_SPEED;
+        return SingleServoCommand::MOVE_WITH_SPEED;
+    }
+    else if (movementType == "")
+    {
+        return SingleServoCommand::NO_TYPE;
     }
     else
     {
-        return false;
-        *movementType = SingleServoCommand::NO_TYPE;
+        return SingleServoCommand::NO_TYPE;
     }
-
-    if (movement == 0)
-    {
-        return false;
-    }
-
-    return true;
 }
 
 double ServoUtils::degreesToPwm(int servo, double degrees)

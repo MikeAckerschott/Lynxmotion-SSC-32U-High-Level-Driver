@@ -53,6 +53,10 @@ void HighLevelNode::handleSingleServoServiceRequest(const std::shared_ptr<msg_sr
   {
     type = SingleServoCommand::MOVE_WITH_SPEED;
   }
+  else if (movementType == "")
+  {
+    type = SingleServoCommand::NO_TYPE;
+  }
   else
   {
     RCLCPP_INFO(this->get_logger(), "Movement type not recognized");
@@ -81,34 +85,47 @@ void HighLevelNode::handleMultiServoServiceRequest(const std::shared_ptr<msg_srv
 
   msg_srv::msg::Move move = request->positions;
 
+  RCLCPP_INFO(this->get_logger(), "Number of instructions: %ld", move.instruction.size());
+
   std::vector<SingleServoCommand> commands;
 
   for (int i = 0; i < move.instruction.size(); ++i)
   {
     short targetServo = (short)move.instruction.at(i).target_servo;
+    std::cout << targetServo << std::endl;
     long long position = move.instruction.at(i).degrees;
+    std::cout << position << std::endl;
     long long movement = move.instruction.at(i).movement;
+    std::cout << movement << std::endl;
     std::string movementType = move.instruction.at(i).movement_type;
+    std::cout << movementType << std::endl;
 
-    SingleServoCommand::movementType *type;
+    SingleServoCommand::movementType type = ServoUtils::getMovementType(movementType);
 
-    if (!ServoUtils::verifyMovementType(type, movement, movementType))
-    {
+    if(movement == 0){
       response->finished = false;
-      RCLCPP_INFO(this->get_logger(), "Movement type not recognized");
+      RCLCPP_INFO(this->get_logger(), "Movement cannot be 0");
       return;
     }
 
-    if(!ServoUtils::verifyServoConstraints(targetServo, position))
+    std::cout << "movement type verified" << std::endl;
+
+    if (!ServoUtils::verifyServoConstraints(targetServo, position))
     {
       response->finished = false;
       RCLCPP_INFO(this->get_logger(), "Servo or position out of bounds");
       return;
     }
 
+    std::cout << "servo constraints verified" << std::endl;
+
     short positionAsPWM = ServoUtils::degreesToPwm(targetServo, position);
-    commands.push_back(SingleServoCommand(targetServo, positionAsPWM, movement, *type, serial_));
+
+    std::cout << "position as pwm calculated" << std::endl;
+    commands.push_back(SingleServoCommand(targetServo, positionAsPWM, movement, type, serial_));
   }
+  MultiServoCommand command(commands, serial_);
+  command.sendCommand();
   response->finished = true;
 }
 
@@ -119,17 +136,17 @@ void HighLevelNode::handleProgrammedPosition(const std::shared_ptr<msg_srv::srv:
 
   std::string commandAsString;
 
-  if(request->position.programmed_position == "park")
+  if (request->position.programmed_position == "park")
   {
     commandAsString = CommandUtils::park;
     commandAsString += Command::cr;
   }
-  else if(request->position.programmed_position == "ready")
+  else if (request->position.programmed_position == "ready")
   {
     commandAsString = CommandUtils::ready;
     commandAsString += Command::cr;
   }
-  else if(request->position.programmed_position == "straight-up")
+  else if (request->position.programmed_position == "straight-up")
   {
     commandAsString = CommandUtils::straightUp;
     commandAsString += Command::cr;

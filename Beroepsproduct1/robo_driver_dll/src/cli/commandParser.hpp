@@ -75,6 +75,7 @@ public:
 
 private:
   bool isNumber(const std::string &s);
+  bool getSingleServoCommandArguments(std::string commandArguments, int &servoNumber, int &angle, int &movement, std::string &movementType);
 };
 
 #endif // COMMANDPARSER_HPP_
