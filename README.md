@@ -16,6 +16,8 @@ colcon build --packages-select robo_driver
 
 <h1> Uitvoeren van het project</h1>
 
+<i> Op dit moment is het programma enkel werkend op linux vanwege de manier hoe USB-poorten worden afgehandelt op windows </i>
+
 * Zorg ervoor dat je na het builden in de /Beroepsproduct1 directory de workspace sourced. Open twee terminals en voer het volgende commando uit in beide terminals:
 . install/setup.bash
 
