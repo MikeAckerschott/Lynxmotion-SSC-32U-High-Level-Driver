@@ -16,6 +16,9 @@ find_package(msg_srv REQUIRED)
 add_executable(high_level_node src/hld/main.cpp src/hld/highLevelNode.cpp src/hld/servoUtils.cpp)
 ament_target_dependencies(high_level_node rclcpp msg_srv)    # CHANGE
 
+add_executable(cli_communication src/cli/main.cpp src/cli/commandParser.cpp src/cli/communicatorNode.cpp)
+ament_target_dependencies(cli_communication rclcpp msg_srv)
+
 add_library(low_level_lib src/lld/command.cpp src/lld/lowLevelServer.cpp src/lld/commandUtils.cpp src/lld/multiServoCommand.cpp src/lld/singleServoCommand.cpp)
 ament_target_dependencies(low_level_lib rclcpp msg_srv)    # CHANGE
 
@@ -35,6 +38,7 @@ endif()
 
 install(TARGETS
   high_level_node
+  cli_communication
   low_level_lib
   DESTINATION lib/${PROJECT_NAME}
 )

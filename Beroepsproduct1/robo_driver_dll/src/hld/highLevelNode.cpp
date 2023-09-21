@@ -67,6 +67,8 @@ void HighLevelNode::handleSingleServoServiceRequest(const std::shared_ptr<msg_sr
     return;
   }
 
+  position = ServoUtils::degreesToPwm(targetServo, position);
+
   SingleServoCommand command(targetServo, position, movement, type, serial_);
   command.sendCommand();
   response->finished = true;
