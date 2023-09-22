@@ -12,7 +12,7 @@ colcon build
 
 colcon build --packages-select msg_srv
 
-colcon build --packages-select robo_driver
+colcon build --packages-select robo_driver_dll
 
 <h1> Uitvoeren van het project</h1>
 
@@ -22,12 +22,12 @@ colcon build --packages-select robo_driver
 . install/setup.bash
 
 * Op de eerste terminal voer je het volgende commando uit:
-ros2 run robo_driver high_level_client
+ros2 run robo_driver high_level_node
 
 * Op de andere terminal voer je het volgende commando uit:
-ros2 run robo_driver low_level_client
+ros2 run robo_driver cli_communication
 
-* open nu opnieuw de terminal waar je de high_level_client runt en begin met commando's uitvoeren!
+* open nu opnieuw de terminal waar je de cli_communication runt en begin met commando's uitvoeren!
 
 <b> Op dit moment zijn de volgende commando's supported:
 
