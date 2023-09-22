@@ -1,7 +1,0 @@
-<map id="src/highLevel/highLevelNode.hpp" name="src/highLevel/highLevelNode.hpp">
-<area shape="rect" id="node1" title="Contains the HighLevelNode class that sends commands to the low level driver based on the input from ..." alt="" coords="240,5,477,32"/>
-<area shape="rect" id="node2" href="$command_parser_8hpp.html" title="Parses the commands sent from the CLI and sends them to the low level driver." alt="" coords="77,80,321,107"/>
-<area shape="rect" id="node4" href="$high_level_2main_8cpp_source.html" title=" " alt="" coords="273,155,445,181"/>
-<area shape="rect" id="node5" href="$high_level_node_8cpp_source.html" title=" " alt="" coords="395,80,631,107"/>
-<area shape="rect" id="node3" href="$command_parser_8cpp_source.html" title=" " alt="" coords="5,155,248,181"/>
-</map>

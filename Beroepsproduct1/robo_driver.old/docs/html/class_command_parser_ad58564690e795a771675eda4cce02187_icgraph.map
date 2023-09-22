@@ -1,4 +1,0 @@
-<map id="CommandParser::parseMultiServoCommand" name="CommandParser::parseMultiServoCommand">
-<area shape="rect" id="node1" title="Parses the command and sends multiServoCommand on successful parsing." alt="" coords="293,5,500,47"/>
-<area shape="rect" id="node2" href="$class_command_parser.html#a5b8a05c35767dca062b15c7f37fd9a4b" title="Parses the command and sends correct command to the low level driver." alt="" coords="5,13,245,39"/>
-</map>

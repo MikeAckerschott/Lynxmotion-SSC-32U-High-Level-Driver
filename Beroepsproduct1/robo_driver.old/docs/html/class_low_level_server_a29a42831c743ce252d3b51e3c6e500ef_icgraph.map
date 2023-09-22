@@ -1,4 +1,0 @@
-<map id="LowLevelServer::handleEmergencyStop" name="LowLevelServer::handleEmergencyStop">
-<area shape="rect" id="node1" title="Handles client request for an emergency stop and stops all servos." alt="" coords="248,13,527,39"/>
-<area shape="rect" id="node2" href="$class_low_level_server.html#a624d619c255127a32cb68ee8d69c416b" title="Constructor." alt="" coords="5,5,200,47"/>
-</map>

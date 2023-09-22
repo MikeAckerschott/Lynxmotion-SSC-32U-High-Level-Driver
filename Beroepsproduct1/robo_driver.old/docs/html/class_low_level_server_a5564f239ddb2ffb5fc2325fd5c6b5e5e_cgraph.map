@@ -1,7 +1,0 @@
-<map id="LowLevelServer::handleSingleServoServiceRequest" name="LowLevelServer::handleSingleServoServiceRequest">
-<area shape="rect" id="node1" title="Handles client request for a single servo command and moves the selected servo if the request is vali..." alt="" coords="5,74,223,115"/>
-<area shape="rect" id="node2" href="$class_servo_utils.html#a175834b1c0a10247cc57f2c6aa1037b6" title="converts the degrees to pwm duration" alt="" coords="296,5,491,32"/>
-<area shape="rect" id="node3" href="$class_command.html#a911de585d69707fce024dcbdd7bba32f" title="Sends the command over the serial port." alt="" coords="296,56,491,83"/>
-<area shape="rect" id="node4" href="$class_servo_utils.html#aabd8a325709bec5bafcb7daabc3e61b1" title="verifies if the duration and speed are valid" alt="" coords="276,107,511,133"/>
-<area shape="rect" id="node5" href="$class_servo_utils.html#ac0afe8fdd8e145286c907e3c326aa202" title="verifies if the servo number and degrees are within the range of motion" alt="" coords="271,157,516,184"/>
-</map>

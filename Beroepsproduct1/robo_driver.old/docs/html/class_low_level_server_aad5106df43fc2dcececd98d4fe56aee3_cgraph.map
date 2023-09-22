@@ -1,4 +1,0 @@
-<map id="LowLevelServer::handleProgrammedPosition" name="LowLevelServer::handleProgrammedPosition">
-<area shape="rect" id="node1" title="Handles client request for a programmed position and moves the servos to the programmed position if t..." alt="" coords="5,5,267,47"/>
-<area shape="rect" id="node2" href="$class_command.html#a911de585d69707fce024dcbdd7bba32f" title="Sends the command over the serial port." alt="" coords="315,13,509,39"/>
-</map>
