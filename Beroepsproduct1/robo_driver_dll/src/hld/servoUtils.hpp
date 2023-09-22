@@ -9,6 +9,11 @@
 #include <vector>
 #include "../lld/singleServoCommand.hpp"
 
+/**
+ * @class ServoUtils
+ * @brief Provides helpful variables and functions for moving the robotic arm's servos safe and easy
+ */
+
 class ServoUtils
 {
 public:
@@ -51,6 +56,11 @@ static RangeOfMotion Elbow;
  */
 static RangeOfMotion Wrist;
 
+/**
+ * @brief Struct to store the range of motion for the gripper of the robotic arm
+ * @param min The minimum angle the gripper can move to: -60 degrees
+ * @param max The maximum angle the gripper can move to: 60 degrees
+*/
 static RangeOfMotion Gripper;
 
 /**

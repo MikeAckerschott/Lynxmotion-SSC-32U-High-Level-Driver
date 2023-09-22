@@ -4,7 +4,7 @@ ServoUtils::RangeOfMotion ServoUtils::Base = {-90, 90};
 ServoUtils::RangeOfMotion ServoUtils::Shoulder = {-30, 90};
 ServoUtils::RangeOfMotion ServoUtils::Elbow = {0, 135};
 ServoUtils::RangeOfMotion ServoUtils::Wrist = {-90, 90};
-ServoUtils::RangeOfMotion ServoUtils::Gripper = {-90, 90};
+ServoUtils::RangeOfMotion ServoUtils::Gripper = {-60, 60};
 ServoUtils::RangeOfMotion ServoUtils::WristRotate = {-90, 90};
 
 short ServoUtils::minServo = 0;

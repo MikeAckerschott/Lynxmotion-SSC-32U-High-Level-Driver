@@ -12,6 +12,11 @@
 #include <thread>
 #include <chrono>
 
+/**
+ * @class Command
+ * @brief Defines the syntax for a command to be sent over the serial port
+ */
+
 class Command
 {
 public:

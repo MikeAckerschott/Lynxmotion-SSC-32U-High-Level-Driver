@@ -32,6 +32,11 @@
 
 // include library for makeshare
 
+/**
+ * @class HighLevelNode
+ * @brief Sends commands to robotic arm based on input from the CLI. Uses the low level driver to send commands to the robotic arm
+*/
+
 class HighLevelNode : public rclcpp::Node
 {
 public:
@@ -88,22 +93,22 @@ public:
 
 private:
   /**
-   * @brief The service that receives a single servo command from the client. See highLevelNode.hpp for the message parameters
+   * @brief The service that receives a single servo command from the client. 
    */
   rclcpp::Service<msg_srv::srv::SingleServoCommand>::SharedPtr singleServoService;
 
   /**
-   * @brief The service that receives a multi servo command from the client. See highLevelNode.hpp for the message parameters
+   * @brief The service that receives a multi servo command from the client. 
    */
   rclcpp::Service<msg_srv::srv::MultiServoCommand>::SharedPtr multiServoService;
 
   /**
-   * @brief The service that receives an emergency stop command from the client. See highLevelNode.hpp for the message parameters
+   * @brief The service that receives an emergency stop command from the client. 
    */
   rclcpp::Service<msg_srv::srv::EmergencyStop>::SharedPtr stopService;
 
   /**
-   * @brief The service that receives a programmed position command from the client. See highLevelNode.hpp for the message parameters
+   * @brief The service that receives a programmed position command from the client. 
    */
   rclcpp::Service<msg_srv::srv::MoveToPosition>::SharedPtr programmedPositionService;
 

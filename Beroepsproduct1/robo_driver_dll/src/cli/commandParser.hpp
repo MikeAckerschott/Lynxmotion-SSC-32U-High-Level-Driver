@@ -16,6 +16,12 @@
 
 #include "communicatorNode.hpp"
 
+/**
+ * @class CommandParser
+ * @brief Parses the commands sent from the CLI and sends them to the low level driver
+ * @details Currently supports commands: singleServo, multiServo, stop, programmedPosition
+ */
+
 class CommandParser
 {
 
@@ -74,7 +80,24 @@ public:
   bool parseProgrammedPositionCommand(std::string commandType, std::string command, std::shared_ptr<CommunicatorNode> node);
 
 private:
+
+  /**
+   * @brief Checks if the string is a number
+   * @param s The string to check
+   * @return True if the string is a number, false if not
+   */
   bool isNumber(const std::string &s);
+
+  /**
+   * @brief fills the reference variables with the correct values from the commandArguments string
+   * @param s The string to check
+   * @param servoNumber The servo number to fill
+   * @param angle The angle to fill
+   * @param movement The movement to fill
+   * @param movementType The movement type to fill 
+   * @return True if the string is correclty formatted and the integer values are filled, false if not
+   */
+   
   bool getSingleServoCommandArguments(std::string commandArguments, int &servoNumber, int &angle, int &movement, std::string &movementType);
 };
 

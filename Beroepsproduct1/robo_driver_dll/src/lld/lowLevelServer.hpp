@@ -26,6 +26,11 @@
 #include <thread>
 #include <vector>
 
+/**
+ * @class LowLevelServer
+ * @brief Dynamically linked libray used by the HLD that implements the basic functionality of the robotic arm
+ */
+
 class LowLevelServer : public rclcpp::Node
 {
 public:
@@ -57,8 +62,6 @@ public:
      * @param response The response to send to the client
      */
     static void handleProgrammedPosition(std::string position, boost::asio::serial_port &serial_);
-
-private:
 };
 
 #endif /* LOWLEVELSERVER_HPP_ */

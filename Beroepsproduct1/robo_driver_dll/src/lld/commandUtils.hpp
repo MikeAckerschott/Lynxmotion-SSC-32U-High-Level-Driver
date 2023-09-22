@@ -8,6 +8,11 @@
 
 #include <iostream>
 
+/**
+ * @class CommandUtils
+ * @brief Provides helpful variables which make sending commands to the robotic arm easier 
+*/
+
 class CommandUtils {
 public:
   /**
