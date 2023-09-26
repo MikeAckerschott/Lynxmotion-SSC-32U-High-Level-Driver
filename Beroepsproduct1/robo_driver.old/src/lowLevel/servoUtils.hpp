@@ -80,11 +80,10 @@ static std::vector<RangeOfMotion> servoRanges;
  * @param pwmDurationUs The pwm duration in microseconds
  * @returns The degrees
  */
-static double pwmToDegrees(int servo, int pwmDurationUs);
+static double pwmToDegrees(int pwmDurationUs);
 
 /**
  * @brief converts the degrees to pwm duration
- * @param servo The servo number
  * @param degrees The degrees to move to
  * @returns The pwm duration in microseconds
  */

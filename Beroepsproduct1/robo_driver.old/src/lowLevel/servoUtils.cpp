@@ -10,7 +10,7 @@ ServoUtils::RangeOfMotion ServoUtils::WristRotate = {-90, 90};
 short ServoUtils::minServo = 0;
 short ServoUtils::maxServo = 5;
 
-double ServoUtils::pwmToDegrees(int servo, int pwmDurationUs)
+double ServoUtils::pwmToDegrees(int pwmDurationUs)
 {
     // Define the PWM-to-degree mapping parameters
     const int minPwmUs = 500;     // Minimum PWM duration for -90 degrees
@@ -20,6 +20,7 @@ double ServoUtils::pwmToDegrees(int servo, int pwmDurationUs)
     // Calculate the degrees using linear interpolation
     double degrees = static_cast<double>(pwmDurationUs - centerPwmUs) /
                      (centerPwmUs - minPwmUs) * 90.0;
+
     return degrees;
 }
 
@@ -103,7 +104,7 @@ double ServoUtils::degreesToPwm(int servo, double degrees)
                                (centerPwmUs - minPwmUs) +
                            centerPwmUs;
 
-    if (servo == 2) //degrees 0 should be straight up (700 pwm)
+    if (servo == 2) // degrees 0 should be straight up (700 pwm)
     {
         pwmDurationUs = pwmDurationUs - 800;
     }

@@ -89,7 +89,7 @@ void HighLevelNode::handleMultiServoServiceRequest(const std::shared_ptr<msg_srv
 
   std::vector<SingleServoCommand> commands;
 
-  for (int i = 0; i < move.instruction.size(); ++i)
+  for (long unsigned int i = 0; i < move.instruction.size(); ++i)
   {
     short targetServo = (short)move.instruction.at(i).target_servo;
     std::cout << targetServo << std::endl;

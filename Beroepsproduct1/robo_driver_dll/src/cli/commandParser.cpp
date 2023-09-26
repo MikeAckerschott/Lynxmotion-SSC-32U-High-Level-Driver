@@ -17,7 +17,7 @@ void CommandParser::parseCommand(std::string command, std::shared_ptr<Communicat
     }
 
     std::string commandType = command.substr(0, command.find(" "));
-    if (!parseSingleServoCommand(commandType, command, node) && !parseMultiServoCommand(commandType, command, node) && !parseStopCommand(commandType, command, node) && !parseProgrammedPositionCommand(commandType, command, node))
+    if (!parseSingleServoCommand(commandType, command, node) && !parseMultiServoCommand(commandType, command, node) && !parseStopCommand(commandType, node) && !parseProgrammedPositionCommand(commandType, command, node))
     {
         std::cout << "Command not recognized" << std::endl;
         return;
@@ -49,6 +49,7 @@ bool CommandParser::parseSingleServoCommand(std::string commandType, std::string
     std::cout << "servoNumber: " << servoNumber << " angle: " << angle << " movement: " << movement << " movementType: " << movementType << std::endl;
 
     node->sendSingleServoCommand(servoNumber, angle, movement, movementType);
+    return true;
 }
 
 bool CommandParser::parseMultiServoCommand(std::string commandType, std::string command, std::shared_ptr<CommunicatorNode> node)
@@ -63,8 +64,8 @@ bool CommandParser::parseMultiServoCommand(std::string commandType, std::string 
     // parse mutli servo commands
     // multi servo commands look like this: "multiServo {servo:0 angle:0 speed:10} {servo:1 angle:0 speed:10} ...etc"
 
-    int firstBracket = commandArguments.find("{");
-    int lastBracket = commandArguments.find("}");
+    long unsigned int firstBracket = commandArguments.find("{");
+    long unsigned int lastBracket = commandArguments.find("}");
 
     std::vector<std::vector<long long>> servoParams;
     std::vector<std::string> movementTypes;
@@ -102,9 +103,10 @@ bool CommandParser::parseMultiServoCommand(std::string commandType, std::string 
     }
 
     node->sendMultiServoCommand(servoParams, movementTypes);
+return true;
 }
 
-bool CommandParser::parseStopCommand(std::string commandType, std::string command, std::shared_ptr<CommunicatorNode> node)
+bool CommandParser::parseStopCommand(std::string commandType, std::shared_ptr<CommunicatorNode> node)
 {
     if (commandType != "stop")
     {
@@ -133,6 +135,7 @@ bool CommandParser::parseProgrammedPositionCommand(std::string commandType, std:
     }
 
     node->sendProgrammedPositionCommand(commandArguments);
+return true;
 }
 
 bool CommandParser::isNumber(const std::string &s)

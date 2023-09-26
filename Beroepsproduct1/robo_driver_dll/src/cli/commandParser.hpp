@@ -68,7 +68,7 @@ public:
    * @param node The node that sends the command to the low level driver
    * @return True if the command was parsed correctly, false if not
    */
-  bool parseStopCommand(std::string commandType, std::string command, std::shared_ptr<CommunicatorNode> node);
+  bool parseStopCommand(std::string commandType, std::shared_ptr<CommunicatorNode> node);
 
   /**
    * @brief Parses the command and sends programmedPositionCommand on successful parsing

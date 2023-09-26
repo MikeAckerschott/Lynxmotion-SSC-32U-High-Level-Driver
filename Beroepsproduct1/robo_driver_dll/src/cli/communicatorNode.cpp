@@ -45,7 +45,7 @@ void CommunicatorNode::sendMultiServoCommand(std::vector<std::vector<long long>>
     auto request_ = std::make_shared<msg_srv::srv::MultiServoCommand::Request>();
     msg_srv::msg::Move move;
 
-    for (int i = 0; i < arguments.size(); i++)
+    for (long unsigned int i = 0; i < arguments.size(); i++)
     {
         msg_srv::msg::ServoCommand servoCommand;
         servoCommand.target_servo = arguments.at(i).at(0);
