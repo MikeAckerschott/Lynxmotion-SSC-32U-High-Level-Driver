@@ -4,7 +4,7 @@
 
 void idleState::f_entry()
 {
-    std::cout<<" IDLE ENTRY"<<std::endl;
+    RCLCPP_INFO(context_->logger_, "STATE: {idleState}");
 }
 
 idleState::idleState()
@@ -48,27 +48,24 @@ bool idleState::checkAllTriggers()
 
     if (singleServoCommandReceived())
     {
-        context_->TransitionTo(new movingState);
+
         context_->singleServoCommandReceived = false;
-        RCLCPP_INFO(context_->node_->get_logger(), "SingleServoCommand received. IdleState exit. MovingState entry");
+        context_->TransitionTo(new movingState);
         return true;
     }
 
     if (multiServoCommandReceived())
     {
-        context_->TransitionTo(new movingState);
+
         context_->multiServoCommandReceived = false;
-        RCLCPP_INFO(context_->node_->get_logger(), "mutliServoCommand received. IdleState exit. MovingState entry");
+        context_->TransitionTo(new movingState);
         return true;
     }
 
     if (programmedPositionCommandReceived())
     {
-        std::cout << "programmedPositionReceived" << std::endl;
         context_->programmedPositionCommandReceived = false;
-        RCLCPP_INFO(context_->node_->get_logger(), "programmedPositionCommand received. IdleState exit. MovingState entry");
         context_->TransitionTo(new movingState);
-
         return true;
     }
 

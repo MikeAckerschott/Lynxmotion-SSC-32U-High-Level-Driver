@@ -31,10 +31,10 @@ void CommunicatorNode::sendSingleServoCommand(short servo, unsigned long long an
     if (rclcpp::spin_until_future_complete(shared_from_this(), result) ==
         rclcpp::FutureReturnCode::SUCCESS)
     {
-        if (result.get()->finished){
+        if (result.get()->finished)
+        {
             RCLCPP_INFO(get_logger(), "singleServoCommand received succesfully, moving robotic arm...");
         }
-        RCLCPP_INFO(get_logger(), "Sheesh %x Wazza", result.get()->finished);
     }
     else
     {
@@ -64,7 +64,10 @@ void CommunicatorNode::sendMultiServoCommand(std::vector<std::vector<long long>>
     if (rclcpp::spin_until_future_complete(shared_from_this(), result) ==
         rclcpp::FutureReturnCode::SUCCESS)
     {
-        RCLCPP_INFO(get_logger(), "Sheesh %x Wazza", result.get()->finished);
+        if (result.get()->finished)
+        {
+            RCLCPP_INFO(get_logger(), "multiServoCommand received succesfully, moving robotic arm...");
+        }
     }
     else
     {
@@ -81,7 +84,10 @@ void CommunicatorNode::sendStopCommand()
     if (rclcpp::spin_until_future_complete(shared_from_this(), result) ==
         rclcpp::FutureReturnCode::SUCCESS)
     {
-        RCLCPP_INFO(get_logger(), "Sheesh %x Wazza", result.get()->stopped);
+        if (result.get()->stopped)
+        {
+            RCLCPP_INFO(get_logger(), "emergencyStop received succesfully, stopping robotic arm...");
+        }
     }
     else
     {
@@ -92,10 +98,8 @@ void CommunicatorNode::sendStopCommand()
 
 void CommunicatorNode::sendProgrammedPositionCommand(std::string programmedPosition)
 {
-    std::cout << "ProgrammedPosition: " << programmedPosition << std::endl;
     if (programmedPosition != "park" && programmedPosition != "ready" && programmedPosition != "straight-up")
     {
-        std::cout << "ProgrammedPosition not recognized" << std::endl;
         return;
     }
 
@@ -110,7 +114,10 @@ void CommunicatorNode::sendProgrammedPositionCommand(std::string programmedPosit
     if (rclcpp::spin_until_future_complete(shared_from_this(), result) ==
         rclcpp::FutureReturnCode::SUCCESS)
     {
-        RCLCPP_INFO(get_logger(), "Sheesh %x Wazza", result.get()->finished);
+        if (result.get()->finished)
+        {
+            RCLCPP_INFO(get_logger(), "programmedPosition received succesfully, moving robotic arm...");
+        }
     }
     else
     {

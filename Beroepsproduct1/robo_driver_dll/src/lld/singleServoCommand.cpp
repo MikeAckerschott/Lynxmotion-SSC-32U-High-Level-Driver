@@ -8,7 +8,6 @@ SingleServoCommand::SingleServoCommand(short pin, short desiredPulseWidth,
       movement(movement), type(type)
 {
 
-  std::cout << "pin: " << pin << " desiredPulseWidth: " << desiredPulseWidth << " movement: " << movement << " type: " << type << std::endl;
   if (desiredPulseWidth > 2500 || desiredPulseWidth < 500)
   {
     throw std::invalid_argument(

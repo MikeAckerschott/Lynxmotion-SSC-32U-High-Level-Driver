@@ -43,7 +43,6 @@ void LowLevelServer::handleProgrammedPosition(std::string position, boost::asio:
   }
   else
   {
-    std::cout << "ProgrammedPosition not recognized" << std::endl;
     return;
   }
   Command command(commandAsString, serial_);

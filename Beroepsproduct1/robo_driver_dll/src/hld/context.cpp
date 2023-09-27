@@ -1,7 +1,7 @@
 #include "context.hpp"
 #include <iostream>
 
-Context::Context(State *state, boost::asio::serial_port &serial, std::shared_ptr<HighLevelNode> node) : state_(nullptr), serialPort_(serial), node_(node)
+Context::Context(State *state, boost::asio::serial_port &serial, rclcpp::Logger logger) : state_(nullptr), serialPort_(serial), logger_(logger)
 {
     this->TransitionTo(state);
 }

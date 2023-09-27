@@ -2,7 +2,7 @@
 
 void movingState::f_entry()
 {
-    std::cout<<"MOVING ENTRY"<<std::endl;
+    RCLCPP_INFO(context_->logger_, "STATE: {movingState}");
 }
 
 movingState::movingState()

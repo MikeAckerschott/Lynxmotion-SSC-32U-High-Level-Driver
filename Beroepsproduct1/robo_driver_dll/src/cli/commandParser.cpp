@@ -198,6 +198,7 @@ bool CommandParser::getSingleServoCommandArguments(std::string commandArguments,
     else if (speedFound)
     {
         movement = std::stoi(speedString);
+        movementType = "speed";
     }
 
     if (durationFound && !isNumber(durationString))
@@ -208,7 +209,10 @@ bool CommandParser::getSingleServoCommandArguments(std::string commandArguments,
     else if (durationFound)
     {
         movement = std::stoi(durationString);
+        movementType = "duration";
     }
+
+    std::cout<<"servo: "<<servoNumberString<<" angle: "<<angleString<<" speed: "<<speedString<<" duration: "<<durationString<<std::endl;
 
     servoNumber = std::stoi(servoNumberString);
     angle = std::stoi(angleString);

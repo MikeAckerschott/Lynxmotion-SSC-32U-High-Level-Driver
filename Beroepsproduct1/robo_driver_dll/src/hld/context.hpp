@@ -29,7 +29,7 @@ private:
     // HighLevelNode *node;
 
 public:
-    Context(State *state, boost::asio::serial_port &serial, std::shared_ptr<HighLevelNode> node);
+    Context(State *state, boost::asio::serial_port &serial, rclcpp::Logger logger);
     ~Context();
     /**
      * The Context allows changing the State object at runtime.
@@ -51,8 +51,7 @@ public:
 
 
     boost::asio::serial_port &serialPort_;
-
-    std::shared_ptr<HighLevelNode> node_; //used for logging
+    rclcpp::Logger logger_;
 };
 
 #endif /* CONTEXT_HPP_ */
