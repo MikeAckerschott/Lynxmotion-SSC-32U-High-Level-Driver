@@ -5,8 +5,12 @@
 #include <deque>
 #include <memory>
 #include "rclcpp/rclcpp.hpp"
+#include <boost/asio.hpp>
+// #include "highLevelNode.hpp"
 
 class State;
+
+class HighLevelNode;
 
 class Context
 {
@@ -22,8 +26,10 @@ class Context
 private:
     State *state_;
 
+    // HighLevelNode *node;
+
 public:
-    Context(State *state, rclcpp::Logger);
+    Context(State *state, boost::asio::serial_port &serial, std::shared_ptr<HighLevelNode> node);
     ~Context();
     /**
      * The Context allows changing the State object at runtime.
@@ -43,7 +49,10 @@ public:
     bool programmedPositionCommandReceived;
     bool emergencyStopReceived;
 
-    rclcpp::Logger logger_;
+
+    boost::asio::serial_port &serialPort_;
+
+    std::shared_ptr<HighLevelNode> node_; //used for logging
 };
 
 #endif /* CONTEXT_HPP_ */

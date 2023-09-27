@@ -17,8 +17,7 @@ int main(int argc, char **argv)
   while (rclcpp::ok() && !exit_requested)
   {
     // Check for user input
-    std::cout << "Enter 'send' followed by 4 integers (e.g., 'send 0 45 0 "
-                 "5000') or 'exit' to exit: ";
+    std::cout << "Enter command: ";
     std::string input;
     std::getline(std::cin, input);
 

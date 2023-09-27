@@ -1,7 +1,7 @@
 #include "context.hpp"
 #include <iostream>
 
-Context::Context(State *state, rclcpp::Logger logger) : state_(nullptr), logger_(logger)
+Context::Context(State *state, boost::asio::serial_port &serial, std::shared_ptr<HighLevelNode> node) : state_(nullptr), serialPort_(serial), node_(node)
 {
     this->TransitionTo(state);
 }
@@ -18,18 +18,13 @@ void Context::TransitionTo(State *state)
     if (this->state_ != nullptr)
     {
         this->state_->f_exit();
-        std::cout<<"test7"<<std::endl;
         delete this->state_;
-        std::cout<<"test8"<<std::endl;
     }
 
     this->state_ = state;
     this->state_->set_context(this);
 
-    std::cout<<"what";
-
     this->state_->f_entry();
-    std::cout<<"done"<<std::endl;
 }
 
 /**

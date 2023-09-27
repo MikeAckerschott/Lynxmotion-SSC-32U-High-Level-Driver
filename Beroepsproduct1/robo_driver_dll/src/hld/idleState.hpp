@@ -4,6 +4,8 @@
 #include "state.hpp"
 #include <iostream>
 
+class HighLevelNode;
+
 class idleState : public State
 {
 public:

@@ -19,7 +19,7 @@ HighLevelNode::HighLevelNode() : Node("high_level_client"), serial_(ioservice, "
   programmedPositionService = create_service<msg_srv::srv::MoveToPosition>("programmed_position", std::bind(&HighLevelNode::handleProgrammedPosition, this,
                                                                                                             std::placeholders::_1, std::placeholders::_2));
 
-  context = new Context(new idleState, get_logger());
+  context = new Context(new idleState, serial_, std::shared_ptr<HighLevelNode>(this));
 
   timer_ = create_wall_timer(std::chrono::milliseconds(10), [this]()
                              { context->f_do(); });

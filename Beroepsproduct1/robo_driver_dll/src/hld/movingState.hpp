@@ -2,6 +2,8 @@
 #define MOVINGSTATE_HPP_
 
 #include "state.hpp"
+#include "../lld/command.hpp"
+#include "idleState.hpp"
 
 class movingState : public State
 {
@@ -15,6 +17,7 @@ public:
     bool checkAllTriggers() override;
 
     bool isMovingDone();
+    bool emergencyStopReceived();
 
 private:
 };

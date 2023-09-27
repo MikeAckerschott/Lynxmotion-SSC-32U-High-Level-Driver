@@ -39,6 +39,8 @@
  * @brief Sends commands to robotic arm based on input from the CLI. Uses the low level driver to send commands to the robotic arm
  */
 
+class Context;
+
 class HighLevelNode : public rclcpp::Node
 {
 public:

@@ -7,8 +7,6 @@ Command::~Command() {}
 
 void Command::sendCommand()
 {
-  std::cout << "sending command: " << std::endl
-            << command << std::endl;
 
   boost::asio::streambuf b;
   std::ostream os(&b);
