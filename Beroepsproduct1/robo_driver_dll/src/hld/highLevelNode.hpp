@@ -23,6 +23,8 @@
 #include "../lld/commandUtils.hpp"
 
 #include "servoUtils.hpp"
+#include "context.hpp"
+#include "idleState.hpp"
 
 #include <chrono>
 #include <cstdint>
@@ -35,7 +37,7 @@
 /**
  * @class HighLevelNode
  * @brief Sends commands to robotic arm based on input from the CLI. Uses the low level driver to send commands to the robotic arm
-*/
+ */
 
 class HighLevelNode : public rclcpp::Node
 {
@@ -93,24 +95,26 @@ public:
 
 private:
   /**
-   * @brief The service that receives a single servo command from the client. 
+   * @brief The service that receives a single servo command from the client.
    */
   rclcpp::Service<msg_srv::srv::SingleServoCommand>::SharedPtr singleServoService;
 
   /**
-   * @brief The service that receives a multi servo command from the client. 
+   * @brief The service that receives a multi servo command from the client.
    */
   rclcpp::Service<msg_srv::srv::MultiServoCommand>::SharedPtr multiServoService;
 
   /**
-   * @brief The service that receives an emergency stop command from the client. 
+   * @brief The service that receives an emergency stop command from the client.
    */
   rclcpp::Service<msg_srv::srv::EmergencyStop>::SharedPtr stopService;
 
   /**
-   * @brief The service that receives a programmed position command from the client. 
+   * @brief The service that receives a programmed position command from the client.
    */
   rclcpp::Service<msg_srv::srv::MoveToPosition>::SharedPtr programmedPositionService;
+
+  Context *context;
 
 private:
   /**
@@ -122,6 +126,8 @@ private:
    * @brief The serial port to communicate with the robotic arm
    */
   boost::asio::serial_port serial_;
+
+  rclcpp::TimerBase::SharedPtr timer_;
 };
 
 #endif // HIGH_LEVEL_NODE_HPP_

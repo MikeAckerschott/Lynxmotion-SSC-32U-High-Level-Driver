@@ -1,4 +1,0 @@
-<map id="LowLevelServer::handleMultiServoServiceRequest" name="LowLevelServer::handleMultiServoServiceRequest">
-<area shape="rect" id="node1" title="Handles client request for a multi servo command and moves the selected servos if the request is vali..." alt="" coords="248,5,459,47"/>
-<area shape="rect" id="node2" href="$class_low_level_server.html#a624d619c255127a32cb68ee8d69c416b" title="Constructor." alt="" coords="5,5,200,47"/>
-</map>

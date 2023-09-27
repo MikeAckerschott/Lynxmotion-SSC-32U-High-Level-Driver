@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 
-CommandParser::CommandParser() {}
+CommandParser::CommandParser(std::shared_ptr<CommunicatorNode> node) : communicatorNode_(node) {}
 
 CommandParser::~CommandParser() {}
 
@@ -12,14 +12,14 @@ void CommandParser::parseCommand(std::string command, std::shared_ptr<Communicat
     // get first word from command
     if (command.size() < 4)
     {
-        std::cout << "Command too short" << std::endl;
+        RCLCPP_ERROR(communicatorNode_->get_logger(), "Command too short. expects at least 4 characters but got %ld", command.size());
         return;
     }
 
     std::string commandType = command.substr(0, command.find(" "));
     if (!parseSingleServoCommand(commandType, command, node) && !parseMultiServoCommand(commandType, command, node) && !parseStopCommand(commandType, node) && !parseProgrammedPositionCommand(commandType, command, node))
     {
-        std::cout << "Command not recognized" << std::endl;
+        RCLCPP_ERROR(communicatorNode_->get_logger(), "Command not recognized. supported commands are: singleServo, multiServo, stop, programmedPosition. check README for syntax");
         return;
     }
 }
@@ -40,15 +40,15 @@ bool CommandParser::parseSingleServoCommand(std::string commandType, std::string
 
     if (!getSingleServoCommandArguments(commandArguments, servoNumber, angle, movement, movementType))
     {
-        std::cout << "Could not parse command arguments" << std::endl;
+
+        RCLCPP_ERROR(communicatorNode_->get_logger(), "Could not parse command arguments. check README for syntax");
         return false;
     }
 
     // Dont check, hld will do this
 
-    std::cout << "servoNumber: " << servoNumber << " angle: " << angle << " movement: " << movement << " movementType: " << movementType << std::endl;
-
-    node->sendSingleServoCommand(servoNumber, angle, movement, movementType);
+    RCLCPP_INFO(communicatorNode_->get_logger(), "Sending singleServoCommand... servoNumber: %d angle: %d movement: %d movementType: %s", servoNumber, angle, movement, movementType.c_str());
+    communicatorNode_->sendSingleServoCommand(servoNumber, angle, movement, movementType);
     return true;
 }
 
@@ -81,7 +81,7 @@ bool CommandParser::parseMultiServoCommand(std::string commandType, std::string 
 
         if (!getSingleServoCommandArguments(singleServoCommand, servoNumber, angle, movement, movementType))
         {
-            std::cout << "Could not parse command arguments" << std::endl;
+            RCLCPP_ERROR(communicatorNode_->get_logger(), "Could not parse command arguments. check README for syntax");
             return false;
         }
 
@@ -89,21 +89,18 @@ bool CommandParser::parseMultiServoCommand(std::string commandType, std::string 
         movementTypes.push_back(movementType);
 
         // Dont check, hld will do this
-
-        std::cout << "servoNumber: " << servoNumber << " angle: " << angle << " movement: " << movement << " movementType: " << movementType << std::endl;
-
         firstBracket = commandArguments.find("{", lastBracket);
         lastBracket = commandArguments.find("}", firstBracket);
     }
 
     if (servoParams.size() == 0)
     {
-        std::cout << "No servo params found" << std::endl;
+        RCLCPP_ERROR(communicatorNode_->get_logger(), "No servo params found");
         return false;
     }
 
-    node->sendMultiServoCommand(servoParams, movementTypes);
-return true;
+    communicatorNode_->sendMultiServoCommand(servoParams, movementTypes);
+    return true;
 }
 
 bool CommandParser::parseStopCommand(std::string commandType, std::shared_ptr<CommunicatorNode> node)
@@ -113,7 +110,7 @@ bool CommandParser::parseStopCommand(std::string commandType, std::shared_ptr<Co
         return false;
     }
 
-    node->sendStopCommand();
+    communicatorNode_->sendStopCommand();
     return true;
 }
 
@@ -126,16 +123,14 @@ bool CommandParser::parseProgrammedPositionCommand(std::string commandType, std:
 
     std::string commandArguments = command.substr(command.find(" ") + 1, command.size());
 
-    std::cout << "'" << commandArguments << "'" << std::endl;
-
     if (commandArguments != "park" && commandArguments != "ready" && commandArguments != "straight-up")
     {
-        std::cout << "ProgrammedPosition not recognized" << std::endl;
+        RCLCPP_ERROR(communicatorNode_->get_logger(), "ProgrammedPosition not recognized, supported positions are: park, ready, straight-up");
         return false;
     }
 
-    node->sendProgrammedPositionCommand(commandArguments);
-return true;
+    communicatorNode_->sendProgrammedPositionCommand(commandArguments);
+    return true;
 }
 
 bool CommandParser::isNumber(const std::string &s)
@@ -159,13 +154,13 @@ bool CommandParser::getSingleServoCommandArguments(std::string commandArguments,
 
     if (!servoNumberFound || !angleFound)
     {
-        std::cout << "Servo or angle param missing" << std::endl;
+        RCLCPP_ERROR(communicatorNode_->get_logger(), "Servo or angle param missing");
         return false;
     }
 
     if (speedFound && durationFound)
     {
-        std::cout << "speed and duration cant both be set" << std::endl;
+        RCLCPP_ERROR(communicatorNode_->get_logger(), "Speed and duration cant both be set");
         return false;
     }
 
@@ -181,48 +176,39 @@ bool CommandParser::getSingleServoCommandArguments(std::string commandArguments,
     {
         durationString = commandArguments.substr(commandArguments.find("duration:") + 9, commandArguments.find(" ", commandArguments.find("duration:")) - commandArguments.find("duration:") - 9);
     }
-
-    std::cout << "servo: '" << servoNumberString << "' angle: '" << angleString << "' speed: '" << speedString << "' duration: '" << durationString << "'" << std::endl;
-
     // check if string is numeric
 
     if (!isNumber(servoNumberString))
     {
-        std::cout << "servoNumber is not numeric" << std::endl;
+        RCLCPP_ERROR(communicatorNode_->get_logger(), "Servo number is not numeric");
         return false;
     }
 
     if (!isNumber(angleString))
     {
-        std::cout << "angle is not numeric" << std::endl;
+        RCLCPP_ERROR(communicatorNode_->get_logger(), "Angle is not numeric");
         return false;
     }
 
     if (speedFound && !isNumber(speedString))
     {
-        std::cout << "speed is not numeric" << std::endl;
+        RCLCPP_ERROR(communicatorNode_->get_logger(), "Speed is not numeric");
         return false;
     }
     else if (speedFound)
     {
-        std::cout << "test3" << std::endl;
         movement = std::stoi(speedString);
-        movementType = "speed";
     }
 
     if (durationFound && !isNumber(durationString))
     {
-        std::cout << "duration is not numeric" << std::endl;
+        RCLCPP_ERROR(communicatorNode_->get_logger(), "Duration is not numeric");
         return false;
     }
     else if (durationFound)
     {
-        std::cout << "test2" << std::endl;
         movement = std::stoi(durationString);
-        movementType = "duration";
     }
-
-    std::cout << "test" << std::endl;
 
     servoNumber = std::stoi(servoNumberString);
     angle = std::stoi(angleString);

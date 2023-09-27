@@ -29,7 +29,7 @@ public:
   /**
    * @brief Constructor
    */
-  CommandParser();
+  CommandParser(std::shared_ptr<CommunicatorNode> node);
 
   /**
    * @brief Destructor
@@ -87,6 +87,8 @@ private:
    * @return True if the string is a number, false if not
    */
   bool isNumber(const std::string &s);
+
+  std::shared_ptr<CommunicatorNode> communicatorNode_;
 
   /**
    * @brief fills the reference variables with the correct values from the commandArguments string

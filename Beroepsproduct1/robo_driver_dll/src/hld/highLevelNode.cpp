@@ -18,6 +18,11 @@ HighLevelNode::HighLevelNode() : Node("high_level_client"), serial_(ioservice, "
 
   programmedPositionService = create_service<msg_srv::srv::MoveToPosition>("programmed_position", std::bind(&HighLevelNode::handleProgrammedPosition, this,
                                                                                                             std::placeholders::_1, std::placeholders::_2));
+
+  context = new Context(new idleState, get_logger());
+
+  timer_ = create_wall_timer(std::chrono::milliseconds(10), [this]()
+                             { context->f_do(); });
 }
 
 HighLevelNode::~HighLevelNode()
@@ -102,7 +107,8 @@ void HighLevelNode::handleMultiServoServiceRequest(const std::shared_ptr<msg_srv
 
     SingleServoCommand::movementType type = ServoUtils::getMovementType(movementType);
 
-    if(movement == 0){
+    if (movement == 0)
+    {
       response->finished = false;
       RCLCPP_INFO(this->get_logger(), "Movement cannot be 0");
       return;
@@ -157,6 +163,8 @@ void HighLevelNode::handleProgrammedPosition(const std::shared_ptr<msg_srv::srv:
     response->finished = false;
     return;
   }
+
+  context->programmedPositionCommandReceived = true;
 
   Command command(commandAsString, serial_);
   command.sendCommand();

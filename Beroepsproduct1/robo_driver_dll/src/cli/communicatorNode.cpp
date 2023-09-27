@@ -24,13 +24,16 @@ void CommunicatorNode::sendSingleServoCommand(short servo, unsigned long long an
     request_->position.movement = movement;
     request_->position.movement_type = movementType;
 
-    std::cout << "sending request: " << (short)request_->position.target_servo << " - " << request_->position.degrees << " - " << request_->position.movement << " - " << request_->position.movement_type << std::endl;
+    RCLCPP_INFO(this->get_logger(), "Sending single servo command: servo: %d, angle: %llu, movement: %llu, movementType: %s", servo, angle, movement, movementType.c_str());
+
     auto result = singleServoClient_->async_send_request(request_);
-    std::cout << "request sent" << std::endl;
     // Wait for the result.
     if (rclcpp::spin_until_future_complete(shared_from_this(), result) ==
         rclcpp::FutureReturnCode::SUCCESS)
     {
+        if (result.get()->finished){
+            RCLCPP_INFO(get_logger(), "singleServoCommand received succesfully, moving robotic arm...");
+        }
         RCLCPP_INFO(get_logger(), "Sheesh %x Wazza", result.get()->finished);
     }
     else
@@ -89,29 +92,29 @@ void CommunicatorNode::sendStopCommand()
 
 void CommunicatorNode::sendProgrammedPositionCommand(std::string programmedPosition)
 {
-  std::cout << "ProgrammedPosition: " << programmedPosition << std::endl;
-  if (programmedPosition != "park" && programmedPosition != "ready" && programmedPosition != "straight-up")
-  {
-    std::cout << "ProgrammedPosition not recognized" << std::endl;
-    return;
-  }
+    std::cout << "ProgrammedPosition: " << programmedPosition << std::endl;
+    if (programmedPosition != "park" && programmedPosition != "ready" && programmedPosition != "straight-up")
+    {
+        std::cout << "ProgrammedPosition not recognized" << std::endl;
+        return;
+    }
 
-  // std::shared_ptr<msg_srv::srv::MoveToPosition::Request> request_;
-  auto request_ = std::make_shared<msg_srv::srv::MoveToPosition::Request>();
-  msg_srv::msg::ProgrammedPosition programmedPositionMsg;
-  programmedPositionMsg.programmed_position = programmedPosition;
-  request_->position = programmedPositionMsg;
+    // std::shared_ptr<msg_srv::srv::MoveToPosition::Request> request_;
+    auto request_ = std::make_shared<msg_srv::srv::MoveToPosition::Request>();
+    msg_srv::msg::ProgrammedPosition programmedPositionMsg;
+    programmedPositionMsg.programmed_position = programmedPosition;
+    request_->position = programmedPositionMsg;
 
-  auto result = programmedPositionClient_->async_send_request(request_);
-  // Wait for the result.
-  if (rclcpp::spin_until_future_complete(shared_from_this(), result) ==
-      rclcpp::FutureReturnCode::SUCCESS)
-  {
-    RCLCPP_INFO(get_logger(), "Sheesh %x Wazza", result.get()->finished);
-  }
-  else
-  {
-    RCLCPP_ERROR(get_logger(),
-                 "Failed to call service");
-  }
+    auto result = programmedPositionClient_->async_send_request(request_);
+    // Wait for the result.
+    if (rclcpp::spin_until_future_complete(shared_from_this(), result) ==
+        rclcpp::FutureReturnCode::SUCCESS)
+    {
+        RCLCPP_INFO(get_logger(), "Sheesh %x Wazza", result.get()->finished);
+    }
+    else
+    {
+        RCLCPP_ERROR(get_logger(),
+                     "Failed to call service");
+    }
 }

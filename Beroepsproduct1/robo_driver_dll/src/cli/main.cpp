@@ -5,10 +5,12 @@
 int main(int argc, char **argv)
 {
   rclcpp::init(argc, argv);
-  CommandParser parser;
+
 
   std::shared_ptr<CommunicatorNode> node =
       std::make_shared<CommunicatorNode>();
+
+        CommandParser parser(node);
 
   bool exit_requested = false;
 
