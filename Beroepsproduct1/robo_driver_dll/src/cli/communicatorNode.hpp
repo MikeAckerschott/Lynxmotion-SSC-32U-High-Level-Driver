@@ -36,7 +36,7 @@ public:
    * @param movement the speed or duration value depending on the movementType
    * @param movementType  move the servo with speed or duration. (example: T1000 or S1000)
    */
-  void sendSingleServoCommand(short servo, unsigned long long angle, unsigned long long movement, std::string movementType);
+  void sendSingleServoCommand(int servo, int angle, int movement, std::string movementType);
 
   /**
    * @brief Sends a multiServoCommand to the high level driver

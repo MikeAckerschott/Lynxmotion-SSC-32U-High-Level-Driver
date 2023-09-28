@@ -41,7 +41,7 @@ void HighLevelNode::handleEmergencyStop(const std::shared_ptr<msg_srv::srv::Emer
     RCLCPP_DEBUG(get_logger(), "EVENT: {Emergency stop | enable: true}");
     context->emergencyStopActivateRequest = true;
     response->stopped = true;
-    LowLevelServer::handleEmergencyStop(serial_);
+    LowLevelServer::stopCurrentMovement(serial_);
   }
   else
   {
@@ -55,6 +55,8 @@ void HighLevelNode::handleSkip(const std::shared_ptr<msg_srv::srv::Skip::Request
                                const std::shared_ptr<msg_srv::srv::Skip::Response> response)
 {
   RCLCPP_DEBUG(get_logger(), "EVENT: {Skip}");
+      LowLevelServer::stopCurrentMovement(serial_);
+
   context->skipCommandReceived = true;
   if (context->commandQueue_.empty())
   {

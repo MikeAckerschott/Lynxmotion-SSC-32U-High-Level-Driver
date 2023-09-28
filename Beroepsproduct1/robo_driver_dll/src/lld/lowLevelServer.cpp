@@ -14,7 +14,7 @@ void LowLevelServer::multiServoRequest(MultiServoCommand command)
   command.sendCommand();
 }
 
-void LowLevelServer::handleEmergencyStop(boost::asio::serial_port &serial_)
+void LowLevelServer::stopCurrentMovement(boost::asio::serial_port &serial_)
 {
   std::string commandAsString = "stop";
   commandAsString += Command::cr;

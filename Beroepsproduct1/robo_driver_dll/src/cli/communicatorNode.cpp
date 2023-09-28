@@ -17,7 +17,7 @@ CommunicatorNode::~CommunicatorNode()
 {
 }
 
-void CommunicatorNode::sendSingleServoCommand(short servo, unsigned long long angle, unsigned long long movement, std::string movementType)
+void CommunicatorNode::sendSingleServoCommand(int servo, int angle, int movement, std::string movementType)
 {
     auto request_ = std::make_shared<msg_srv::srv::SingleServoCommand::Request>();
 

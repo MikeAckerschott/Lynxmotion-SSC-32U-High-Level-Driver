@@ -22,7 +22,9 @@ void movingState::f_do()
             context_->commandQueue_.pop();
         }
 
-        if(context_->skipCommandReceived){
+        if (context_->skipCommandReceived)
+        {
+
             context_->commandQueue_.front().sendCommand();
             context_->commandQueue_.pop();
             context_->skipCommandReceived = false;
@@ -32,6 +34,7 @@ void movingState::f_do()
 
 void movingState::f_exit()
 {
+    context_->skipCommandReceived = false;
 }
 
 bool movingState::isMovingDone()
@@ -82,6 +85,12 @@ bool movingState::checkAllTriggers()
     }
 
     if (isQueueEmpty() && isMovingDone())
+    {
+        context_->TransitionTo(new idleState);
+        return true;
+    }
+
+    if (isQueueEmpty() && context_->skipCommandReceived)
     {
         context_->TransitionTo(new idleState);
         return true;

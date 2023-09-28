@@ -54,7 +54,7 @@ public:
      * @param request The request from the client
      * @param response The response to send to the client
      */
-    static void handleEmergencyStop(boost::asio::serial_port &serial_);
+    static void stopCurrentMovement(boost::asio::serial_port &serial_);
 
     /**
      * @brief Handles client request for a programmed position and moves the servos to the programmed position if the request is valid
