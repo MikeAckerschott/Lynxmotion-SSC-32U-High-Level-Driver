@@ -49,6 +49,8 @@ public:
    */
   void sendStopCommand();
 
+  void deactivateEmergencyStop();
+
   /**
    * @brief Sends a programmedPositionCommand to the high level driver
    * @param programmedPosition The programmed position to move to (park, ready, straight-up)

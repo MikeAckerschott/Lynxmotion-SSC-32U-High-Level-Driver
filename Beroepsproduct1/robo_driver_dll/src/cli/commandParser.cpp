@@ -17,7 +17,7 @@ void CommandParser::parseCommand(std::string command, std::shared_ptr<Communicat
     }
 
     std::string commandType = command.substr(0, command.find(" "));
-    if (!parseSingleServoCommand(commandType, command, node) && !parseMultiServoCommand(commandType, command, node) && !parseStopCommand(commandType, node) && !parseProgrammedPositionCommand(commandType, command, node))
+    if (!parseSingleServoCommand(commandType, command, node) && !parseMultiServoCommand(commandType, command, node) && !parseStopCommand(commandType, node) && !parseProgrammedPositionCommand(commandType, command, node) && !parseStartCommand(commandType, node))
     {
         RCLCPP_ERROR(communicatorNode_->get_logger(), "Command not recognized. supported commands are: singleServo, multiServo, stop, programmedPosition. check README for syntax");
         return;
@@ -111,6 +111,17 @@ bool CommandParser::parseStopCommand(std::string commandType, std::shared_ptr<Co
     }
 
     communicatorNode_->sendStopCommand();
+    return true;
+}
+
+bool CommandParser::parseStartCommand(std::string commandType, std::shared_ptr<CommunicatorNode> node)
+{
+    if (commandType != "start")
+    {
+        return false;
+    }
+
+    communicatorNode_->deactivateEmergencyStop();
     return true;
 }
 

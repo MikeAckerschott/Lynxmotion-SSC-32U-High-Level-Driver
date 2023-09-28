@@ -31,17 +31,17 @@ ros2 run robo_driver cli_communication
 
 <b> Op dit moment zijn de volgende commando's supported:
 
-singleServoCommand int servo int degrees int speed int time
+singleServo int servo int degrees int speed int time
 
 * voorbeeld:
 * singleServoCommand servo:0 angle:45 duration:1000
 * singleServoCommand servo:0 angle:45 speed:100
 
-multiServoCommand {int servo int degrees int speed int time} {int servo int degrees int speed int time} 
+multiServo {int servo int degrees int speed int time} {int servo int degrees int speed int time} 
 
 * voorbeeld:
 
-* multiServoCommand {servo:0 angle:45 duration:4000} {servo:1 angle:60}
+* multiServo {servo:0 angle:45 duration:4000} {servo:1 angle:60}
 
 stop
 

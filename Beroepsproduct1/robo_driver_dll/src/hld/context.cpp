@@ -1,7 +1,7 @@
 #include "context.hpp"
 #include <iostream>
 
-Context::Context(State *state, boost::asio::serial_port &serial, rclcpp::Logger logger) : state_(nullptr), serialPort_(serial), logger_(logger)
+Context::Context(State *state, boost::asio::serial_port &serial, rclcpp::Logger logger) : state_(nullptr), serialPort_(serial), logger_(logger), commandQueue_()
 {
     this->TransitionTo(state);
 }

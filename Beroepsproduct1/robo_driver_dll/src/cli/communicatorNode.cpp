@@ -79,6 +79,9 @@ void CommunicatorNode::sendMultiServoCommand(std::vector<std::vector<long long>>
 void CommunicatorNode::sendStopCommand()
 {
     auto request_ = std::make_shared<msg_srv::srv::EmergencyStop::Request>();
+
+    request_->enable = true;
+
     auto result = stopClient_->async_send_request(request_);
 
     if (rclcpp::spin_until_future_complete(shared_from_this(), result) ==
@@ -87,6 +90,30 @@ void CommunicatorNode::sendStopCommand()
         if (result.get()->stopped)
         {
             RCLCPP_INFO(get_logger(), "emergencyStop received succesfully, stopping robotic arm...");
+        }
+    }
+    else
+    {
+        RCLCPP_ERROR(get_logger(),
+                     "Failed to call service ");
+    }
+}
+
+void CommunicatorNode::deactivateEmergencyStop()
+{
+    auto request_ = std::make_shared<msg_srv::srv::EmergencyStop::Request>();
+
+    //set emergency stop enabled to false
+    request_->enable = false;
+
+    auto result = stopClient_->async_send_request(request_);
+
+    if (rclcpp::spin_until_future_complete(shared_from_this(), result) ==
+        rclcpp::FutureReturnCode::SUCCESS)
+    {
+        if (result.get()->stopped)
+        {
+            RCLCPP_INFO(get_logger(), "emergencyStop deactivation received succesfully, starting robotic arm...");
         }
     }
     else

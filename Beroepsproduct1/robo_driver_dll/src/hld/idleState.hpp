@@ -21,6 +21,7 @@ public:
     bool multiServoCommandReceived();
     bool emergencyStopReceived();
     bool programmedPositionCommandReceived();
+    bool movementQueueNotEmpty();
 };
 
 #endif /*IDLESTATE_HPP_*/

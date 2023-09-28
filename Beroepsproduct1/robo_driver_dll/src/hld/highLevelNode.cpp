@@ -32,19 +32,30 @@ HighLevelNode::~HighLevelNode()
 void HighLevelNode::handleEmergencyStop(const std::shared_ptr<msg_srv::srv::EmergencyStop::Request> request,
                                         const std::shared_ptr<msg_srv::srv::EmergencyStop::Response> response)
 {
- 
-  LowLevelServer::handleEmergencyStop(serial_);
 
-  RCLCPP_DEBUG(get_logger(), "EVENT: {Emergency stop}");
-  context->emergencyStopReceived = true;
+  
 
-  response->stopped = true;
+  if (request->enable == true)
+  {
+    RCLCPP_DEBUG(get_logger(), "EVENT: {Emergency stop | enable: true}");
+    context->emergencyStopActivateRequest = true;
+    response->stopped = true;
+    LowLevelServer::handleEmergencyStop(serial_);
+  }
+  else
+  {
+    RCLCPP_DEBUG(get_logger(), "EVENT: {Emergency stop | enable: false}");
+    context->emergencyStopDeactivateRequest = true;
+    response->stopped = false;
+  }
+
+
 }
 
 void HighLevelNode::handleSingleServoServiceRequest(const std::shared_ptr<msg_srv::srv::SingleServoCommand::Request> request,
                                                     const std::shared_ptr<msg_srv::srv::SingleServoCommand::Response> response)
 {
- 
+
   short targetServo = (short)request->position.target_servo;
   long long position = request->position.degrees;
   long long movement = request->position.movement;
@@ -80,8 +91,12 @@ void HighLevelNode::handleSingleServoServiceRequest(const std::shared_ptr<msg_sr
   RCLCPP_DEBUG(get_logger(), "EVENT: {Single servo command | servo: %d, angle: %llu, movement: %llu, movementType: %s}", targetServo, position, movement, movementType.c_str());
   context->singleServoCommandReceived = true;
 
-  SingleServoCommand command(targetServo, position, movement, type, serial_);
-  command.sendCommand();
+  // SingleServoCommand command(targetServo, position, movement, type, serial_);
+  // command.sendCommand();
+
+  Command command = SingleServoCommand(targetServo, position, movement, type, serial_);
+  context->commandQueue_.push(command);
+
   response->finished = true;
 }
 
@@ -91,7 +106,6 @@ void HighLevelNode::handleMultiServoServiceRequest(const std::shared_ptr<msg_srv
 
   msg_srv::msg::Move move = request->positions;
 
- 
   std::vector<SingleServoCommand> commands;
 
   for (long unsigned int i = 0; i < move.instruction.size(); ++i)
@@ -121,15 +135,19 @@ void HighLevelNode::handleMultiServoServiceRequest(const std::shared_ptr<msg_srv
 
   RCLCPP_DEBUG(get_logger(), "EVENT: {Multi servo command}");
   context->multiServoCommandReceived = true;
-  MultiServoCommand command(commands, serial_);
-  command.sendCommand();
+  // MultiServoCommand command(commands, serial_);
+  // command.sendCommand();
+
+  Command command = MultiServoCommand(commands, serial_);
+  context->commandQueue_.push(command);
+
   response->finished = true;
 }
 
 void HighLevelNode::handleProgrammedPosition(const std::shared_ptr<msg_srv::srv::MoveToPosition::Request> request,
                                              const std::shared_ptr<msg_srv::srv::MoveToPosition::Response> response)
 {
- 
+
   std::string commandAsString;
 
   if (request->position.programmed_position == "park")
@@ -157,6 +175,6 @@ void HighLevelNode::handleProgrammedPosition(const std::shared_ptr<msg_srv::srv:
   RCLCPP_DEBUG(get_logger(), "EVENT: {Programmed position command | position: %s}", request->position.programmed_position.c_str());
 
   Command command(commandAsString, serial_);
-  command.sendCommand();
+  context->commandQueue_.push(command);
   response->finished = true;
 }

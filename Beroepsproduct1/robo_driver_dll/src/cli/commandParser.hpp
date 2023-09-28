@@ -70,6 +70,8 @@ public:
    */
   bool parseStopCommand(std::string commandType, std::shared_ptr<CommunicatorNode> node);
 
+  bool parseStartCommand(std::string commandType, std::shared_ptr<CommunicatorNode> node);
+
   /**
    * @brief Parses the command and sends programmedPositionCommand on successful parsing
    * @param commandType The type of command to parse (typically the first word sent from CLI)

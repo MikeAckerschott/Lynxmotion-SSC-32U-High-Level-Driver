@@ -4,6 +4,7 @@
 #include "state.hpp"
 #include "../lld/command.hpp"
 #include "idleState.hpp"
+#include "emergencyStopState.hpp"
 
 class movingState : public State
 {
@@ -17,6 +18,11 @@ public:
     bool checkAllTriggers() override;
 
     bool isMovingDone();
+    bool newPositionCommandReceived();
+    bool newSingleServoCommandReceived();
+    bool newMultiServoCommandReceived();
+    bool isQueueEmpty();
+
     bool emergencyStopReceived();
 
 private:

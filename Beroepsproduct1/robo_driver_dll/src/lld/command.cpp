@@ -15,6 +15,16 @@ void Command::sendCommand()
   os.flush();
 }
 
+std::string Command::getCommand()
+{
+  return command;
+}
+
+void Command::setCommand(std::string command)
+{
+  this->command = command;
+}
+
 char Command::readMostRecentChar()
 {
   char received_char;

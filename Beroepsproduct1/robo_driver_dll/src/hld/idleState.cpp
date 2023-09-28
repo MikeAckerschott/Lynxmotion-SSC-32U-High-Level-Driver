@@ -31,7 +31,7 @@ bool idleState::multiServoCommandReceived()
 
 bool idleState::emergencyStopReceived()
 {
-    return context_->emergencyStopReceived;
+    return context_->emergencyStopActivateRequest;
 }
 
 bool idleState::programmedPositionCommandReceived()
@@ -39,35 +39,46 @@ bool idleState::programmedPositionCommandReceived()
     return context_->programmedPositionCommandReceived;
 }
 
+bool idleState::movementQueueNotEmpty()
+{
+    return !context_->commandQueue_.empty();
+}
+
 bool idleState::checkAllTriggers()
 {
     if (emergencyStopReceived())
-    {
-        // TODO transition to emergency stop state
+    {   
+        context_->TransitionTo(new emergencyStopState);
+        return true;
     }
 
-    if (singleServoCommandReceived())
-    {
-
-        context_->singleServoCommandReceived = false;
+    if(movementQueueNotEmpty()){
         context_->TransitionTo(new movingState);
         return true;
     }
 
-    if (multiServoCommandReceived())
-    {
+    // if (singleServoCommandReceived())
+    // {
 
-        context_->multiServoCommandReceived = false;
-        context_->TransitionTo(new movingState);
-        return true;
-    }
+    //     context_->singleServoCommandReceived = false;
+    //     context_->TransitionTo(new movingState);
+    //     return true;
+    // }
 
-    if (programmedPositionCommandReceived())
-    {
-        context_->programmedPositionCommandReceived = false;
-        context_->TransitionTo(new movingState);
-        return true;
-    }
+    // if (multiServoCommandReceived())
+    // {
+
+    //     context_->multiServoCommandReceived = false;
+    //     context_->TransitionTo(new movingState);
+    //     return true;
+    // }
+
+    // if (programmedPositionCommandReceived())
+    // {
+    //     context_->programmedPositionCommandReceived = false;
+    //     context_->TransitionTo(new movingState);
+    //     return true;
+    // }
 
     return false;
 }

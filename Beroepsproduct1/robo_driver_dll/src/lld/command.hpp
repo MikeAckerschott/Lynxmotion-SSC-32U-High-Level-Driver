@@ -44,6 +44,10 @@ public:
    */
   static const char cr = 13;
 
+  std::string getCommand();
+
+  void setCommand(std::string command);
+
 private:
   /**
    * @brief command to send over the serial port

@@ -13,7 +13,7 @@ find_package(msg_srv REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-add_executable(high_level_node src/hld/main.cpp src/hld/highLevelNode.cpp src/hld/servoUtils.cpp src/hld/context.cpp src/hld/state.cpp src/hld/idleState.cpp src/hld/movingState)
+add_executable(high_level_node src/hld/main.cpp src/hld/highLevelNode.cpp src/hld/servoUtils.cpp src/hld/context.cpp src/hld/state.cpp src/hld/idleState.cpp src/hld/movingState src/hld/emergencyStopState)
 ament_target_dependencies(high_level_node rclcpp msg_srv)    # CHANGE
 
 add_executable(cli_communication src/cli/main.cpp src/cli/commandParser.cpp src/cli/communicatorNode.cpp)
