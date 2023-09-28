@@ -32,12 +32,14 @@ ros2 run robo_driver cli_communication
 <b> Op dit moment zijn de volgende commando's supported:
 
 singleServo int servo int degrees int speed int time
+
 <i> zet de geselecteerde servo naar de aangegeven hoek met behulp van snelheid of duratie </i>
 * voorbeeld:
 * singleServoCommand servo:0 angle:45 duration:1000
 * singleServoCommand servo:0 angle:45 speed:100
 
 multiServo {int servo int degrees int speed int time} {int servo int degrees int speed int time} 
+
 <i> zet de geselecteerde servos naar de aangegeven hoek met behulp van snelheid of duratie </i>
 
 * voorbeeld:
@@ -45,6 +47,7 @@ multiServo {int servo int degrees int speed int time} {int servo int degrees int
 * multiServo {servo:0 angle:45 duration:4000} {servo:1 angle:60}
 
 stop
+
 <i> zet het systeem in noodstop. Stopt de beweging op het moment en voert geen inkomende requests meer uit </i>
 
 * voorbeeld:
@@ -52,6 +55,7 @@ stop
 * stop
 
 start
+
 <i> haalt het systeem uit de noodstop. Zorgt ervoor dat er weer op inkomende requests gereageerd wordt</i>
 
 * voorbeeld:
@@ -59,6 +63,7 @@ start
 * start
 
 programmedPosition string position
+
 <i> zet de robotarm naar een van de voorgeprogrammeerde posities (park, ready of straightup) </i>
 * voorbeeld:
 
@@ -69,6 +74,7 @@ programmedPosition string position
 * programmedPosition straight-up 
 
 skip
+
 <i> skipt de beweging die op dit moment wordt uitgevoerd en voert de volgende beweging uit in de queue.</i>
 * voorbeeld
 
