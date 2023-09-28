@@ -109,9 +109,9 @@ double ServoUtils::degreesToPwm(int servo, double degrees)
                                (centerPwmUs - minPwmUs) +
                            centerPwmUs;
 
-    if (servo == 2) // degrees 0 should be straight up (700 pwm)
+    if (servo == 2) // degrees 0 should be straight up (600 pwm)
     {
-        pwmDurationUs = pwmDurationUs - 800;
+        pwmDurationUs = pwmDurationUs - 900;
     }
     return pwmDurationUs;
 }
