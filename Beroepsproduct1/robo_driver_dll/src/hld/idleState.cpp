@@ -57,28 +57,5 @@ bool idleState::checkAllTriggers()
         return true;
     }
 
-    // if (singleServoCommandReceived())
-    // {
-
-    //     context_->singleServoCommandReceived = false;
-    //     context_->TransitionTo(new movingState);
-    //     return true;
-    // }
-
-    // if (multiServoCommandReceived())
-    // {
-
-    //     context_->multiServoCommandReceived = false;
-    //     context_->TransitionTo(new movingState);
-    //     return true;
-    // }
-
-    // if (programmedPositionCommandReceived())
-    // {
-    //     context_->programmedPositionCommandReceived = false;
-    //     context_->TransitionTo(new movingState);
-    //     return true;
-    // }
-
     return false;
 }

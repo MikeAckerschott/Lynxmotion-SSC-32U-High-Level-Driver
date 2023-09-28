@@ -74,34 +74,11 @@ bool movingState::checkAllTriggers()
         return true;
     }
 
-    if (isQueueEmpty())
+    if (isQueueEmpty() && isMovingDone())
     {
         context_->TransitionTo(new idleState);
         return true;
     }
-    // if (isMovingDone())
-    // {
-    //     context_->TransitionTo(new idleState);
-    //     return true;
-    // }
 
-    // if(newPositionCommandReceived()){
-    //     //TODO
-    //     context_->programmedPositionCommandReceived = false;
-    //     context_->TransitionTo(new movingState);
-    //     return true;
-    // }
-    // if(newSingleServoCommandReceived()){
-    //     //TODO
-    //     context_->singleServoCommandReceived = false;
-    //     context_->TransitionTo(new movingState);
-    //     return true;
-    // }
-    // if(newMultiServoCommandReceived()){
-    //     //TODO
-    //     context_->multiServoCommandReceived = false;
-    //     context_->TransitionTo(new movingState);
-    //     return true;
-    // }
     return false;
 }
