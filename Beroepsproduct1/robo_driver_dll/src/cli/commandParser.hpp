@@ -81,6 +81,8 @@ public:
    */
   bool parseProgrammedPositionCommand(std::string commandType, std::string command, std::shared_ptr<CommunicatorNode> node);
 
+  bool parseSkipCommand(std::string commandType, std::shared_ptr<CommunicatorNode> node);
+
 private:
 
   /**

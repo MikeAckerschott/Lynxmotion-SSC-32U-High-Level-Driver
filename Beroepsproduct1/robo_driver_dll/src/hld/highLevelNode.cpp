@@ -19,6 +19,9 @@ HighLevelNode::HighLevelNode() : Node("high_level_client"), serial_(ioservice, "
   programmedPositionService = create_service<msg_srv::srv::MoveToPosition>("programmed_position", std::bind(&HighLevelNode::handleProgrammedPosition, this,
                                                                                                             std::placeholders::_1, std::placeholders::_2));
 
+  skipService = create_service<msg_srv::srv::Skip>("skip", std::bind(&HighLevelNode::handleSkip, this,
+                                                                     std::placeholders::_1, std::placeholders::_2));
+
   context = new Context(new idleState, serial_, get_logger());
 
   timer_ = create_wall_timer(std::chrono::milliseconds(10), [this]()
@@ -33,8 +36,6 @@ void HighLevelNode::handleEmergencyStop(const std::shared_ptr<msg_srv::srv::Emer
                                         const std::shared_ptr<msg_srv::srv::EmergencyStop::Response> response)
 {
 
-  
-
   if (request->enable == true)
   {
     RCLCPP_DEBUG(get_logger(), "EVENT: {Emergency stop | enable: true}");
@@ -48,8 +49,19 @@ void HighLevelNode::handleEmergencyStop(const std::shared_ptr<msg_srv::srv::Emer
     context->emergencyStopDeactivateRequest = true;
     response->stopped = false;
   }
+}
 
-
+void HighLevelNode::handleSkip(const std::shared_ptr<msg_srv::srv::Skip::Request> request,
+                               const std::shared_ptr<msg_srv::srv::Skip::Response> response)
+{
+  RCLCPP_DEBUG(get_logger(), "EVENT: {Skip}");
+  context->skipCommandReceived = true;
+  if (context->commandQueue_.empty())
+  {
+    response->empty = true;
+    return;
+  }
+  response->empty = false;
 }
 
 void HighLevelNode::handleSingleServoServiceRequest(const std::shared_ptr<msg_srv::srv::SingleServoCommand::Request> request,

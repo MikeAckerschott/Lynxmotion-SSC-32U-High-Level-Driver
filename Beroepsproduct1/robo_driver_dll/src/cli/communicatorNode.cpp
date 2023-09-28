@@ -9,6 +9,8 @@ CommunicatorNode::CommunicatorNode() : Node("communicator_node")
     stopClient_ = create_client<msg_srv::srv::EmergencyStop>("emergency_stop");
 
     programmedPositionClient_ = create_client<msg_srv::srv::MoveToPosition>("programmed_position");
+
+    skipClient_ = create_client<msg_srv::srv::Skip>("skip");
 }
 
 CommunicatorNode::~CommunicatorNode()
@@ -103,7 +105,7 @@ void CommunicatorNode::deactivateEmergencyStop()
 {
     auto request_ = std::make_shared<msg_srv::srv::EmergencyStop::Request>();
 
-    //set emergency stop enabled to false
+    // set emergency stop enabled to false
     request_->enable = false;
 
     auto result = stopClient_->async_send_request(request_);
@@ -150,5 +152,31 @@ void CommunicatorNode::sendProgrammedPositionCommand(std::string programmedPosit
     {
         RCLCPP_ERROR(get_logger(),
                      "Failed to call service");
+    }
+}
+
+void CommunicatorNode::sendSkipCommand()
+{
+
+    auto request_ = std::make_shared<msg_srv::srv::Skip::Request>();
+
+    auto result = skipClient_->async_send_request(request_);
+
+    if (rclcpp::spin_until_future_complete(shared_from_this(), result) ==
+        rclcpp::FutureReturnCode::SUCCESS)
+    {
+        if (result.get()->empty)
+        {
+            RCLCPP_INFO(get_logger(), "skip received succesfully, but queue is empty");
+        }
+        else
+        {
+            RCLCPP_INFO(get_logger(), "skip received succesfully, skipping command...");
+        }
+    }
+    else
+    {
+        RCLCPP_ERROR(get_logger(),
+                     "Failed to call service ");
     }
 }

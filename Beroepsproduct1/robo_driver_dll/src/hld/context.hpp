@@ -37,7 +37,7 @@ public:
     bool programmedPositionCommandReceived;
     bool emergencyStopDeactivateRequest;
     bool emergencyStopActivateRequest;
-
+    bool skipCommandReceived;
 
     boost::asio::serial_port &serialPort_;
     rclcpp::Logger logger_;

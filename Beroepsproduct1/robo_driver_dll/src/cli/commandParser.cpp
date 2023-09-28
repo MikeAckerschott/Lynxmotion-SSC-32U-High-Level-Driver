@@ -17,7 +17,7 @@ void CommandParser::parseCommand(std::string command, std::shared_ptr<Communicat
     }
 
     std::string commandType = command.substr(0, command.find(" "));
-    if (!parseSingleServoCommand(commandType, command, node) && !parseMultiServoCommand(commandType, command, node) && !parseStopCommand(commandType, node) && !parseProgrammedPositionCommand(commandType, command, node) && !parseStartCommand(commandType, node))
+    if (!parseSingleServoCommand(commandType, command, node) && !parseMultiServoCommand(commandType, command, node) && !parseStopCommand(commandType, node) && !parseProgrammedPositionCommand(commandType, command, node) && !parseStartCommand(commandType, node) && !parseSkipCommand(commandType, node))
     {
         RCLCPP_ERROR(communicatorNode_->get_logger(), "Command not recognized. supported commands are: singleServo, multiServo, stop, programmedPosition. check README for syntax");
         return;
@@ -144,10 +144,21 @@ bool CommandParser::parseProgrammedPositionCommand(std::string commandType, std:
     return true;
 }
 
+bool CommandParser::parseSkipCommand(std::string commandType, std::shared_ptr<CommunicatorNode> node)
+{
+    if (commandType != "skip")
+    {
+        return false;
+    }
+
+    communicatorNode_->sendSkipCommand();
+    return true;
+}
+
 bool CommandParser::isNumber(const std::string &s)
 {
     std::string::const_iterator it = s.begin();
-    while (it != s.end() && std::isdigit(*it))
+    while (it != s.end() && (std::isdigit(*it) || *it == '-'))
         ++it;
     return !s.empty() && it == s.end();
 }
@@ -223,7 +234,7 @@ bool CommandParser::getSingleServoCommandArguments(std::string commandArguments,
         movementType = "duration";
     }
 
-    std::cout<<"servo: "<<servoNumberString<<" angle: "<<angleString<<" speed: "<<speedString<<" duration: "<<durationString<<std::endl;
+    std::cout << "servo: " << servoNumberString << " angle: " << angleString << " speed: " << speedString << " duration: " << durationString << std::endl;
 
     servoNumber = std::stoi(servoNumberString);
     angle = std::stoi(angleString);

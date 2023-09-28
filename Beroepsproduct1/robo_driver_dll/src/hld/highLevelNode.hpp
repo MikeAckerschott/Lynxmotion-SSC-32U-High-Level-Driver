@@ -11,6 +11,7 @@
 #include "msg_srv/srv/multi_servo_command.hpp"
 #include "msg_srv/srv/emergency_stop.hpp"
 #include "msg_srv/srv/move_to_position.hpp"
+#include "msg_srv/srv/skip.hpp"
 
 #include "msg_srv/msg/move.hpp"
 #include "msg_srv/msg/servo_command.hpp"
@@ -95,6 +96,10 @@ public:
       const std::shared_ptr<msg_srv::srv::MoveToPosition::Request> request,
       const std::shared_ptr<msg_srv::srv::MoveToPosition::Response> response);
 
+  void handleSkip(
+      const std::shared_ptr<msg_srv::srv::Skip::Request> request,
+      const std::shared_ptr<msg_srv::srv::Skip::Response> response);
+
 private:
   /**
    * @brief The service that receives a single servo command from the client.
@@ -115,6 +120,11 @@ private:
    * @brief The service that receives a programmed position command from the client.
    */
   rclcpp::Service<msg_srv::srv::MoveToPosition>::SharedPtr programmedPositionService;
+
+  /**
+   * @brief The service that receives a skip command from the client.
+   */
+  rclcpp::Service<msg_srv::srv::Skip>::SharedPtr skipService;
 
   Context *context;
 

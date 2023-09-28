@@ -17,6 +17,7 @@ void idleState::f_do()
 
 void idleState::f_exit()
 {
+    context_->skipCommandReceived = false;
 }
 
 bool idleState::singleServoCommandReceived()

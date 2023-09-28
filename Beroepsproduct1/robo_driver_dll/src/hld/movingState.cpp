@@ -13,12 +13,19 @@ movingState::movingState()
 
 void movingState::f_do()
 {
-    if (isMovingDone())
+
+    if (!context_->commandQueue_.empty())
     {
-        if (!context_->commandQueue_.empty())
+        if (isMovingDone())
         {
             context_->commandQueue_.front().sendCommand();
             context_->commandQueue_.pop();
+        }
+
+        if(context_->skipCommandReceived){
+            context_->commandQueue_.front().sendCommand();
+            context_->commandQueue_.pop();
+            context_->skipCommandReceived = false;
         }
     }
 }

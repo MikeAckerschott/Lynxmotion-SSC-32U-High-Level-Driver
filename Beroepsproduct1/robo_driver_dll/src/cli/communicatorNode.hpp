@@ -6,6 +6,7 @@
 #include "msg_srv/srv/multi_servo_command.hpp"
 #include "msg_srv/srv/emergency_stop.hpp"
 #include "msg_srv/srv/move_to_position.hpp"
+#include "msg_srv/srv/skip.hpp"
 
 /**
  * @class CommunicatorNode
@@ -56,6 +57,8 @@ public:
    * @param programmedPosition The programmed position to move to (park, ready, straight-up)
    */
   void sendProgrammedPositionCommand(std::string programmedPosition);
+
+  void sendSkipCommand();
 
 private:
     /**
@@ -116,6 +119,8 @@ private:
      * @returns true if the command was validated by the high level driver, false if not
      */
     rclcpp::Client<msg_srv::srv::MoveToPosition>::SharedPtr programmedPositionClient_;
+
+    rclcpp::Client<msg_srv::srv::Skip>::SharedPtr skipClient_;
 };
 
 #endif /* COMMUNICATORNODE_HPP_ */

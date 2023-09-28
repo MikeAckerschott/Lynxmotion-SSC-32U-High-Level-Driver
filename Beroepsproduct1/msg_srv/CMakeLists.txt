@@ -21,6 +21,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/MultiServoCommand.srv"
   "srv/EmergencyStop.srv"
   "srv/MoveToPosition.srv"
+  "srv/Skip.srv"
 )
 
 if(BUILD_TESTING)
