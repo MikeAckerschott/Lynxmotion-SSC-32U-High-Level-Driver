@@ -31,7 +31,7 @@
  * @brief Dynamically linked libray used by the HLD that implements the basic functionality of the robotic arm
  */
 
-class LowLevelServer : public rclcpp::Node
+class LowLevelServer
 {
 public:
 

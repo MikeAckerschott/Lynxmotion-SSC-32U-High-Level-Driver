@@ -24,7 +24,14 @@ HighLevelNode::HighLevelNode() : Node("high_level_client"), serial_(ioservice, "
 
   emptyQueueService = create_service<msg_srv::srv::EmptyQueue>("empty_queue", std::bind(&HighLevelNode::handleEmptyQueue, this,
                                                                                         std::placeholders::_1, std::placeholders::_2));
-
+  auto ret = rcutils_logging_set_logger_level(
+      get_logger().get_name(), RCUTILS_LOG_SEVERITY_DEBUG);
+  if (ret != RCUTILS_RET_OK)
+  {
+    RCLCPP_ERROR(get_logger(), "Error setting severity: %s", rcutils_get_error_string().str);
+    rcutils_reset_error();
+  }
+  
   context = new Context(new idleState, serial_, get_logger());
 
   timer_ = create_wall_timer(std::chrono::milliseconds(10), [this]()
@@ -108,9 +115,6 @@ void HighLevelNode::handleSingleServoServiceRequest(const std::shared_ptr<msg_sr
   RCLCPP_DEBUG(get_logger(), "EVENT: {Single servo command | servo: %d, angle: %llu, movement: %llu, movementType: %s}", targetServo, position, movement, movementType.c_str());
   context->singleServoCommandReceived = true;
 
-  // SingleServoCommand command(targetServo, position, movement, type, serial_);
-  // command.sendCommand();
-
   Command command = SingleServoCommand(targetServo, position, movement, type, serial_);
   context->commandQueue_.push(command);
 
@@ -152,8 +156,6 @@ void HighLevelNode::handleMultiServoServiceRequest(const std::shared_ptr<msg_srv
 
   RCLCPP_DEBUG(get_logger(), "EVENT: {Multi servo command}");
   context->multiServoCommandReceived = true;
-  // MultiServoCommand command(commands, serial_);
-  // command.sendCommand();
 
   Command command = MultiServoCommand(commands, serial_);
   context->commandQueue_.push(command);
@@ -202,7 +204,8 @@ void HighLevelNode::handleEmptyQueue(const std::shared_ptr<msg_srv::srv::EmptyQu
   RCLCPP_DEBUG(get_logger(), "EVENT: {Empty queue}");
   context->emptyQueueCommandReceived = true;
 
-  if(context->commandQueue_.empty()){
+  if (context->commandQueue_.empty())
+  {
     response->empty = true;
     return;
   }

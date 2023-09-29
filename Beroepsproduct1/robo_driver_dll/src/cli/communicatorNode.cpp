@@ -13,6 +13,14 @@ CommunicatorNode::CommunicatorNode() : Node("communicator_node")
     skipClient_ = create_client<msg_srv::srv::Skip>("skip");
 
     emptyQueueClient_ = create_client<msg_srv::srv::EmptyQueue>("empty_queue");
+
+    auto ret = rcutils_logging_set_logger_level(
+        get_logger().get_name(), RCUTILS_LOG_SEVERITY_DEBUG);
+    if (ret != RCUTILS_RET_OK)
+    {
+        RCLCPP_ERROR(get_logger(), "Error setting severity: %s", rcutils_get_error_string().str);
+        rcutils_reset_error();
+    }
 }
 
 CommunicatorNode::~CommunicatorNode()
@@ -183,7 +191,8 @@ void CommunicatorNode::sendSkipCommand()
     }
 }
 
-void CommunicatorNode::sendEmptyQueueCommand(){
+void CommunicatorNode::sendEmptyQueueCommand()
+{
     auto request_ = std::make_shared<msg_srv::srv::EmptyQueue::Request>();
 
     auto result = emptyQueueClient_->async_send_request(request_);
