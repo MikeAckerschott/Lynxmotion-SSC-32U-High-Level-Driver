@@ -19,7 +19,7 @@
 /**
  * @class CommandParser
  * @brief Parses the commands sent from the CLI and sends them to the low level driver
- * @details Currently supports commands: singleServo, multiServo, stop, programmedPosition
+ * @details Currently supports commands: singleServo, multiServo, start, stop, programmedPosition, skip and emptyQueue
  */
 
 class CommandParser
@@ -62,7 +62,6 @@ public:
   /**
    * @brief Parses the command and sends stopCommand on successful parsing. 
    * @param commandType The type of command to parse (typically the first word sent from CLI)
-   * @param command The command to parse (the entire string from CLI)
    * @return True if the command was parsed correctly, false if not
    */
   bool parseStopCommand(std::string commandType);

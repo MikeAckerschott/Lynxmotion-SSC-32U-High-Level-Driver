@@ -1,0 +1,329 @@
+\hypertarget{class_high_level_node}{}\doxysection{High\+Level\+Node Class Reference}
+\label{class_high_level_node}\index{HighLevelNode@{HighLevelNode}}
+
+
+Sends commands to robotic arm based on input from the CLI. Uses the low level driver to send commands to the robotic arm.  
+
+
+
+
+{\ttfamily \#include $<$high\+Level\+Node.\+hpp$>$}
+
+
+
+Inheritance diagram for High\+Level\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{class_high_level_node__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for High\+Level\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{class_high_level_node__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_high_level_node_aa27678104d27de84f3b27f4a9d5f0f22}{High\+Level\+Node}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_high_level_node_a26e7d8039dd62cc87a8ea156710d7ea7}{$\sim$\+High\+Level\+Node}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_high_level_node_a1ee585ff35e8c11c1a00069965d3e61e}{handle\+Single\+Servo\+Service\+Request}} (const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Single\+Servo\+Command\+::\+Request $>$ request, const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Single\+Servo\+Command\+::\+Response $>$ response)
+\begin{DoxyCompactList}\small\item\em Handles client request for a single servo command and moves the selected servo if the request is valid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_high_level_node_a61a0334988c480c6b5eea17452587c03}{handle\+Multi\+Servo\+Service\+Request}} (const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Multi\+Servo\+Command\+::\+Request $>$ request, const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Multi\+Servo\+Command\+::\+Response $>$ response)
+\begin{DoxyCompactList}\small\item\em Handles client request for a multi servo command and moves the selected servos if the request is valid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_high_level_node_a415357f182894852d8ebdb6dd35a2516}{handle\+Emergency\+Stop}} (const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Emergency\+Stop\+::\+Request $>$ request, const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Emergency\+Stop\+::\+Response $>$ response)
+\begin{DoxyCompactList}\small\item\em Handles client request for an emergency stop and stops all servos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_high_level_node_aba0d4b21f0f7c56fe18bad055fa21e54}{handle\+Programmed\+Position}} (const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Move\+To\+Position\+::\+Request $>$ request, const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Move\+To\+Position\+::\+Response $>$ response)
+\begin{DoxyCompactList}\small\item\em Handles client request for a programmed position and moves the servos to the programmed position if the request is valid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_high_level_node_a375dcb80d3b27baff41728ad5ba1cf89}{handle\+Skip}} (const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Skip\+::\+Request $>$ request, const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Skip\+::\+Response $>$ response)
+\begin{DoxyCompactList}\small\item\em Handles client request for a skip command and skips the next command in the queue if the request is valid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_high_level_node_af571f405ad9b60051b1b975103848bc6}{handle\+Empty\+Queue}} (const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Empty\+Queue\+::\+Request $>$ request, const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Empty\+Queue\+::\+Response $>$ response)
+\begin{DoxyCompactList}\small\item\em Handles client request for an empty queue command and empties the queue and stops current movement if the request is valid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sends commands to robotic arm based on input from the CLI. Uses the low level driver to send commands to the robotic arm. 
+
+Definition at line 46 of file high\+Level\+Node.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_high_level_node_aa27678104d27de84f3b27f4a9d5f0f22}\label{class_high_level_node_aa27678104d27de84f3b27f4a9d5f0f22}} 
+\index{HighLevelNode@{HighLevelNode}!HighLevelNode@{HighLevelNode}}
+\index{HighLevelNode@{HighLevelNode}!HighLevelNode@{HighLevelNode}}
+\doxysubsubsection{\texorpdfstring{HighLevelNode()}{HighLevelNode()}}
+{\footnotesize\ttfamily High\+Level\+Node\+::\+High\+Level\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 6 of file high\+Level\+Node.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_high_level_node_aa27678104d27de84f3b27f4a9d5f0f22_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_high_level_node_a26e7d8039dd62cc87a8ea156710d7ea7}\label{class_high_level_node_a26e7d8039dd62cc87a8ea156710d7ea7}} 
+\index{HighLevelNode@{HighLevelNode}!````~HighLevelNode@{$\sim$HighLevelNode}}
+\index{````~HighLevelNode@{$\sim$HighLevelNode}!HighLevelNode@{HighLevelNode}}
+\doxysubsubsection{\texorpdfstring{$\sim$HighLevelNode()}{~HighLevelNode()}}
+{\footnotesize\ttfamily High\+Level\+Node\+::$\sim$\+High\+Level\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+Definition at line 41 of file high\+Level\+Node.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_high_level_node_a415357f182894852d8ebdb6dd35a2516}\label{class_high_level_node_a415357f182894852d8ebdb6dd35a2516}} 
+\index{HighLevelNode@{HighLevelNode}!handleEmergencyStop@{handleEmergencyStop}}
+\index{handleEmergencyStop@{handleEmergencyStop}!HighLevelNode@{HighLevelNode}}
+\doxysubsubsection{\texorpdfstring{handleEmergencyStop()}{handleEmergencyStop()}}
+{\footnotesize\ttfamily void High\+Level\+Node\+::handle\+Emergency\+Stop (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Emergency\+Stop\+::\+Request $>$}]{request,  }\item[{const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Emergency\+Stop\+::\+Response $>$}]{response }\end{DoxyParamCaption})}
+
+
+
+Handles client request for an emergency stop and stops all servos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The request from the client \\
+\hline
+{\em response} & The response to send to the client \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 45 of file high\+Level\+Node.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_high_level_node_a415357f182894852d8ebdb6dd35a2516_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_high_level_node_a415357f182894852d8ebdb6dd35a2516_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_high_level_node_af571f405ad9b60051b1b975103848bc6}\label{class_high_level_node_af571f405ad9b60051b1b975103848bc6}} 
+\index{HighLevelNode@{HighLevelNode}!handleEmptyQueue@{handleEmptyQueue}}
+\index{handleEmptyQueue@{handleEmptyQueue}!HighLevelNode@{HighLevelNode}}
+\doxysubsubsection{\texorpdfstring{handleEmptyQueue()}{handleEmptyQueue()}}
+{\footnotesize\ttfamily void High\+Level\+Node\+::handle\+Empty\+Queue (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Empty\+Queue\+::\+Request $>$}]{request,  }\item[{const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Empty\+Queue\+::\+Response $>$}]{response }\end{DoxyParamCaption})}
+
+
+
+Handles client request for an empty queue command and empties the queue and stops current movement if the request is valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The request from the client \\
+\hline
+{\em response} & The response to send to the client \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 201 of file high\+Level\+Node.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_high_level_node_af571f405ad9b60051b1b975103848bc6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_high_level_node_a61a0334988c480c6b5eea17452587c03}\label{class_high_level_node_a61a0334988c480c6b5eea17452587c03}} 
+\index{HighLevelNode@{HighLevelNode}!handleMultiServoServiceRequest@{handleMultiServoServiceRequest}}
+\index{handleMultiServoServiceRequest@{handleMultiServoServiceRequest}!HighLevelNode@{HighLevelNode}}
+\doxysubsubsection{\texorpdfstring{handleMultiServoServiceRequest()}{handleMultiServoServiceRequest()}}
+{\footnotesize\ttfamily void High\+Level\+Node\+::handle\+Multi\+Servo\+Service\+Request (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Multi\+Servo\+Command\+::\+Request $>$}]{request,  }\item[{const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Multi\+Servo\+Command\+::\+Response $>$}]{response }\end{DoxyParamCaption})}
+
+
+
+Handles client request for a multi servo command and moves the selected servos if the request is valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The request from the client \\
+\hline
+{\em response} & The response to send to the client \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 124 of file high\+Level\+Node.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_high_level_node_a61a0334988c480c6b5eea17452587c03_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_high_level_node_a61a0334988c480c6b5eea17452587c03_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_high_level_node_aba0d4b21f0f7c56fe18bad055fa21e54}\label{class_high_level_node_aba0d4b21f0f7c56fe18bad055fa21e54}} 
+\index{HighLevelNode@{HighLevelNode}!handleProgrammedPosition@{handleProgrammedPosition}}
+\index{handleProgrammedPosition@{handleProgrammedPosition}!HighLevelNode@{HighLevelNode}}
+\doxysubsubsection{\texorpdfstring{handleProgrammedPosition()}{handleProgrammedPosition()}}
+{\footnotesize\ttfamily void High\+Level\+Node\+::handle\+Programmed\+Position (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Move\+To\+Position\+::\+Request $>$}]{request,  }\item[{const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Move\+To\+Position\+::\+Response $>$}]{response }\end{DoxyParamCaption})}
+
+
+
+Handles client request for a programmed position and moves the servos to the programmed position if the request is valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The request from the client \\
+\hline
+{\em response} & The response to send to the client \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 166 of file high\+Level\+Node.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_high_level_node_aba0d4b21f0f7c56fe18bad055fa21e54_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_high_level_node_a1ee585ff35e8c11c1a00069965d3e61e}\label{class_high_level_node_a1ee585ff35e8c11c1a00069965d3e61e}} 
+\index{HighLevelNode@{HighLevelNode}!handleSingleServoServiceRequest@{handleSingleServoServiceRequest}}
+\index{handleSingleServoServiceRequest@{handleSingleServoServiceRequest}!HighLevelNode@{HighLevelNode}}
+\doxysubsubsection{\texorpdfstring{handleSingleServoServiceRequest()}{handleSingleServoServiceRequest()}}
+{\footnotesize\ttfamily void High\+Level\+Node\+::handle\+Single\+Servo\+Service\+Request (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Single\+Servo\+Command\+::\+Request $>$}]{request,  }\item[{const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Single\+Servo\+Command\+::\+Response $>$}]{response }\end{DoxyParamCaption})}
+
+
+
+Handles client request for a single servo command and moves the selected servo if the request is valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The request from the client \\
+\hline
+{\em response} & The response to send to the client \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 79 of file high\+Level\+Node.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_high_level_node_a1ee585ff35e8c11c1a00069965d3e61e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_high_level_node_a1ee585ff35e8c11c1a00069965d3e61e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_high_level_node_a375dcb80d3b27baff41728ad5ba1cf89}\label{class_high_level_node_a375dcb80d3b27baff41728ad5ba1cf89}} 
+\index{HighLevelNode@{HighLevelNode}!handleSkip@{handleSkip}}
+\index{handleSkip@{handleSkip}!HighLevelNode@{HighLevelNode}}
+\doxysubsubsection{\texorpdfstring{handleSkip()}{handleSkip()}}
+{\footnotesize\ttfamily void High\+Level\+Node\+::handle\+Skip (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Skip\+::\+Request $>$}]{request,  }\item[{const std\+::shared\+\_\+ptr$<$ msg\+\_\+srv\+::srv\+::\+Skip\+::\+Response $>$}]{response }\end{DoxyParamCaption})}
+
+
+
+Handles client request for a skip command and skips the next command in the queue if the request is valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The request from the client \\
+\hline
+{\em response} & The response to send to the client \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 64 of file high\+Level\+Node.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_high_level_node_a375dcb80d3b27baff41728ad5ba1cf89_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_high_level_node_a375dcb80d3b27baff41728ad5ba1cf89_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/hld/\mbox{\hyperlink{high_level_node_8hpp}{high\+Level\+Node.\+hpp}}\item 
+src/hld/\mbox{\hyperlink{high_level_node_8cpp}{high\+Level\+Node.\+cpp}}\end{DoxyCompactItemize}

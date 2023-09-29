@@ -1,0 +1,361 @@
+\hypertarget{class_servo_utils}{}\doxysection{Servo\+Utils Class Reference}
+\label{class_servo_utils}\index{ServoUtils@{ServoUtils}}
+
+
+Provides helpful variables and functions for moving the robotic arm\textquotesingle{}s servos safe and easy.  
+
+
+
+
+{\ttfamily \#include $<$servo\+Utils.\+hpp$>$}
+
+
+
+Collaboration diagram for Servo\+Utils\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{class_servo_utils__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_servo_utils_1_1_range_of_motion}{Range\+Of\+Motion}}
+\begin{DoxyCompactList}\small\item\em Struct to store the range of motion for a servo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{class_servo_utils_a5da7eb40df0b5a463755a7458bf601a4}{pwm\+To\+Degrees}} (int pwm\+Duration\+Us)
+\begin{DoxyCompactList}\small\item\em converts the pwm duration to degrees \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_servo_utils_a175834b1c0a10247cc57f2c6aa1037b6}{degrees\+To\+Pwm}} (int servo, double degrees)
+\begin{DoxyCompactList}\small\item\em converts the degrees to pwm duration \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_servo_utils_ac0afe8fdd8e145286c907e3c326aa202}{verify\+Servo\+Constraints}} (short servo, double degrees)
+\begin{DoxyCompactList}\small\item\em verifies if the servo number and degrees are within the range of motion \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_single_servo_command_a1aaceeed37fcdc93b35794c208e77a9e}{Single\+Servo\+Command\+::movement\+Type}} \mbox{\hyperlink{class_servo_utils_a02c37a23a806b25d7f966045c93ed86f}{get\+Movement\+Type}} (std\+::string movement\+Type)
+\begin{DoxyCompactList}\small\item\em converts a string to a \mbox{\hyperlink{class_single_servo_command_a1aaceeed37fcdc93b35794c208e77a9e}{Single\+Servo\+Command\+::movement\+Type}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{struct_servo_utils_1_1_range_of_motion}{Range\+Of\+Motion}} \mbox{\hyperlink{class_servo_utils_a079a29663e8e6705c35e021b0ebb5f2c}{Base}} = \{-\/90, 90\}
+\begin{DoxyCompactList}\small\item\em Struct to store the range of motion for the base of the robotic arm. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_servo_utils_1_1_range_of_motion}{Range\+Of\+Motion}} \mbox{\hyperlink{class_servo_utils_af87a4ee9b1cd55f7a5eae791d40033d2}{Shoulder}} = \{-\/30, 90\}
+\begin{DoxyCompactList}\small\item\em Struct to store the range of motion for the shoulder of the robotic arm. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_servo_utils_1_1_range_of_motion}{Range\+Of\+Motion}} \mbox{\hyperlink{class_servo_utils_a16e3a65776587b0438c540ba30815b93}{Elbow}} = \{0, 135\}
+\begin{DoxyCompactList}\small\item\em Struct to store the range of motion for the elbow of the robotic arm. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_servo_utils_1_1_range_of_motion}{Range\+Of\+Motion}} \mbox{\hyperlink{class_servo_utils_ad35cecf71a08bb2004f2beb0740cc59a}{Wrist}} = \{-\/90, 90\}
+\begin{DoxyCompactList}\small\item\em Struct to store the range of motion for the wrist of the robotic arm. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_servo_utils_1_1_range_of_motion}{Range\+Of\+Motion}} \mbox{\hyperlink{class_servo_utils_a9b5287ff9cec17da14be6a0dc1e2e115}{Gripper}} = \{-\/60, 60\}
+\begin{DoxyCompactList}\small\item\em Struct to store the range of motion for the gripper of the robotic arm. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_servo_utils_1_1_range_of_motion}{Range\+Of\+Motion}} \mbox{\hyperlink{class_servo_utils_af8f35492a9af49acfb1bbf5b3979c394}{Wrist\+Rotate}} = \{-\/90, 90\}
+\begin{DoxyCompactList}\small\item\em Struct to store the range of motion for the wrist rotation of the robotic arm. \end{DoxyCompactList}\item 
+static short \mbox{\hyperlink{class_servo_utils_a0fb98c068d575f20ac1c10e766acf4e7}{min\+Servo}} = 0
+\begin{DoxyCompactList}\small\item\em The minimum servo number\+: 0. \end{DoxyCompactList}\item 
+static short \mbox{\hyperlink{class_servo_utils_aa960772dc6d4397b20e0f653be6b2ecc}{max\+Servo}} = 5
+\begin{DoxyCompactList}\small\item\em The maximum servo number\+: 5. \end{DoxyCompactList}\item 
+static std\+::vector$<$ \mbox{\hyperlink{struct_servo_utils_1_1_range_of_motion}{Range\+Of\+Motion}} $>$ \mbox{\hyperlink{class_servo_utils_a196f5ae10753bf2adc59e5939888486c}{servo\+Ranges}}
+\begin{DoxyCompactList}\small\item\em vector that stores the range of motion for each servo \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides helpful variables and functions for moving the robotic arm\textquotesingle{}s servos safe and easy. 
+
+Definition at line 17 of file servo\+Utils.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_servo_utils_a175834b1c0a10247cc57f2c6aa1037b6}\label{class_servo_utils_a175834b1c0a10247cc57f2c6aa1037b6}} 
+\index{ServoUtils@{ServoUtils}!degreesToPwm@{degreesToPwm}}
+\index{degreesToPwm@{degreesToPwm}!ServoUtils@{ServoUtils}}
+\doxysubsubsection{\texorpdfstring{degreesToPwm()}{degreesToPwm()}}
+{\footnotesize\ttfamily double Servo\+Utils\+::degrees\+To\+Pwm (\begin{DoxyParamCaption}\item[{int}]{servo,  }\item[{double}]{degrees }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+converts the degrees to pwm duration 
+
+
+\begin{DoxyParams}{Parameters}
+{\em servo} & The servo number \\
+\hline
+{\em degrees} & The degrees to move to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pwm duration in microseconds 
+\end{DoxyReturn}
+
+
+Definition at line 99 of file servo\+Utils.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_servo_utils_a175834b1c0a10247cc57f2c6aa1037b6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_servo_utils_a02c37a23a806b25d7f966045c93ed86f}\label{class_servo_utils_a02c37a23a806b25d7f966045c93ed86f}} 
+\index{ServoUtils@{ServoUtils}!getMovementType@{getMovementType}}
+\index{getMovementType@{getMovementType}!ServoUtils@{ServoUtils}}
+\doxysubsubsection{\texorpdfstring{getMovementType()}{getMovementType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_single_servo_command_a1aaceeed37fcdc93b35794c208e77a9e}{Single\+Servo\+Command\+::movement\+Type}} Servo\+Utils\+::get\+Movement\+Type (\begin{DoxyParamCaption}\item[{std\+::string}]{movement\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+converts a string to a \mbox{\hyperlink{class_single_servo_command_a1aaceeed37fcdc93b35794c208e77a9e}{Single\+Servo\+Command\+::movement\+Type}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em movement\+Type} & The string to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{class_single_servo_command_a1aaceeed37fcdc93b35794c208e77a9e}{Single\+Servo\+Command\+::movement\+Type}} 
+\end{DoxyReturn}
+
+
+Definition at line 78 of file servo\+Utils.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_servo_utils_a02c37a23a806b25d7f966045c93ed86f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_servo_utils_a5da7eb40df0b5a463755a7458bf601a4}\label{class_servo_utils_a5da7eb40df0b5a463755a7458bf601a4}} 
+\index{ServoUtils@{ServoUtils}!pwmToDegrees@{pwmToDegrees}}
+\index{pwmToDegrees@{pwmToDegrees}!ServoUtils@{ServoUtils}}
+\doxysubsubsection{\texorpdfstring{pwmToDegrees()}{pwmToDegrees()}}
+{\footnotesize\ttfamily double Servo\+Utils\+::pwm\+To\+Degrees (\begin{DoxyParamCaption}\item[{int}]{pwm\+Duration\+Us }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+converts the pwm duration to degrees 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pwm\+Duration\+Us} & The pwm duration in microseconds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The degrees 
+\end{DoxyReturn}
+
+
+Definition at line 13 of file servo\+Utils.\+cpp.
+
+\mbox{\Hypertarget{class_servo_utils_ac0afe8fdd8e145286c907e3c326aa202}\label{class_servo_utils_ac0afe8fdd8e145286c907e3c326aa202}} 
+\index{ServoUtils@{ServoUtils}!verifyServoConstraints@{verifyServoConstraints}}
+\index{verifyServoConstraints@{verifyServoConstraints}!ServoUtils@{ServoUtils}}
+\doxysubsubsection{\texorpdfstring{verifyServoConstraints()}{verifyServoConstraints()}}
+{\footnotesize\ttfamily bool Servo\+Utils\+::verify\+Servo\+Constraints (\begin{DoxyParamCaption}\item[{short}]{servo,  }\item[{double}]{degrees }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+verifies if the servo number and degrees are within the range of motion 
+
+
+\begin{DoxyParams}{Parameters}
+{\em servo} & The servo number \\
+\hline
+{\em degrees} & The degrees to move to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the servo number and degrees are within the range of motion, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 26 of file servo\+Utils.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_servo_utils_ac0afe8fdd8e145286c907e3c326aa202_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_servo_utils_a079a29663e8e6705c35e021b0ebb5f2c}\label{class_servo_utils_a079a29663e8e6705c35e021b0ebb5f2c}} 
+\index{ServoUtils@{ServoUtils}!Base@{Base}}
+\index{Base@{Base}!ServoUtils@{ServoUtils}}
+\doxysubsubsection{\texorpdfstring{Base}{Base}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_servo_utils_1_1_range_of_motion}{Servo\+Utils\+::\+Range\+Of\+Motion}} Servo\+Utils\+::\+Base = \{-\/90, 90\}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Struct to store the range of motion for the base of the robotic arm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & The minimum angle the base can move to\+: -\/90 degrees \\
+\hline
+{\em max} & The maximum angle the base can move to\+: 90 degrees \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 36 of file servo\+Utils.\+hpp.
+
+\mbox{\Hypertarget{class_servo_utils_a16e3a65776587b0438c540ba30815b93}\label{class_servo_utils_a16e3a65776587b0438c540ba30815b93}} 
+\index{ServoUtils@{ServoUtils}!Elbow@{Elbow}}
+\index{Elbow@{Elbow}!ServoUtils@{ServoUtils}}
+\doxysubsubsection{\texorpdfstring{Elbow}{Elbow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_servo_utils_1_1_range_of_motion}{Servo\+Utils\+::\+Range\+Of\+Motion}} Servo\+Utils\+::\+Elbow = \{0, 135\}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Struct to store the range of motion for the elbow of the robotic arm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & The minimum angle the elbow can move to\+: 0 degrees \\
+\hline
+{\em max} & The maximum angle the elbow can move to\+: 135 degrees \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 50 of file servo\+Utils.\+hpp.
+
+\mbox{\Hypertarget{class_servo_utils_a9b5287ff9cec17da14be6a0dc1e2e115}\label{class_servo_utils_a9b5287ff9cec17da14be6a0dc1e2e115}} 
+\index{ServoUtils@{ServoUtils}!Gripper@{Gripper}}
+\index{Gripper@{Gripper}!ServoUtils@{ServoUtils}}
+\doxysubsubsection{\texorpdfstring{Gripper}{Gripper}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_servo_utils_1_1_range_of_motion}{Servo\+Utils\+::\+Range\+Of\+Motion}} Servo\+Utils\+::\+Gripper = \{-\/60, 60\}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Struct to store the range of motion for the gripper of the robotic arm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & The minimum angle the gripper can move to\+: -\/60 degrees \\
+\hline
+{\em max} & The maximum angle the gripper can move to\+: 60 degrees \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file servo\+Utils.\+hpp.
+
+\mbox{\Hypertarget{class_servo_utils_aa960772dc6d4397b20e0f653be6b2ecc}\label{class_servo_utils_aa960772dc6d4397b20e0f653be6b2ecc}} 
+\index{ServoUtils@{ServoUtils}!maxServo@{maxServo}}
+\index{maxServo@{maxServo}!ServoUtils@{ServoUtils}}
+\doxysubsubsection{\texorpdfstring{maxServo}{maxServo}}
+{\footnotesize\ttfamily short Servo\+Utils\+::max\+Servo = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The maximum servo number\+: 5. 
+
+
+
+Definition at line 81 of file servo\+Utils.\+hpp.
+
+\mbox{\Hypertarget{class_servo_utils_a0fb98c068d575f20ac1c10e766acf4e7}\label{class_servo_utils_a0fb98c068d575f20ac1c10e766acf4e7}} 
+\index{ServoUtils@{ServoUtils}!minServo@{minServo}}
+\index{minServo@{minServo}!ServoUtils@{ServoUtils}}
+\doxysubsubsection{\texorpdfstring{minServo}{minServo}}
+{\footnotesize\ttfamily short Servo\+Utils\+::min\+Servo = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The minimum servo number\+: 0. 
+
+
+
+Definition at line 76 of file servo\+Utils.\+hpp.
+
+\mbox{\Hypertarget{class_servo_utils_a196f5ae10753bf2adc59e5939888486c}\label{class_servo_utils_a196f5ae10753bf2adc59e5939888486c}} 
+\index{ServoUtils@{ServoUtils}!servoRanges@{servoRanges}}
+\index{servoRanges@{servoRanges}!ServoUtils@{ServoUtils}}
+\doxysubsubsection{\texorpdfstring{servoRanges}{servoRanges}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_servo_utils_1_1_range_of_motion}{Range\+Of\+Motion}}$>$ Servo\+Utils\+::servo\+Ranges\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+vector that stores the range of motion for each servo 
+
+
+
+Definition at line 86 of file servo\+Utils.\+hpp.
+
+\mbox{\Hypertarget{class_servo_utils_af87a4ee9b1cd55f7a5eae791d40033d2}\label{class_servo_utils_af87a4ee9b1cd55f7a5eae791d40033d2}} 
+\index{ServoUtils@{ServoUtils}!Shoulder@{Shoulder}}
+\index{Shoulder@{Shoulder}!ServoUtils@{ServoUtils}}
+\doxysubsubsection{\texorpdfstring{Shoulder}{Shoulder}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_servo_utils_1_1_range_of_motion}{Servo\+Utils\+::\+Range\+Of\+Motion}} Servo\+Utils\+::\+Shoulder = \{-\/30, 90\}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Struct to store the range of motion for the shoulder of the robotic arm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & The minimum angle the shoulder can move to\+: -\/30 degrees \\
+\hline
+{\em max} & The maximum angle the shoulder can move to\+: 90 degrees \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 43 of file servo\+Utils.\+hpp.
+
+\mbox{\Hypertarget{class_servo_utils_ad35cecf71a08bb2004f2beb0740cc59a}\label{class_servo_utils_ad35cecf71a08bb2004f2beb0740cc59a}} 
+\index{ServoUtils@{ServoUtils}!Wrist@{Wrist}}
+\index{Wrist@{Wrist}!ServoUtils@{ServoUtils}}
+\doxysubsubsection{\texorpdfstring{Wrist}{Wrist}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_servo_utils_1_1_range_of_motion}{Servo\+Utils\+::\+Range\+Of\+Motion}} Servo\+Utils\+::\+Wrist = \{-\/90, 90\}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Struct to store the range of motion for the wrist of the robotic arm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & The minimum angle the wrist can move to\+: -\/90 degrees \\
+\hline
+{\em max} & The maximum angle the wrist can move to\+: 90 degrees \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file servo\+Utils.\+hpp.
+
+\mbox{\Hypertarget{class_servo_utils_af8f35492a9af49acfb1bbf5b3979c394}\label{class_servo_utils_af8f35492a9af49acfb1bbf5b3979c394}} 
+\index{ServoUtils@{ServoUtils}!WristRotate@{WristRotate}}
+\index{WristRotate@{WristRotate}!ServoUtils@{ServoUtils}}
+\doxysubsubsection{\texorpdfstring{WristRotate}{WristRotate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_servo_utils_1_1_range_of_motion}{Servo\+Utils\+::\+Range\+Of\+Motion}} Servo\+Utils\+::\+Wrist\+Rotate = \{-\/90, 90\}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Struct to store the range of motion for the wrist rotation of the robotic arm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & The minimum angle the wrist rotation can move to\+: -\/90 degrees \\
+\hline
+{\em max} & The maximum angle the wrist rotation can move to\+: 90 degrees \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 71 of file servo\+Utils.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/hld/\mbox{\hyperlink{servo_utils_8hpp}{servo\+Utils.\+hpp}}\item 
+src/hld/\mbox{\hyperlink{servo_utils_8cpp}{servo\+Utils.\+cpp}}\end{DoxyCompactItemize}

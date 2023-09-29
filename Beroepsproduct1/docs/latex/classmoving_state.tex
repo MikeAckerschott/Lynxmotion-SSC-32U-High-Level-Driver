@@ -1,0 +1,315 @@
+\hypertarget{classmoving_state}{}\doxysection{moving\+State Class Reference}
+\label{classmoving_state}\index{movingState@{movingState}}
+
+
+The \mbox{\hyperlink{classmoving_state}{moving\+State}} class is used to handle the moving state of the robotic arm.  
+
+
+
+
+{\ttfamily \#include $<$moving\+State.\+hpp$>$}
+
+
+
+Inheritance diagram for moving\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{classmoving_state__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for moving\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classmoving_state__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmoving_state_aa32bc26fb317ab6ec6f136125fb7604a}{moving\+State}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmoving_state_adc1a27611fd8d18186941f26591bae1f}{f\+\_\+entry}} () override
+\begin{DoxyCompactList}\small\item\em function that is called when the state is entered \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmoving_state_a557fe2d861f3f93ad9de3d358bde6d16}{f\+\_\+do}} () override
+\begin{DoxyCompactList}\small\item\em function that is called as long as the state is active \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmoving_state_a2fdaaccfe906bd352e616b30e669f127}{f\+\_\+exit}} () override
+\begin{DoxyCompactList}\small\item\em function that is called when the state is exited \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmoving_state_ad452c7d68f97db66435ea99e0853bebf}{check\+All\+Triggers}} () override
+\begin{DoxyCompactList}\small\item\em Checks if any trigger is activated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmoving_state_a02c2c049d9b9bc9fa328fe437d70623c}{is\+Moving\+Done}} ()
+\begin{DoxyCompactList}\small\item\em A trigger that checks if the current movement is done. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmoving_state_a9ff3e2c7e505acc121fb2883ce9bedc3}{new\+Position\+Command\+Received}} ()
+\begin{DoxyCompactList}\small\item\em A trigger that checks if a new position command has been received. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmoving_state_a52431a9563aace23b31ca78432236561}{new\+Single\+Servo\+Command\+Received}} ()
+\begin{DoxyCompactList}\small\item\em A trigger that checks if a new single servo command has been received. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmoving_state_a35bfec361a8f35274d3582743d2ba420}{new\+Multi\+Servo\+Command\+Received}} ()
+\begin{DoxyCompactList}\small\item\em A trigger that checks if a new multi servo command has been received. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmoving_state_a211061a9b72364511046f834b9ee3a72}{is\+Queue\+Empty}} ()
+\begin{DoxyCompactList}\small\item\em A trigger that checks if the command\+Queue is empty. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmoving_state_a413f18fdd7bf9e88910d7047f949c525}{emergency\+Stop\+Received}} ()
+\begin{DoxyCompactList}\small\item\em A trigger that checks if an emergency stop has been received. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classmoving_state}{moving\+State}} class is used to handle the moving state of the robotic arm. 
+
+Definition at line 20 of file moving\+State.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmoving_state_aa32bc26fb317ab6ec6f136125fb7604a}\label{classmoving_state_aa32bc26fb317ab6ec6f136125fb7604a}} 
+\index{movingState@{movingState}!movingState@{movingState}}
+\index{movingState@{movingState}!movingState@{movingState}}
+\doxysubsubsection{\texorpdfstring{movingState()}{movingState()}}
+{\footnotesize\ttfamily moving\+State\+::moving\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 10 of file moving\+State.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmoving_state_ad452c7d68f97db66435ea99e0853bebf}\label{classmoving_state_ad452c7d68f97db66435ea99e0853bebf}} 
+\index{movingState@{movingState}!checkAllTriggers@{checkAllTriggers}}
+\index{checkAllTriggers@{checkAllTriggers}!movingState@{movingState}}
+\doxysubsubsection{\texorpdfstring{checkAllTriggers()}{checkAllTriggers()}}
+{\footnotesize\ttfamily bool moving\+State\+::check\+All\+Triggers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if any trigger is activated. 
+
+\begin{DoxyReturn}{Returns}
+True if the state should be exited, false if not 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_state_a90c076865d9796423edd2175fed41cea}{State}}.
+
+
+
+Definition at line 79 of file moving\+State.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmoving_state_ad452c7d68f97db66435ea99e0853bebf_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmoving_state_a413f18fdd7bf9e88910d7047f949c525}\label{classmoving_state_a413f18fdd7bf9e88910d7047f949c525}} 
+\index{movingState@{movingState}!emergencyStopReceived@{emergencyStopReceived}}
+\index{emergencyStopReceived@{emergencyStopReceived}!movingState@{movingState}}
+\doxysubsubsection{\texorpdfstring{emergencyStopReceived()}{emergencyStopReceived()}}
+{\footnotesize\ttfamily bool moving\+State\+::emergency\+Stop\+Received (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A trigger that checks if an emergency stop has been received. 
+
+\begin{DoxyReturn}{Returns}
+True if an emergency stop has been received, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file moving\+State.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmoving_state_a413f18fdd7bf9e88910d7047f949c525_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmoving_state_a557fe2d861f3f93ad9de3d358bde6d16}\label{classmoving_state_a557fe2d861f3f93ad9de3d358bde6d16}} 
+\index{movingState@{movingState}!f\_do@{f\_do}}
+\index{f\_do@{f\_do}!movingState@{movingState}}
+\doxysubsubsection{\texorpdfstring{f\_do()}{f\_do()}}
+{\footnotesize\ttfamily void moving\+State\+::f\+\_\+do (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+function that is called as long as the state is active 
+
+
+
+Implements \mbox{\hyperlink{class_state_a5b19102546d294f537bcb8fa7e45c760}{State}}.
+
+
+
+Definition at line 14 of file moving\+State.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmoving_state_a557fe2d861f3f93ad9de3d358bde6d16_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmoving_state_adc1a27611fd8d18186941f26591bae1f}\label{classmoving_state_adc1a27611fd8d18186941f26591bae1f}} 
+\index{movingState@{movingState}!f\_entry@{f\_entry}}
+\index{f\_entry@{f\_entry}!movingState@{movingState}}
+\doxysubsubsection{\texorpdfstring{f\_entry()}{f\_entry()}}
+{\footnotesize\ttfamily void moving\+State\+::f\+\_\+entry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+function that is called when the state is entered 
+
+
+
+Implements \mbox{\hyperlink{class_state_a3527189c052a46ea76801906829c43df}{State}}.
+
+
+
+Definition at line 3 of file moving\+State.\+cpp.
+
+\mbox{\Hypertarget{classmoving_state_a2fdaaccfe906bd352e616b30e669f127}\label{classmoving_state_a2fdaaccfe906bd352e616b30e669f127}} 
+\index{movingState@{movingState}!f\_exit@{f\_exit}}
+\index{f\_exit@{f\_exit}!movingState@{movingState}}
+\doxysubsubsection{\texorpdfstring{f\_exit()}{f\_exit()}}
+{\footnotesize\ttfamily void moving\+State\+::f\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+function that is called when the state is exited 
+
+
+
+Implements \mbox{\hyperlink{class_state_aca588de032e98a660f340fa45b20b82c}{State}}.
+
+
+
+Definition at line 35 of file moving\+State.\+cpp.
+
+\mbox{\Hypertarget{classmoving_state_a02c2c049d9b9bc9fa328fe437d70623c}\label{classmoving_state_a02c2c049d9b9bc9fa328fe437d70623c}} 
+\index{movingState@{movingState}!isMovingDone@{isMovingDone}}
+\index{isMovingDone@{isMovingDone}!movingState@{movingState}}
+\doxysubsubsection{\texorpdfstring{isMovingDone()}{isMovingDone()}}
+{\footnotesize\ttfamily bool moving\+State\+::is\+Moving\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A trigger that checks if the current movement is done. 
+
+\begin{DoxyReturn}{Returns}
+True if the movement is done, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 40 of file moving\+State.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmoving_state_a02c2c049d9b9bc9fa328fe437d70623c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmoving_state_a02c2c049d9b9bc9fa328fe437d70623c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmoving_state_a211061a9b72364511046f834b9ee3a72}\label{classmoving_state_a211061a9b72364511046f834b9ee3a72}} 
+\index{movingState@{movingState}!isQueueEmpty@{isQueueEmpty}}
+\index{isQueueEmpty@{isQueueEmpty}!movingState@{movingState}}
+\doxysubsubsection{\texorpdfstring{isQueueEmpty()}{isQueueEmpty()}}
+{\footnotesize\ttfamily bool moving\+State\+::is\+Queue\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A trigger that checks if the command\+Queue is empty. 
+
+\begin{DoxyReturn}{Returns}
+True if the command\+Queue is empty, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 74 of file moving\+State.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmoving_state_a211061a9b72364511046f834b9ee3a72_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmoving_state_a35bfec361a8f35274d3582743d2ba420}\label{classmoving_state_a35bfec361a8f35274d3582743d2ba420}} 
+\index{movingState@{movingState}!newMultiServoCommandReceived@{newMultiServoCommandReceived}}
+\index{newMultiServoCommandReceived@{newMultiServoCommandReceived}!movingState@{movingState}}
+\doxysubsubsection{\texorpdfstring{newMultiServoCommandReceived()}{newMultiServoCommandReceived()}}
+{\footnotesize\ttfamily bool moving\+State\+::new\+Multi\+Servo\+Command\+Received (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A trigger that checks if a new multi servo command has been received. 
+
+\begin{DoxyReturn}{Returns}
+True if a new multi servo command has been received, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 69 of file moving\+State.\+cpp.
+
+\mbox{\Hypertarget{classmoving_state_a9ff3e2c7e505acc121fb2883ce9bedc3}\label{classmoving_state_a9ff3e2c7e505acc121fb2883ce9bedc3}} 
+\index{movingState@{movingState}!newPositionCommandReceived@{newPositionCommandReceived}}
+\index{newPositionCommandReceived@{newPositionCommandReceived}!movingState@{movingState}}
+\doxysubsubsection{\texorpdfstring{newPositionCommandReceived()}{newPositionCommandReceived()}}
+{\footnotesize\ttfamily bool moving\+State\+::new\+Position\+Command\+Received (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A trigger that checks if a new position command has been received. 
+
+\begin{DoxyReturn}{Returns}
+True if a new position command has been received, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 59 of file moving\+State.\+cpp.
+
+\mbox{\Hypertarget{classmoving_state_a52431a9563aace23b31ca78432236561}\label{classmoving_state_a52431a9563aace23b31ca78432236561}} 
+\index{movingState@{movingState}!newSingleServoCommandReceived@{newSingleServoCommandReceived}}
+\index{newSingleServoCommandReceived@{newSingleServoCommandReceived}!movingState@{movingState}}
+\doxysubsubsection{\texorpdfstring{newSingleServoCommandReceived()}{newSingleServoCommandReceived()}}
+{\footnotesize\ttfamily bool moving\+State\+::new\+Single\+Servo\+Command\+Received (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A trigger that checks if a new single servo command has been received. 
+
+\begin{DoxyReturn}{Returns}
+True if a new single servo command has been received, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 64 of file moving\+State.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/hld/\mbox{\hyperlink{moving_state_8hpp}{moving\+State.\+hpp}}\item 
+src/hld/\mbox{\hyperlink{moving_state_8cpp}{moving\+State.\+cpp}}\end{DoxyCompactItemize}

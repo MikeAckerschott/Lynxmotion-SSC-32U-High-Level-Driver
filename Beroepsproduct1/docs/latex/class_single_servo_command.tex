@@ -1,0 +1,201 @@
+\hypertarget{class_single_servo_command}{}\doxysection{Single\+Servo\+Command Class Reference}
+\label{class_single_servo_command}\index{SingleServoCommand@{SingleServoCommand}}
+
+
+Defines the syntax for a single servo command to be sent over the serial port.  
+
+
+
+
+{\ttfamily \#include $<$single\+Servo\+Command.\+hpp$>$}
+
+
+
+Inheritance diagram for Single\+Servo\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{class_single_servo_command__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Single\+Servo\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{class_single_servo_command__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_single_servo_command_a1aaceeed37fcdc93b35794c208e77a9e}{movement\+Type}} \{ \mbox{\hyperlink{class_single_servo_command_a1aaceeed37fcdc93b35794c208e77a9ea64c06581a6d85255b133d24d3b79d18a}{MOVE\+\_\+\+WITH\+\_\+\+TIME}} = 0
+, \mbox{\hyperlink{class_single_servo_command_a1aaceeed37fcdc93b35794c208e77a9eac18879de041f710a1a13d6f59dec392f}{MOVE\+\_\+\+WITH\+\_\+\+SPEED}} = 1
+, \mbox{\hyperlink{class_single_servo_command_a1aaceeed37fcdc93b35794c208e77a9eaa2bb311fc6210c342cb4d4a8217c0b4f}{NO\+\_\+\+TYPE}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Defines the type of movement of the servo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_single_servo_command_abb236a908ce9f3912bf301ac08996a60}{Single\+Servo\+Command}} (short pin, short desired\+Pulse\+Width, long movement, \mbox{\hyperlink{class_single_servo_command_a1aaceeed37fcdc93b35794c208e77a9e}{movement\+Type}} type, boost\+::asio\+::serial\+\_\+port \&serial)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_single_servo_command_a1363cb6563d76fa2b8829a91513593ad}{$\sim$\+Single\+Servo\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_single_servo_command_a97a41e0bd7ba437e4c38cb4da6fe013e}{get\+Command\+String}} (short pin, short desired\+Pulse\+Width, long movement, \mbox{\hyperlink{class_single_servo_command_a1aaceeed37fcdc93b35794c208e77a9e}{movement\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Gets the command string from the parameters. Used in constructor, since member variables are not initialized yet. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_single_servo_command_aa2713f516798286c7144628562bb120c}{get\+Command\+String}} ()
+\begin{DoxyCompactList}\small\item\em Gets the command string from the member variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Defines the syntax for a single servo command to be sent over the serial port. 
+
+This class is used to send a command to a single servo over the serial port \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_command}{Command}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 23 of file single\+Servo\+Command.\+hpp.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_single_servo_command_a1aaceeed37fcdc93b35794c208e77a9e}\label{class_single_servo_command_a1aaceeed37fcdc93b35794c208e77a9e}} 
+\index{SingleServoCommand@{SingleServoCommand}!movementType@{movementType}}
+\index{movementType@{movementType}!SingleServoCommand@{SingleServoCommand}}
+\doxysubsubsection{\texorpdfstring{movementType}{movementType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_single_servo_command_a1aaceeed37fcdc93b35794c208e77a9e}{Single\+Servo\+Command\+::movement\+Type}}}
+
+
+
+Defines the type of movement of the servo. 
+
+This enum is used to define the type of movement of the servo 
+\begin{DoxyParams}{Parameters}
+{\em MOVE\+\_\+\+WITH\+\_\+\+TIME} & The servo moves with a duration \\
+\hline
+{\em MOVE\+\_\+\+WITH\+\_\+\+SPEED} & The servo moves with a speed \\
+\hline
+{\em NO\+\_\+\+TYPE} & The servo does not mvoe with a type. used for multiservocommands where the type is already defined from another servo, since a type does not have to be defined for every servo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOVE\_WITH\_TIME@{MOVE\_WITH\_TIME}!SingleServoCommand@{SingleServoCommand}}\index{SingleServoCommand@{SingleServoCommand}!MOVE\_WITH\_TIME@{MOVE\_WITH\_TIME}}}\mbox{\Hypertarget{class_single_servo_command_a1aaceeed37fcdc93b35794c208e77a9ea64c06581a6d85255b133d24d3b79d18a}\label{class_single_servo_command_a1aaceeed37fcdc93b35794c208e77a9ea64c06581a6d85255b133d24d3b79d18a}} 
+MOVE\+\_\+\+WITH\+\_\+\+TIME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOVE\_WITH\_SPEED@{MOVE\_WITH\_SPEED}!SingleServoCommand@{SingleServoCommand}}\index{SingleServoCommand@{SingleServoCommand}!MOVE\_WITH\_SPEED@{MOVE\_WITH\_SPEED}}}\mbox{\Hypertarget{class_single_servo_command_a1aaceeed37fcdc93b35794c208e77a9eac18879de041f710a1a13d6f59dec392f}\label{class_single_servo_command_a1aaceeed37fcdc93b35794c208e77a9eac18879de041f710a1a13d6f59dec392f}} 
+MOVE\+\_\+\+WITH\+\_\+\+SPEED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NO\_TYPE@{NO\_TYPE}!SingleServoCommand@{SingleServoCommand}}\index{SingleServoCommand@{SingleServoCommand}!NO\_TYPE@{NO\_TYPE}}}\mbox{\Hypertarget{class_single_servo_command_a1aaceeed37fcdc93b35794c208e77a9eaa2bb311fc6210c342cb4d4a8217c0b4f}\label{class_single_servo_command_a1aaceeed37fcdc93b35794c208e77a9eaa2bb311fc6210c342cb4d4a8217c0b4f}} 
+NO\+\_\+\+TYPE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 33 of file single\+Servo\+Command.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_single_servo_command_abb236a908ce9f3912bf301ac08996a60}\label{class_single_servo_command_abb236a908ce9f3912bf301ac08996a60}} 
+\index{SingleServoCommand@{SingleServoCommand}!SingleServoCommand@{SingleServoCommand}}
+\index{SingleServoCommand@{SingleServoCommand}!SingleServoCommand@{SingleServoCommand}}
+\doxysubsubsection{\texorpdfstring{SingleServoCommand()}{SingleServoCommand()}}
+{\footnotesize\ttfamily Single\+Servo\+Command\+::\+Single\+Servo\+Command (\begin{DoxyParamCaption}\item[{short}]{pin,  }\item[{short}]{desired\+Pulse\+Width,  }\item[{long}]{movement,  }\item[{\mbox{\hyperlink{class_single_servo_command_a1aaceeed37fcdc93b35794c208e77a9e}{movement\+Type}}}]{type,  }\item[{boost\+::asio\+::serial\+\_\+port \&}]{serial }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & The pin of the servo \\
+\hline
+{\em desired\+Pulse\+Width} & The desired pulse width of the servo \\
+\hline
+{\em movement} & The movement of the servo \\
+\hline
+{\em type} & The type of movement of the servo (MOVE\+\_\+\+WITH\+\_\+\+TIME, MOVE\+\_\+\+WITH\+\_\+\+SPEED, NO\+\_\+\+TYPE) \\
+\hline
+{\em serial} & The serial port to send the command over \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 4 of file single\+Servo\+Command.\+cpp.
+
+\mbox{\Hypertarget{class_single_servo_command_a1363cb6563d76fa2b8829a91513593ad}\label{class_single_servo_command_a1363cb6563d76fa2b8829a91513593ad}} 
+\index{SingleServoCommand@{SingleServoCommand}!````~SingleServoCommand@{$\sim$SingleServoCommand}}
+\index{````~SingleServoCommand@{$\sim$SingleServoCommand}!SingleServoCommand@{SingleServoCommand}}
+\doxysubsubsection{\texorpdfstring{$\sim$SingleServoCommand()}{~SingleServoCommand()}}
+{\footnotesize\ttfamily Single\+Servo\+Command\+::$\sim$\+Single\+Servo\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+Definition at line 18 of file single\+Servo\+Command.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_single_servo_command_aa2713f516798286c7144628562bb120c}\label{class_single_servo_command_aa2713f516798286c7144628562bb120c}} 
+\index{SingleServoCommand@{SingleServoCommand}!getCommandString@{getCommandString}}
+\index{getCommandString@{getCommandString}!SingleServoCommand@{SingleServoCommand}}
+\doxysubsubsection{\texorpdfstring{getCommandString()}{getCommandString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string Single\+Servo\+Command\+::get\+Command\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the command string from the member variables. 
+
+\begin{DoxyReturn}{Returns}
+The command string that can be sent over the serial port 
+\end{DoxyReturn}
+
+
+Definition at line 42 of file single\+Servo\+Command.\+cpp.
+
+\mbox{\Hypertarget{class_single_servo_command_a97a41e0bd7ba437e4c38cb4da6fe013e}\label{class_single_servo_command_a97a41e0bd7ba437e4c38cb4da6fe013e}} 
+\index{SingleServoCommand@{SingleServoCommand}!getCommandString@{getCommandString}}
+\index{getCommandString@{getCommandString}!SingleServoCommand@{SingleServoCommand}}
+\doxysubsubsection{\texorpdfstring{getCommandString()}{getCommandString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string Single\+Servo\+Command\+::get\+Command\+String (\begin{DoxyParamCaption}\item[{short}]{pin,  }\item[{short}]{desired\+Pulse\+Width,  }\item[{long}]{movement,  }\item[{\mbox{\hyperlink{class_single_servo_command_a1aaceeed37fcdc93b35794c208e77a9e}{movement\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Gets the command string from the parameters. Used in constructor, since member variables are not initialized yet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & The pin of the servo \\
+\hline
+{\em desired\+Pulse\+Width} & The desired pulse width of the servo \\
+\hline
+{\em movement} & The movement of the servo \\
+\hline
+{\em type} & The type of movement of the servo (MOVE\+\_\+\+WITH\+\_\+\+TIME, MOVE\+\_\+\+WITH\+\_\+\+SPEED, NO\+\_\+\+TYPE) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The command string that can be sent over the serial port 
+\end{DoxyReturn}
+
+
+Definition at line 20 of file single\+Servo\+Command.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lld/\mbox{\hyperlink{single_servo_command_8hpp}{single\+Servo\+Command.\+hpp}}\item 
+src/lld/\mbox{\hyperlink{single_servo_command_8cpp}{single\+Servo\+Command.\+cpp}}\end{DoxyCompactItemize}

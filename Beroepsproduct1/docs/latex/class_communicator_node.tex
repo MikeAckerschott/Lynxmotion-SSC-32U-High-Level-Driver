@@ -1,0 +1,222 @@
+\hypertarget{class_communicator_node}{}\doxysection{Communicator\+Node Class Reference}
+\label{class_communicator_node}\index{CommunicatorNode@{CommunicatorNode}}
+
+
+Node that sends commands to the high level driver.  
+
+
+
+
+{\ttfamily \#include $<$communicator\+Node.\+hpp$>$}
+
+
+
+Inheritance diagram for Communicator\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class_communicator_node__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Communicator\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class_communicator_node__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_communicator_node_a70c22c095cd15d8c0927a18a49dff777}{Communicator\+Node}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_communicator_node_a4513fdabd37d412640198abfaf7e0b8b}{$\sim$\+Communicator\+Node}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communicator_node_accbb470ce2960a1c88055708eb988463}{send\+Single\+Servo\+Command}} (int servo, int angle, int movement, std\+::string movement\+Type)
+\begin{DoxyCompactList}\small\item\em Sends a single\+Servo\+Command to the high level driver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communicator_node_a7c04880b6b62dc7c95644186205ac7c2}{send\+Multi\+Servo\+Command}} (std\+::vector$<$ std\+::vector$<$ long long $>$$>$ arguments, std\+::vector$<$ std\+::string $>$ movement\+Types)
+\begin{DoxyCompactList}\small\item\em Sends a multi\+Servo\+Command to the high level driver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communicator_node_aea5d41130535a360e9475671a89e6e4c}{send\+Stop\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Sends a stop\+Command to the high level driver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communicator_node_abdb260e0913351a802646ec80a190704}{deactivate\+Emergency\+Stop}} ()
+\begin{DoxyCompactList}\small\item\em sends an emergency\+Stop to the high level driver with param enable to false \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communicator_node_ad58057cadfb9803fbb990d02a4e30768}{send\+Programmed\+Position\+Command}} (std\+::string programmed\+Position)
+\begin{DoxyCompactList}\small\item\em Sends a programmed\+Position\+Command to the high level driver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communicator_node_a32eb35ece41debd40be59fb96f5a0094}{send\+Skip\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Sends a skip\+Command to the high level driver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communicator_node_a7affedff4c71cb5ecd3d95d2d68e8fff}{send\+Empty\+Queue\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Sends an empty\+Queue\+Command to the high level driver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Node that sends commands to the high level driver. 
+
+Currently supports commands\+: single\+Servo, multi\+Servo, stop, programmed\+Position 
+
+Definition at line 18 of file communicator\+Node.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_communicator_node_a70c22c095cd15d8c0927a18a49dff777}\label{class_communicator_node_a70c22c095cd15d8c0927a18a49dff777}} 
+\index{CommunicatorNode@{CommunicatorNode}!CommunicatorNode@{CommunicatorNode}}
+\index{CommunicatorNode@{CommunicatorNode}!CommunicatorNode@{CommunicatorNode}}
+\doxysubsubsection{\texorpdfstring{CommunicatorNode()}{CommunicatorNode()}}
+{\footnotesize\ttfamily Communicator\+Node\+::\+Communicator\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 3 of file communicator\+Node.\+cpp.
+
+\mbox{\Hypertarget{class_communicator_node_a4513fdabd37d412640198abfaf7e0b8b}\label{class_communicator_node_a4513fdabd37d412640198abfaf7e0b8b}} 
+\index{CommunicatorNode@{CommunicatorNode}!````~CommunicatorNode@{$\sim$CommunicatorNode}}
+\index{````~CommunicatorNode@{$\sim$CommunicatorNode}!CommunicatorNode@{CommunicatorNode}}
+\doxysubsubsection{\texorpdfstring{$\sim$CommunicatorNode()}{~CommunicatorNode()}}
+{\footnotesize\ttfamily Communicator\+Node\+::$\sim$\+Communicator\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+Definition at line 26 of file communicator\+Node.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_communicator_node_abdb260e0913351a802646ec80a190704}\label{class_communicator_node_abdb260e0913351a802646ec80a190704}} 
+\index{CommunicatorNode@{CommunicatorNode}!deactivateEmergencyStop@{deactivateEmergencyStop}}
+\index{deactivateEmergencyStop@{deactivateEmergencyStop}!CommunicatorNode@{CommunicatorNode}}
+\doxysubsubsection{\texorpdfstring{deactivateEmergencyStop()}{deactivateEmergencyStop()}}
+{\footnotesize\ttfamily void Communicator\+Node\+::deactivate\+Emergency\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+sends an emergency\+Stop to the high level driver with param enable to false 
+
+This will disable the emergency stop 
+
+Definition at line 114 of file communicator\+Node.\+cpp.
+
+\mbox{\Hypertarget{class_communicator_node_a7affedff4c71cb5ecd3d95d2d68e8fff}\label{class_communicator_node_a7affedff4c71cb5ecd3d95d2d68e8fff}} 
+\index{CommunicatorNode@{CommunicatorNode}!sendEmptyQueueCommand@{sendEmptyQueueCommand}}
+\index{sendEmptyQueueCommand@{sendEmptyQueueCommand}!CommunicatorNode@{CommunicatorNode}}
+\doxysubsubsection{\texorpdfstring{sendEmptyQueueCommand()}{sendEmptyQueueCommand()}}
+{\footnotesize\ttfamily void Communicator\+Node\+::send\+Empty\+Queue\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sends an empty\+Queue\+Command to the high level driver. 
+
+This will empty the commandqueue on the HLD 
+
+Definition at line 194 of file communicator\+Node.\+cpp.
+
+\mbox{\Hypertarget{class_communicator_node_a7c04880b6b62dc7c95644186205ac7c2}\label{class_communicator_node_a7c04880b6b62dc7c95644186205ac7c2}} 
+\index{CommunicatorNode@{CommunicatorNode}!sendMultiServoCommand@{sendMultiServoCommand}}
+\index{sendMultiServoCommand@{sendMultiServoCommand}!CommunicatorNode@{CommunicatorNode}}
+\doxysubsubsection{\texorpdfstring{sendMultiServoCommand()}{sendMultiServoCommand()}}
+{\footnotesize\ttfamily void Communicator\+Node\+::send\+Multi\+Servo\+Command (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ long long $>$$>$}]{arguments,  }\item[{std\+::vector$<$ std\+::string $>$}]{movement\+Types }\end{DoxyParamCaption})}
+
+
+
+Sends a multi\+Servo\+Command to the high level driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arguments} & A vector of vectors containing the servo, angle and movement values \\
+\hline
+{\em movement\+Types} & A vector of strings containing the movement types for each servo (speed or duration) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 58 of file communicator\+Node.\+cpp.
+
+\mbox{\Hypertarget{class_communicator_node_ad58057cadfb9803fbb990d02a4e30768}\label{class_communicator_node_ad58057cadfb9803fbb990d02a4e30768}} 
+\index{CommunicatorNode@{CommunicatorNode}!sendProgrammedPositionCommand@{sendProgrammedPositionCommand}}
+\index{sendProgrammedPositionCommand@{sendProgrammedPositionCommand}!CommunicatorNode@{CommunicatorNode}}
+\doxysubsubsection{\texorpdfstring{sendProgrammedPositionCommand()}{sendProgrammedPositionCommand()}}
+{\footnotesize\ttfamily void Communicator\+Node\+::send\+Programmed\+Position\+Command (\begin{DoxyParamCaption}\item[{std\+::string}]{programmed\+Position }\end{DoxyParamCaption})}
+
+
+
+Sends a programmed\+Position\+Command to the high level driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em programmed\+Position} & The programmed position to move to (park, ready, straight-\/up) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 138 of file communicator\+Node.\+cpp.
+
+\mbox{\Hypertarget{class_communicator_node_accbb470ce2960a1c88055708eb988463}\label{class_communicator_node_accbb470ce2960a1c88055708eb988463}} 
+\index{CommunicatorNode@{CommunicatorNode}!sendSingleServoCommand@{sendSingleServoCommand}}
+\index{sendSingleServoCommand@{sendSingleServoCommand}!CommunicatorNode@{CommunicatorNode}}
+\doxysubsubsection{\texorpdfstring{sendSingleServoCommand()}{sendSingleServoCommand()}}
+{\footnotesize\ttfamily void Communicator\+Node\+::send\+Single\+Servo\+Command (\begin{DoxyParamCaption}\item[{int}]{servo,  }\item[{int}]{angle,  }\item[{int}]{movement,  }\item[{std\+::string}]{movement\+Type }\end{DoxyParamCaption})}
+
+
+
+Sends a single\+Servo\+Command to the high level driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em servo} & The servo to move \\
+\hline
+{\em angle} & The angle to move to \\
+\hline
+{\em movement} & the speed or duration value depending on the movement\+Type \\
+\hline
+{\em movement\+Type} & move the servo with speed or duration. (example\+: T1000 or S1000) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 30 of file communicator\+Node.\+cpp.
+
+\mbox{\Hypertarget{class_communicator_node_a32eb35ece41debd40be59fb96f5a0094}\label{class_communicator_node_a32eb35ece41debd40be59fb96f5a0094}} 
+\index{CommunicatorNode@{CommunicatorNode}!sendSkipCommand@{sendSkipCommand}}
+\index{sendSkipCommand@{sendSkipCommand}!CommunicatorNode@{CommunicatorNode}}
+\doxysubsubsection{\texorpdfstring{sendSkipCommand()}{sendSkipCommand()}}
+{\footnotesize\ttfamily void Communicator\+Node\+::send\+Skip\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sends a skip\+Command to the high level driver. 
+
+This will skip the current command in the queue 
+
+Definition at line 168 of file communicator\+Node.\+cpp.
+
+\mbox{\Hypertarget{class_communicator_node_aea5d41130535a360e9475671a89e6e4c}\label{class_communicator_node_aea5d41130535a360e9475671a89e6e4c}} 
+\index{CommunicatorNode@{CommunicatorNode}!sendStopCommand@{sendStopCommand}}
+\index{sendStopCommand@{sendStopCommand}!CommunicatorNode@{CommunicatorNode}}
+\doxysubsubsection{\texorpdfstring{sendStopCommand()}{sendStopCommand()}}
+{\footnotesize\ttfamily void Communicator\+Node\+::send\+Stop\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sends a stop\+Command to the high level driver. 
+
+This will enable the emergency stop 
+
+Definition at line 91 of file communicator\+Node.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/cli/\mbox{\hyperlink{communicator_node_8hpp}{communicator\+Node.\+hpp}}\item 
+src/cli/\mbox{\hyperlink{communicator_node_8cpp}{communicator\+Node.\+cpp}}\end{DoxyCompactItemize}

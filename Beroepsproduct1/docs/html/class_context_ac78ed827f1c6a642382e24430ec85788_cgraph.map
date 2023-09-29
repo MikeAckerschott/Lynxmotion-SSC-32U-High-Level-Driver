@@ -1,0 +1,6 @@
+<map id="Context::f_do" name="Context::f_do">
+<area shape="rect" id="node1" title="Calls the do function of the current state." alt="" coords="5,31,115,57"/>
+<area shape="rect" id="node2" href="$class_context.html#a3560320b26b34decbff741fe66119c26" title="Calls the checkAllTriggers function of the current state." alt="" coords="163,5,349,32"/>
+<area shape="rect" id="node4" href="$class_state.html#a5b19102546d294f537bcb8fa7e45c760" title="function that is called as long as the state is active" alt="" coords="210,56,302,83"/>
+<area shape="rect" id="node3" href="$class_state.html#a90c076865d9796423edd2175fed41cea" title="Checks if any trigger is activated." alt="" coords="397,5,568,32"/>
+</map>

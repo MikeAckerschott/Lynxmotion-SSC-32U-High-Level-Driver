@@ -1,0 +1,402 @@
+\hypertarget{class_context}{}\doxysection{Context Class Reference}
+\label{class_context}\index{Context@{Context}}
+
+
+Contains the \mbox{\hyperlink{class_context}{Context}} class that is used to transition between states.  
+
+
+
+
+{\ttfamily \#include $<$context.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_context_a844463963bb3bc74d92e5ccc587cb066}{Context}} (\mbox{\hyperlink{class_state}{State}} $\ast$state, boost\+::asio\+::serial\+\_\+port \&serial, rclcpp\+::\+Logger logger)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_context_a2d34e4556448e40693f61d15e091b604}{$\sim$\+Context}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_context_a3a2a6386414de3a5aa28784bb3c58b26}{Transition\+To}} (\mbox{\hyperlink{class_state}{State}} $\ast$state)
+\begin{DoxyCompactList}\small\item\em Transitions to a new state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_context_a5967fd059944d568aee8db8daae3d551}{f\+\_\+entry}} ()
+\begin{DoxyCompactList}\small\item\em Calls the entry function of the current state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_context_ac78ed827f1c6a642382e24430ec85788}{f\+\_\+do}} ()
+\begin{DoxyCompactList}\small\item\em Calls the do function of the current state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_context_a5b63a218d4bdc7e5ebb64dd2d59482ed}{f\+\_\+exit}} ()
+\begin{DoxyCompactList}\small\item\em Calls the exit function of the current state. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_context_a3560320b26b34decbff741fe66119c26}{check\+All\+Triggers}} ()
+\begin{DoxyCompactList}\small\item\em Calls the check\+All\+Triggers function of the current state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_context_aa5e05689126ca8fd4f8018ab067e291e}{single\+Servo\+Command\+Received}}
+\begin{DoxyCompactList}\small\item\em variable to check if a single\+Servo\+Command was received \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_context_ac769516e9d9afcb6d6b34f025b27e7c1}{multi\+Servo\+Command\+Received}}
+\begin{DoxyCompactList}\small\item\em variable to check if a multi\+Servo\+Command was received \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_context_a6d50365eba6e5ff8ab1f320c6196c08d}{programmed\+Position\+Command\+Received}}
+\begin{DoxyCompactList}\small\item\em variable to check if a programmed\+Position\+Command was received \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_context_af7974546b20c569f30e86dc8e1a6c573}{emergency\+Stop\+Deactivate\+Request}}
+\begin{DoxyCompactList}\small\item\em variable to check if a emergency\+Stop\+Deactivate\+Request was received \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_context_a964562f126f9557da4594044c0bdd436}{emergency\+Stop\+Activate\+Request}}
+\begin{DoxyCompactList}\small\item\em variable to check if a emergency\+Stop\+Activate\+Request was received \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_context_ace53f8000d46df4841289318fa37770a}{skip\+Command\+Received}}
+\begin{DoxyCompactList}\small\item\em variable to check if a skip\+Command was received \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_context_a4699bf129f8d4869dd238901aaf0caef}{empty\+Queue\+Command\+Received}}
+\begin{DoxyCompactList}\small\item\em variable to check if a empty\+Queue\+Command was received \end{DoxyCompactList}\item 
+boost\+::asio\+::serial\+\_\+port \& \mbox{\hyperlink{class_context_a372747f36bd250c099bbbc6911211aab}{serial\+Port\+\_\+}}
+\begin{DoxyCompactList}\small\item\em the serial port over which the commands are sent to the robotic arm \end{DoxyCompactList}\item 
+rclcpp\+::\+Logger \mbox{\hyperlink{class_context_aabc4e9524ab9222399dc5088da23615f}{logger\+\_\+}}
+\begin{DoxyCompactList}\small\item\em the logger used to log messages. received from the \mbox{\hyperlink{class_high_level_node}{High\+Level\+Node}} \end{DoxyCompactList}\item 
+std\+::queue$<$ \mbox{\hyperlink{class_command}{Command}} $>$ \mbox{\hyperlink{class_context_ae933e07bc5bbce7929fde861791573bb}{command\+Queue\+\_\+}}
+\begin{DoxyCompactList}\small\item\em the queue of commands to execute \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains the \mbox{\hyperlink{class_context}{Context}} class that is used to transition between states. 
+
+The \mbox{\hyperlink{class_context}{Context}} class is used to transition between states. It also contains the serial port and logger that is used by the states 
+
+Definition at line 25 of file context.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_context_a844463963bb3bc74d92e5ccc587cb066}\label{class_context_a844463963bb3bc74d92e5ccc587cb066}} 
+\index{Context@{Context}!Context@{Context}}
+\index{Context@{Context}!Context@{Context}}
+\doxysubsubsection{\texorpdfstring{Context()}{Context()}}
+{\footnotesize\ttfamily Context\+::\+Context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state}{State}} $\ast$}]{state,  }\item[{boost\+::asio\+::serial\+\_\+port \&}]{serial,  }\item[{rclcpp\+::\+Logger}]{logger }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The initial state \\
+\hline
+{\em serial} & The serial port \\
+\hline
+{\em logger} & The logger \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 4 of file context.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_context_a844463963bb3bc74d92e5ccc587cb066_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_context_a2d34e4556448e40693f61d15e091b604}\label{class_context_a2d34e4556448e40693f61d15e091b604}} 
+\index{Context@{Context}!````~Context@{$\sim$Context}}
+\index{````~Context@{$\sim$Context}!Context@{Context}}
+\doxysubsubsection{\texorpdfstring{$\sim$Context()}{~Context()}}
+{\footnotesize\ttfamily Context\+::$\sim$\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+Definition at line 8 of file context.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_context_a3560320b26b34decbff741fe66119c26}\label{class_context_a3560320b26b34decbff741fe66119c26}} 
+\index{Context@{Context}!checkAllTriggers@{checkAllTriggers}}
+\index{checkAllTriggers@{checkAllTriggers}!Context@{Context}}
+\doxysubsubsection{\texorpdfstring{checkAllTriggers()}{checkAllTriggers()}}
+{\footnotesize\ttfamily bool Context\+::check\+All\+Triggers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls the check\+All\+Triggers function of the current state. 
+
+\begin{DoxyReturn}{Returns}
+True if a trigger was activated, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 47 of file context.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_context_a3560320b26b34decbff741fe66119c26_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_context_a3560320b26b34decbff741fe66119c26_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_context_ac78ed827f1c6a642382e24430ec85788}\label{class_context_ac78ed827f1c6a642382e24430ec85788}} 
+\index{Context@{Context}!f\_do@{f\_do}}
+\index{f\_do@{f\_do}!Context@{Context}}
+\doxysubsubsection{\texorpdfstring{f\_do()}{f\_do()}}
+{\footnotesize\ttfamily void Context\+::f\+\_\+do (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls the do function of the current state. 
+
+
+
+Definition at line 37 of file context.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_context_ac78ed827f1c6a642382e24430ec85788_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_context_ac78ed827f1c6a642382e24430ec85788_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_context_a5967fd059944d568aee8db8daae3d551}\label{class_context_a5967fd059944d568aee8db8daae3d551}} 
+\index{Context@{Context}!f\_entry@{f\_entry}}
+\index{f\_entry@{f\_entry}!Context@{Context}}
+\doxysubsubsection{\texorpdfstring{f\_entry()}{f\_entry()}}
+{\footnotesize\ttfamily void Context\+::f\+\_\+entry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls the entry function of the current state. 
+
+The \mbox{\hyperlink{class_context}{Context}} delegates part of its behavior to the current \mbox{\hyperlink{class_state}{State}} object. 
+
+Definition at line 33 of file context.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class_context_a5967fd059944d568aee8db8daae3d551_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_context_a5b63a218d4bdc7e5ebb64dd2d59482ed}\label{class_context_a5b63a218d4bdc7e5ebb64dd2d59482ed}} 
+\index{Context@{Context}!f\_exit@{f\_exit}}
+\index{f\_exit@{f\_exit}!Context@{Context}}
+\doxysubsubsection{\texorpdfstring{f\_exit()}{f\_exit()}}
+{\footnotesize\ttfamily void Context\+::f\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls the exit function of the current state. 
+
+
+
+Definition at line 42 of file context.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{class_context_a5b63a218d4bdc7e5ebb64dd2d59482ed_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_context_a3a2a6386414de3a5aa28784bb3c58b26}\label{class_context_a3a2a6386414de3a5aa28784bb3c58b26}} 
+\index{Context@{Context}!TransitionTo@{TransitionTo}}
+\index{TransitionTo@{TransitionTo}!Context@{Context}}
+\doxysubsubsection{\texorpdfstring{TransitionTo()}{TransitionTo()}}
+{\footnotesize\ttfamily void Context\+::\+Transition\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state}{State}} $\ast$}]{state }\end{DoxyParamCaption})}
+
+
+
+Transitions to a new state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The new state\\
+\hline
+\end{DoxyParams}
+The \mbox{\hyperlink{class_context}{Context}} allows changing the \mbox{\hyperlink{class_state}{State}} object at runtime. 
+
+Definition at line 15 of file context.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_context_a3a2a6386414de3a5aa28784bb3c58b26_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_context_a3a2a6386414de3a5aa28784bb3c58b26_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_context_ae933e07bc5bbce7929fde861791573bb}\label{class_context_ae933e07bc5bbce7929fde861791573bb}} 
+\index{Context@{Context}!commandQueue\_@{commandQueue\_}}
+\index{commandQueue\_@{commandQueue\_}!Context@{Context}}
+\doxysubsubsection{\texorpdfstring{commandQueue\_}{commandQueue\_}}
+{\footnotesize\ttfamily std\+::queue$<$\mbox{\hyperlink{class_command}{Command}}$>$ Context\+::command\+Queue\+\_\+}
+
+
+
+the queue of commands to execute 
+
+
+
+Definition at line 125 of file context.\+hpp.
+
+\mbox{\Hypertarget{class_context_a964562f126f9557da4594044c0bdd436}\label{class_context_a964562f126f9557da4594044c0bdd436}} 
+\index{Context@{Context}!emergencyStopActivateRequest@{emergencyStopActivateRequest}}
+\index{emergencyStopActivateRequest@{emergencyStopActivateRequest}!Context@{Context}}
+\doxysubsubsection{\texorpdfstring{emergencyStopActivateRequest}{emergencyStopActivateRequest}}
+{\footnotesize\ttfamily bool Context\+::emergency\+Stop\+Activate\+Request}
+
+
+
+variable to check if a emergency\+Stop\+Activate\+Request was received 
+
+
+
+Definition at line 100 of file context.\+hpp.
+
+\mbox{\Hypertarget{class_context_af7974546b20c569f30e86dc8e1a6c573}\label{class_context_af7974546b20c569f30e86dc8e1a6c573}} 
+\index{Context@{Context}!emergencyStopDeactivateRequest@{emergencyStopDeactivateRequest}}
+\index{emergencyStopDeactivateRequest@{emergencyStopDeactivateRequest}!Context@{Context}}
+\doxysubsubsection{\texorpdfstring{emergencyStopDeactivateRequest}{emergencyStopDeactivateRequest}}
+{\footnotesize\ttfamily bool Context\+::emergency\+Stop\+Deactivate\+Request}
+
+
+
+variable to check if a emergency\+Stop\+Deactivate\+Request was received 
+
+
+
+Definition at line 95 of file context.\+hpp.
+
+\mbox{\Hypertarget{class_context_a4699bf129f8d4869dd238901aaf0caef}\label{class_context_a4699bf129f8d4869dd238901aaf0caef}} 
+\index{Context@{Context}!emptyQueueCommandReceived@{emptyQueueCommandReceived}}
+\index{emptyQueueCommandReceived@{emptyQueueCommandReceived}!Context@{Context}}
+\doxysubsubsection{\texorpdfstring{emptyQueueCommandReceived}{emptyQueueCommandReceived}}
+{\footnotesize\ttfamily bool Context\+::empty\+Queue\+Command\+Received}
+
+
+
+variable to check if a empty\+Queue\+Command was received 
+
+
+
+Definition at line 110 of file context.\+hpp.
+
+\mbox{\Hypertarget{class_context_aabc4e9524ab9222399dc5088da23615f}\label{class_context_aabc4e9524ab9222399dc5088da23615f}} 
+\index{Context@{Context}!logger\_@{logger\_}}
+\index{logger\_@{logger\_}!Context@{Context}}
+\doxysubsubsection{\texorpdfstring{logger\_}{logger\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Logger Context\+::logger\+\_\+}
+
+
+
+the logger used to log messages. received from the \mbox{\hyperlink{class_high_level_node}{High\+Level\+Node}} 
+
+
+
+Definition at line 120 of file context.\+hpp.
+
+\mbox{\Hypertarget{class_context_ac769516e9d9afcb6d6b34f025b27e7c1}\label{class_context_ac769516e9d9afcb6d6b34f025b27e7c1}} 
+\index{Context@{Context}!multiServoCommandReceived@{multiServoCommandReceived}}
+\index{multiServoCommandReceived@{multiServoCommandReceived}!Context@{Context}}
+\doxysubsubsection{\texorpdfstring{multiServoCommandReceived}{multiServoCommandReceived}}
+{\footnotesize\ttfamily bool Context\+::multi\+Servo\+Command\+Received}
+
+
+
+variable to check if a multi\+Servo\+Command was received 
+
+
+
+Definition at line 85 of file context.\+hpp.
+
+\mbox{\Hypertarget{class_context_a6d50365eba6e5ff8ab1f320c6196c08d}\label{class_context_a6d50365eba6e5ff8ab1f320c6196c08d}} 
+\index{Context@{Context}!programmedPositionCommandReceived@{programmedPositionCommandReceived}}
+\index{programmedPositionCommandReceived@{programmedPositionCommandReceived}!Context@{Context}}
+\doxysubsubsection{\texorpdfstring{programmedPositionCommandReceived}{programmedPositionCommandReceived}}
+{\footnotesize\ttfamily bool Context\+::programmed\+Position\+Command\+Received}
+
+
+
+variable to check if a programmed\+Position\+Command was received 
+
+
+
+Definition at line 90 of file context.\+hpp.
+
+\mbox{\Hypertarget{class_context_a372747f36bd250c099bbbc6911211aab}\label{class_context_a372747f36bd250c099bbbc6911211aab}} 
+\index{Context@{Context}!serialPort\_@{serialPort\_}}
+\index{serialPort\_@{serialPort\_}!Context@{Context}}
+\doxysubsubsection{\texorpdfstring{serialPort\_}{serialPort\_}}
+{\footnotesize\ttfamily boost\+::asio\+::serial\+\_\+port\& Context\+::serial\+Port\+\_\+}
+
+
+
+the serial port over which the commands are sent to the robotic arm 
+
+
+
+Definition at line 115 of file context.\+hpp.
+
+\mbox{\Hypertarget{class_context_aa5e05689126ca8fd4f8018ab067e291e}\label{class_context_aa5e05689126ca8fd4f8018ab067e291e}} 
+\index{Context@{Context}!singleServoCommandReceived@{singleServoCommandReceived}}
+\index{singleServoCommandReceived@{singleServoCommandReceived}!Context@{Context}}
+\doxysubsubsection{\texorpdfstring{singleServoCommandReceived}{singleServoCommandReceived}}
+{\footnotesize\ttfamily bool Context\+::single\+Servo\+Command\+Received}
+
+
+
+variable to check if a single\+Servo\+Command was received 
+
+
+
+Definition at line 80 of file context.\+hpp.
+
+\mbox{\Hypertarget{class_context_ace53f8000d46df4841289318fa37770a}\label{class_context_ace53f8000d46df4841289318fa37770a}} 
+\index{Context@{Context}!skipCommandReceived@{skipCommandReceived}}
+\index{skipCommandReceived@{skipCommandReceived}!Context@{Context}}
+\doxysubsubsection{\texorpdfstring{skipCommandReceived}{skipCommandReceived}}
+{\footnotesize\ttfamily bool Context\+::skip\+Command\+Received}
+
+
+
+variable to check if a skip\+Command was received 
+
+
+
+Definition at line 105 of file context.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/hld/\mbox{\hyperlink{context_8hpp}{context.\+hpp}}\item 
+src/hld/\mbox{\hyperlink{context_8cpp}{context.\+cpp}}\end{DoxyCompactItemize}

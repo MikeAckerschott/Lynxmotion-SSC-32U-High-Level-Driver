@@ -1,0 +1,4 @@
+<map id="HighLevelNode::handleEmptyQueue" name="HighLevelNode::handleEmptyQueue">
+<area shape="rect" id="node1" title="Handles client request for an empty queue command and empties the queue and stops current movement if..." alt="" coords="281,5,496,47"/>
+<area shape="rect" id="node2" href="$class_high_level_node.html#aa27678104d27de84f3b27f4a9d5f0f22" title="Constructor." alt="" coords="5,13,233,39"/>
+</map>

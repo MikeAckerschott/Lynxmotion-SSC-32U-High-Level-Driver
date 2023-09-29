@@ -1,0 +1,4 @@
+<map id="HighLevelNode::handleProgrammedPosition" name="HighLevelNode::handleProgrammedPosition">
+<area shape="rect" id="node1" title="Handles client request for a programmed position and moves the servos to the programmed position if t..." alt="" coords="281,5,539,47"/>
+<area shape="rect" id="node2" href="$class_high_level_node.html#aa27678104d27de84f3b27f4a9d5f0f22" title="Constructor." alt="" coords="5,13,233,39"/>
+</map>

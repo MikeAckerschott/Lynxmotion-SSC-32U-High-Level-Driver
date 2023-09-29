@@ -1,0 +1,4 @@
+<map id="movingState::emergencyStopReceived" name="movingState::emergencyStopReceived">
+<area shape="rect" id="node1" title="A trigger that checks if an emergency stop has been received." alt="" coords="272,5,487,47"/>
+<area shape="rect" id="node2" href="$classmoving_state.html#ad452c7d68f97db66435ea99e0853bebf" title="Checks if any trigger is activated." alt="" coords="5,13,224,39"/>
+</map>

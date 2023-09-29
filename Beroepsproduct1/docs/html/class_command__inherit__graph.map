@@ -1,0 +1,5 @@
+<map id="Command" name="Command">
+<area shape="rect" id="node1" title="Defines the syntax for a command to be sent over the serial port." alt="" coords="133,5,223,32"/>
+<area shape="rect" id="node2" href="$class_multi_servo_command.html" title=" " alt="" coords="5,80,164,107"/>
+<area shape="rect" id="node3" href="$class_single_servo_command.html" title="Defines the syntax for a single servo command to be sent over the serial port." alt="" coords="188,80,355,107"/>
+</map>

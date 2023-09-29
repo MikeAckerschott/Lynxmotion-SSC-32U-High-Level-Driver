@@ -1,0 +1,4 @@
+<map id="Context::f_entry" name="Context::f_entry">
+<area shape="rect" id="node1" title="Calls the entry function of the current state." alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node2" href="$class_state.html#a3527189c052a46ea76801906829c43df" title="function that is called when the state is entered" alt="" coords="180,5,291,32"/>
+</map>

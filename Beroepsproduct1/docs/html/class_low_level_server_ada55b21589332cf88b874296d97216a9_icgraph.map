@@ -1,0 +1,7 @@
+<map id="LowLevelServer::stopCurrentMovement" name="LowLevelServer::stopCurrentMovement">
+<area shape="rect" id="node1" title="Stops the current movement of the robotic arm." alt="" coords="604,49,813,90"/>
+<area shape="rect" id="node2" href="$classmoving_state.html#ad452c7d68f97db66435ea99e0853bebf" title="Checks if any trigger is activated." alt="" coords="309,5,528,32"/>
+<area shape="rect" id="node3" href="$class_high_level_node.html#a415357f182894852d8ebdb6dd35a2516" title="Handles client request for an emergency stop and stops all servos." alt="" coords="281,56,556,83"/>
+<area shape="rect" id="node5" href="$class_high_level_node.html#a375dcb80d3b27baff41728ad5ba1cf89" title="Handles client request for a skip command and skips the next command in the queue if the request is v..." alt="" coords="318,107,519,133"/>
+<area shape="rect" id="node4" href="$class_high_level_node.html#aa27678104d27de84f3b27f4a9d5f0f22" title="Constructor." alt="" coords="5,81,233,108"/>
+</map>

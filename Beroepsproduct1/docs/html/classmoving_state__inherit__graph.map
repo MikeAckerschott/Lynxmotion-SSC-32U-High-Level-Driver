@@ -1,0 +1,4 @@
+<map id="movingState" name="movingState">
+<area shape="rect" id="node1" title="The movingState class is used to handle the moving state of the robotic arm." alt="" coords="5,80,111,107"/>
+<area shape="rect" id="node2" href="$class_state.html" title=" " alt="" coords="30,5,86,32"/>
+</map>

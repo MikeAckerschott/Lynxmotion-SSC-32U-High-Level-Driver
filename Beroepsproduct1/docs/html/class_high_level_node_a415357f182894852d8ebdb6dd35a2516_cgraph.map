@@ -1,0 +1,5 @@
+<map id="HighLevelNode::handleEmergencyStop" name="HighLevelNode::handleEmergencyStop">
+<area shape="rect" id="node1" title="Handles client request for an emergency stop and stops all servos." alt="" coords="5,13,280,39"/>
+<area shape="rect" id="node2" href="$class_low_level_server.html#ada55b21589332cf88b874296d97216a9" title="Stops the current movement of the robotic arm." alt="" coords="328,5,537,47"/>
+<area shape="rect" id="node3" href="$class_command.html#a911de585d69707fce024dcbdd7bba32f" title="Sends the command over the serial port." alt="" coords="585,13,780,39"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="LowLevelServer::multiServoRequest" name="LowLevelServer::multiServoRequest">
+<area shape="rect" id="node1" title="Sends a multiServoCommand to the robotic arm." alt="" coords="5,5,209,47"/>
+<area shape="rect" id="node2" href="$class_command.html#a911de585d69707fce024dcbdd7bba32f" title="Sends the command over the serial port." alt="" coords="257,13,452,39"/>
+</map>

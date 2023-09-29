@@ -1,0 +1,4 @@
+<map id="emergencyStopState" name="emergencyStopState">
+<area shape="rect" id="node1" title="The emergencyStopState class is used to handle the emergency stop state of the robotic arm." alt="" coords="5,80,164,107"/>
+<area shape="rect" id="node2" href="$class_state.html" title=" " alt="" coords="57,5,113,32"/>
+</map>

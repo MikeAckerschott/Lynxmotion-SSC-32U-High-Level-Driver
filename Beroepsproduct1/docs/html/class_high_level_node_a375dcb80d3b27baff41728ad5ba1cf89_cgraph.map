@@ -1,0 +1,5 @@
+<map id="HighLevelNode::handleSkip" name="HighLevelNode::handleSkip">
+<area shape="rect" id="node1" title="Handles client request for a skip command and skips the next command in the queue if the request is v..." alt="" coords="5,13,207,39"/>
+<area shape="rect" id="node2" href="$class_low_level_server.html#ada55b21589332cf88b874296d97216a9" title="Stops the current movement of the robotic arm." alt="" coords="255,5,464,47"/>
+<area shape="rect" id="node3" href="$class_command.html#a911de585d69707fce024dcbdd7bba32f" title="Sends the command over the serial port." alt="" coords="512,13,707,39"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="movingState::f_do" name="movingState::f_do">
+<area shape="rect" id="node1" title="function that is called as long as the state is active" alt="" coords="5,31,147,57"/>
+<area shape="rect" id="node2" href="$classmoving_state.html#a02c2c049d9b9bc9fa328fe437d70623c" title="A trigger that checks if the current movement is done." alt="" coords="195,31,401,57"/>
+<area shape="rect" id="node3" href="$class_command.html#afa71d14f42e7212e4548e9d6736a9c49" title=" " alt="" coords="449,5,683,32"/>
+<area shape="rect" id="node4" href="$class_command.html#a911de585d69707fce024dcbdd7bba32f" title="Sends the command over the serial port." alt="" coords="469,56,663,83"/>
+</map>

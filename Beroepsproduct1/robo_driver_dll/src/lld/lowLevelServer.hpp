@@ -36,30 +36,27 @@ class LowLevelServer
 public:
 
     /**
-     * @brief Handles client request for a single servo command and moves the selected servo if the request is valid
-     * @param request The request from the client
-     * @param response The response to send to the client
+     * @brief Sends a singleServoRequest to the robotic arm
+     * @param command The command that needs to be send to the robotic arm
      */
     static void singleServoRequest(SingleServoCommand command);
 
     /**
-     * @brief Handles client request for a multi servo command and moves the selected servos if the request is valid
-     * @param request The request from the client
-     * @param response The response to send to the client
+     * @brief Sends a multiServoCommand to the robotic arm
+     * @param command The command that needs to be send to the robotic arm 
      */
     static void multiServoRequest(MultiServoCommand command);
 
     /**
-     * @brief Handles client request for an emergency stop and stops all servos
-     * @param request The request from the client
-     * @param response The response to send to the client
+     * @brief Stops the current movement of the robotic arm
+     * @param serial_ The serial port that is used to communicate with the robotic arm
      */
     static void stopCurrentMovement(boost::asio::serial_port &serial_);
 
     /**
-     * @brief Handles client request for a programmed position and moves the servos to the programmed position if the request is valid
-     * @param request The request from the client
-     * @param response The response to send to the client
+     * @brief Moves the robotic arm to the given position
+     * @param position The position the robotic arm needs to move to
+     * @param serial_ The serial port that is used to communicate with the robotic arm
      */
     static void handleProgrammedPosition(std::string position, boost::asio::serial_port &serial_);
 };
