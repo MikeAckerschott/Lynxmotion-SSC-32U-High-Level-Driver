@@ -22,7 +22,7 @@ int main(int argc, char **argv)
     std::string input;
     std::getline(std::cin, input);
 
-    parser.parseCommand(input, node);
+    parser.parseCommand(input);
   }
   rclcpp::shutdown();
   return 0;

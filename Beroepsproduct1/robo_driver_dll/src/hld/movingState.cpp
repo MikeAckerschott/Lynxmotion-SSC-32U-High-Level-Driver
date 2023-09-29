@@ -96,5 +96,12 @@ bool movingState::checkAllTriggers()
         return true;
     }
 
+    if(context_->emptyQueueCommandReceived){
+        context_->commandQueue_ = std::queue<Command>();
+        LowLevelServer::stopCurrentMovement(context_->serialPort_);
+        context_->TransitionTo(new idleState);
+        return true;
+    }
+
     return false;
 }

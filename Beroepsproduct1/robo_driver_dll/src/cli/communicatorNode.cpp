@@ -11,6 +11,8 @@ CommunicatorNode::CommunicatorNode() : Node("communicator_node")
     programmedPositionClient_ = create_client<msg_srv::srv::MoveToPosition>("programmed_position");
 
     skipClient_ = create_client<msg_srv::srv::Skip>("skip");
+
+    emptyQueueClient_ = create_client<msg_srv::srv::EmptyQueue>("empty_queue");
 }
 
 CommunicatorNode::~CommunicatorNode()
@@ -172,6 +174,30 @@ void CommunicatorNode::sendSkipCommand()
         else
         {
             RCLCPP_INFO(get_logger(), "skip received succesfully, skipping command...");
+        }
+    }
+    else
+    {
+        RCLCPP_ERROR(get_logger(),
+                     "Failed to call service ");
+    }
+}
+
+void CommunicatorNode::sendEmptyQueueCommand(){
+    auto request_ = std::make_shared<msg_srv::srv::EmptyQueue::Request>();
+
+    auto result = emptyQueueClient_->async_send_request(request_);
+
+    if (rclcpp::spin_until_future_complete(shared_from_this(), result) ==
+        rclcpp::FutureReturnCode::SUCCESS)
+    {
+        if (result.get()->empty)
+        {
+            RCLCPP_INFO(get_logger(), "emptyQueue received succesfully, but queue is empty");
+        }
+        else
+        {
+            RCLCPP_INFO(get_logger(), "emptyQueue received succesfully, emptying queue...");
         }
     }
     else

@@ -7,7 +7,7 @@ CommandParser::CommandParser(std::shared_ptr<CommunicatorNode> node) : communica
 
 CommandParser::~CommandParser() {}
 
-void CommandParser::parseCommand(std::string command, std::shared_ptr<CommunicatorNode> node)
+void CommandParser::parseCommand(std::string command)
 {
     // get first word from command
     if (command.size() < 4)
@@ -17,14 +17,14 @@ void CommandParser::parseCommand(std::string command, std::shared_ptr<Communicat
     }
 
     std::string commandType = command.substr(0, command.find(" "));
-    if (!parseSingleServoCommand(commandType, command, node) && !parseMultiServoCommand(commandType, command, node) && !parseStopCommand(commandType, node) && !parseProgrammedPositionCommand(commandType, command, node) && !parseStartCommand(commandType, node) && !parseSkipCommand(commandType, node))
+    if (!parseSingleServoCommand(commandType, command) && !parseMultiServoCommand(commandType, command) && !parseStopCommand(commandType) && !parseProgrammedPositionCommand(commandType, command) && !parseStartCommand(commandType) && !parseSkipCommand(commandType) && !parseEmptyQueueCommand(commandType))
     {
         RCLCPP_ERROR(communicatorNode_->get_logger(), "Command not recognized. supported commands are: singleServo, multiServo, stop, programmedPosition. check README for syntax");
         return;
     }
 }
 
-bool CommandParser::parseSingleServoCommand(std::string commandType, std::string command, std::shared_ptr<CommunicatorNode> node)
+bool CommandParser::parseSingleServoCommand(std::string commandType, std::string command)
 {
     if (commandType != "singleServo")
     {
@@ -52,7 +52,7 @@ bool CommandParser::parseSingleServoCommand(std::string commandType, std::string
     return true;
 }
 
-bool CommandParser::parseMultiServoCommand(std::string commandType, std::string command, std::shared_ptr<CommunicatorNode> node)
+bool CommandParser::parseMultiServoCommand(std::string commandType, std::string command)
 {
     if (commandType != "multiServo")
     {
@@ -103,7 +103,7 @@ bool CommandParser::parseMultiServoCommand(std::string commandType, std::string 
     return true;
 }
 
-bool CommandParser::parseStopCommand(std::string commandType, std::shared_ptr<CommunicatorNode> node)
+bool CommandParser::parseStopCommand(std::string commandType)
 {
     if (commandType != "stop")
     {
@@ -114,7 +114,7 @@ bool CommandParser::parseStopCommand(std::string commandType, std::shared_ptr<Co
     return true;
 }
 
-bool CommandParser::parseStartCommand(std::string commandType, std::shared_ptr<CommunicatorNode> node)
+bool CommandParser::parseStartCommand(std::string commandType)
 {
     if (commandType != "start")
     {
@@ -125,7 +125,7 @@ bool CommandParser::parseStartCommand(std::string commandType, std::shared_ptr<C
     return true;
 }
 
-bool CommandParser::parseProgrammedPositionCommand(std::string commandType, std::string command, std::shared_ptr<CommunicatorNode> node)
+bool CommandParser::parseProgrammedPositionCommand(std::string commandType, std::string command)
 {
     if (commandType != "programmedPosition")
     {
@@ -144,7 +144,7 @@ bool CommandParser::parseProgrammedPositionCommand(std::string commandType, std:
     return true;
 }
 
-bool CommandParser::parseSkipCommand(std::string commandType, std::shared_ptr<CommunicatorNode> node)
+bool CommandParser::parseSkipCommand(std::string commandType)
 {
     if (commandType != "skip")
     {
@@ -239,5 +239,16 @@ bool CommandParser::getSingleServoCommandArguments(std::string commandArguments,
     servoNumber = std::stoi(servoNumberString);
     angle = std::stoi(angleString);
 
+    return true;
+}
+
+bool CommandParser::parseEmptyQueueCommand(std::string commandType)
+{
+    if (commandType != "emptyQueue")
+    {
+        return false;
+    }
+
+    communicatorNode_->sendEmptyQueueCommand();
     return true;
 }

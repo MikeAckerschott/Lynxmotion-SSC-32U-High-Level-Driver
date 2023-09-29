@@ -22,6 +22,9 @@ HighLevelNode::HighLevelNode() : Node("high_level_client"), serial_(ioservice, "
   skipService = create_service<msg_srv::srv::Skip>("skip", std::bind(&HighLevelNode::handleSkip, this,
                                                                      std::placeholders::_1, std::placeholders::_2));
 
+  emptyQueueService = create_service<msg_srv::srv::EmptyQueue>("empty_queue", std::bind(&HighLevelNode::handleEmptyQueue, this,
+                                                                                        std::placeholders::_1, std::placeholders::_2));
+
   context = new Context(new idleState, serial_, get_logger());
 
   timer_ = create_wall_timer(std::chrono::milliseconds(10), [this]()
@@ -55,7 +58,7 @@ void HighLevelNode::handleSkip(const std::shared_ptr<msg_srv::srv::Skip::Request
                                const std::shared_ptr<msg_srv::srv::Skip::Response> response)
 {
   RCLCPP_DEBUG(get_logger(), "EVENT: {Skip}");
-      LowLevelServer::stopCurrentMovement(serial_);
+  LowLevelServer::stopCurrentMovement(serial_);
 
   context->skipCommandReceived = true;
   if (context->commandQueue_.empty())
@@ -191,4 +194,18 @@ void HighLevelNode::handleProgrammedPosition(const std::shared_ptr<msg_srv::srv:
   Command command(commandAsString, serial_);
   context->commandQueue_.push(command);
   response->finished = true;
+}
+
+void HighLevelNode::handleEmptyQueue(const std::shared_ptr<msg_srv::srv::EmptyQueue::Request> request,
+                                     const std::shared_ptr<msg_srv::srv::EmptyQueue::Response> response)
+{
+  RCLCPP_DEBUG(get_logger(), "EVENT: {Empty queue}");
+  context->emptyQueueCommandReceived = true;
+
+  if(context->commandQueue_.empty()){
+    response->empty = true;
+    return;
+  }
+
+  response->empty = false;
 }

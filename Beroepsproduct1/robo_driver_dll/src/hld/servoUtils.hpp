@@ -109,6 +109,11 @@ static double degreesToPwm(int servo, double degrees);
  */
 static bool verifyServoConstraints(short servo, double degrees);
 
+/**
+ * @brief converts a string to a SingleServoCommand::movementType
+ * @param movementType The string to convert
+ * @returns The SingleServoCommand::movementType
+ */
 static SingleServoCommand::movementType getMovementType(std::string movementType);
 }
 ;
