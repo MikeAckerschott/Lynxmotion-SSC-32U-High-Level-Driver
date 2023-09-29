@@ -36,7 +36,7 @@ void CommunicatorNode::sendSingleServoCommand(int servo, int angle, int movement
     request_->position.movement = movement;
     request_->position.movement_type = movementType;
 
-    RCLCPP_INFO(this->get_logger(), "Sending single servo command: servo: %d, angle: %llu, movement: %llu, movementType: %s", servo, angle, movement, movementType.c_str());
+    RCLCPP_INFO(this->get_logger(), "Sending single servo command: servo: %d, angle: %u, movement: %u, movementType: %s", servo, angle, movement, movementType.c_str());
 
     auto result = singleServoClient_->async_send_request(request_);
     // Wait for the result.

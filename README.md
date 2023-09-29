@@ -6,10 +6,6 @@ Dit project bestaat uit 2 packages, namelijk msg_srv (de custom service en messa
 
 * Voer het volgende commando uit in de directory /Beroepsproduct1:
 
-colcon build
-
-* Als dit niet werkt, bouw dan de packages apart:
-
 colcon build --packages-select msg_srv
 
 colcon build --packages-select robo_driver_dll

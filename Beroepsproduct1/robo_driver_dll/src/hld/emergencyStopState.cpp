@@ -33,4 +33,5 @@ bool emergencyStopState::checkAllTriggers()
         context_->TransitionTo(new idleState);
         return true;
     }
+    return false;
 }
