@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_command.html" title="Defines the syntax for a command to be sent over the serial port." alt="" coords="5,31,95,57"/>
+<area shape="rect" id="node2" href="$class_multi_servo_command.html" title=" " alt="" coords="147,5,305,32"/>
+<area shape="rect" id="node3" href="$class_single_servo_command.html" title="Defines the syntax for a single servo command to be sent over the serial port." alt="" coords="143,56,309,83"/>
+</map>

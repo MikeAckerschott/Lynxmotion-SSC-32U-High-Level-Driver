@@ -1,0 +1,13 @@
+<map id="Command::sendCommand" name="Command::sendCommand">
+<area shape="rect" id="node1" title="Sends the command over the serial port." alt="" coords="913,130,1108,157"/>
+<area shape="rect" id="node2" href="$class_low_level_server.html#abc339034906bb5d8c165b36e574d51a3" title="Moves the robotic arm to the given position." alt="" coords="604,5,865,47"/>
+<area shape="rect" id="node3" href="$classmoving_state.html#a02c2c049d9b9bc9fa328fe437d70623c" title="A trigger that checks if the current movement is done." alt="" coords="631,71,838,98"/>
+<area shape="rect" id="node6" href="$class_low_level_server.html#aaf1e77131e23b9f6c0dc8b9252877067" title="Sends a multiServoCommand to the robotic arm." alt="" coords="633,123,837,164"/>
+<area shape="rect" id="node7" href="$class_low_level_server.html#a688fbb218c1e1d6e5d41b48bfa892da6" title="Sends a singleServoRequest to the robotic arm." alt="" coords="630,188,839,229"/>
+<area shape="rect" id="node8" href="$class_low_level_server.html#ada55b21589332cf88b874296d97216a9" title="Stops the current movement of the robotic arm." alt="" coords="630,253,839,295"/>
+<area shape="rect" id="node4" href="$classmoving_state.html#ad452c7d68f97db66435ea99e0853bebf" title="Checks if any trigger is activated." alt="" coords="309,153,528,179"/>
+<area shape="rect" id="node5" href="$classmoving_state.html#a557fe2d861f3f93ad9de3d358bde6d16" title="function that is called as long as the state is active" alt="" coords="348,71,489,98"/>
+<area shape="rect" id="node9" href="$class_high_level_node.html#a415357f182894852d8ebdb6dd35a2516" title="Handles client request for an emergency stop and stops all servos." alt="" coords="281,235,556,262"/>
+<area shape="rect" id="node11" href="$class_high_level_node.html#a375dcb80d3b27baff41728ad5ba1cf89" title="Handles client request for a skip command and skips the next command in the queue if the request is v..." alt="" coords="318,286,519,313"/>
+<area shape="rect" id="node10" href="$class_high_level_node.html#aa27678104d27de84f3b27f4a9d5f0f22" title="Constructor." alt="" coords="5,261,233,287"/>
+</map>

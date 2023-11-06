@@ -87,11 +87,10 @@ static std::vector<RangeOfMotion> servoRanges;
 
 /**
  * @brief converts the pwm duration to degrees
- * @param servo The servo number
  * @param pwmDurationUs The pwm duration in microseconds
  * @returns The degrees
  */
-static double pwmToDegrees(int servo, int pwmDurationUs);
+static double pwmToDegrees(int pwmDurationUs);
 
 /**
  * @brief converts the degrees to pwm duration
@@ -109,6 +108,11 @@ static double degreesToPwm(int servo, double degrees);
  */
 static bool verifyServoConstraints(short servo, double degrees);
 
+/**
+ * @brief converts a string to a SingleServoCommand::movementType
+ * @param movementType The string to convert
+ * @returns The SingleServoCommand::movementType
+ */
 static SingleServoCommand::movementType getMovementType(std::string movementType);
 }
 ;

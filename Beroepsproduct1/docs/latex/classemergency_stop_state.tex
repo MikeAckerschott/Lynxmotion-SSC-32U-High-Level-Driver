@@ -1,0 +1,188 @@
+\hypertarget{classemergency_stop_state}{}\doxysection{emergency\+Stop\+State Class Reference}
+\label{classemergency_stop_state}\index{emergencyStopState@{emergencyStopState}}
+
+
+The \mbox{\hyperlink{classemergency_stop_state}{emergency\+Stop\+State}} class is used to handle the emergency stop state of the robotic arm.  
+
+
+
+
+{\ttfamily \#include $<$emergency\+Stop\+State.\+hpp$>$}
+
+
+
+Inheritance diagram for emergency\+Stop\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classemergency_stop_state__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for emergency\+Stop\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classemergency_stop_state__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classemergency_stop_state_acc3640fc7b6849d8a73187b268dc86c3}{emergency\+Stop\+State}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classemergency_stop_state_a462eb33cdc57efa5db351f210acf9fcb}{f\+\_\+entry}} () override
+\begin{DoxyCompactList}\small\item\em function that is called when the state is entered \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classemergency_stop_state_ac3640b7006f1383fe732b87e58a2d703}{f\+\_\+do}} () override
+\begin{DoxyCompactList}\small\item\em function that is called as long as the state is active \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classemergency_stop_state_abb5c3685c2ea260099dc5d6b1ab06d64}{f\+\_\+exit}} () override
+\begin{DoxyCompactList}\small\item\em function that is called when the state is exited \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classemergency_stop_state_a612b7b807a3d96c9a2fb9faf54e9faf1}{check\+All\+Triggers}} () override
+\begin{DoxyCompactList}\small\item\em Checks if any trigger is activated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classemergency_stop_state_a3e0ea8ee8ced2ad936c974efa4df733e}{deactivate\+Emergency\+Stop\+Received}} ()
+\begin{DoxyCompactList}\small\item\em A trigger that checks if the emergency stop has been deactivated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classemergency_stop_state}{emergency\+Stop\+State}} class is used to handle the emergency stop state of the robotic arm. 
+
+Definition at line 18 of file emergency\+Stop\+State.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classemergency_stop_state_acc3640fc7b6849d8a73187b268dc86c3}\label{classemergency_stop_state_acc3640fc7b6849d8a73187b268dc86c3}} 
+\index{emergencyStopState@{emergencyStopState}!emergencyStopState@{emergencyStopState}}
+\index{emergencyStopState@{emergencyStopState}!emergencyStopState@{emergencyStopState}}
+\doxysubsubsection{\texorpdfstring{emergencyStopState()}{emergencyStopState()}}
+{\footnotesize\ttfamily emergency\+Stop\+State\+::emergency\+Stop\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 10 of file emergency\+Stop\+State.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classemergency_stop_state_a612b7b807a3d96c9a2fb9faf54e9faf1}\label{classemergency_stop_state_a612b7b807a3d96c9a2fb9faf54e9faf1}} 
+\index{emergencyStopState@{emergencyStopState}!checkAllTriggers@{checkAllTriggers}}
+\index{checkAllTriggers@{checkAllTriggers}!emergencyStopState@{emergencyStopState}}
+\doxysubsubsection{\texorpdfstring{checkAllTriggers()}{checkAllTriggers()}}
+{\footnotesize\ttfamily bool emergency\+Stop\+State\+::check\+All\+Triggers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if any trigger is activated. 
+
+\begin{DoxyReturn}{Returns}
+True if the state should be exited, false if not 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_state_a90c076865d9796423edd2175fed41cea}{State}}.
+
+
+
+Definition at line 30 of file emergency\+Stop\+State.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classemergency_stop_state_a612b7b807a3d96c9a2fb9faf54e9faf1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classemergency_stop_state_a3e0ea8ee8ced2ad936c974efa4df733e}\label{classemergency_stop_state_a3e0ea8ee8ced2ad936c974efa4df733e}} 
+\index{emergencyStopState@{emergencyStopState}!deactivateEmergencyStopReceived@{deactivateEmergencyStopReceived}}
+\index{deactivateEmergencyStopReceived@{deactivateEmergencyStopReceived}!emergencyStopState@{emergencyStopState}}
+\doxysubsubsection{\texorpdfstring{deactivateEmergencyStopReceived()}{deactivateEmergencyStopReceived()}}
+{\footnotesize\ttfamily bool emergency\+Stop\+State\+::deactivate\+Emergency\+Stop\+Received (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A trigger that checks if the emergency stop has been deactivated. 
+
+\begin{DoxyReturn}{Returns}
+True if the state should be exited, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 25 of file emergency\+Stop\+State.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classemergency_stop_state_a3e0ea8ee8ced2ad936c974efa4df733e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classemergency_stop_state_ac3640b7006f1383fe732b87e58a2d703}\label{classemergency_stop_state_ac3640b7006f1383fe732b87e58a2d703}} 
+\index{emergencyStopState@{emergencyStopState}!f\_do@{f\_do}}
+\index{f\_do@{f\_do}!emergencyStopState@{emergencyStopState}}
+\doxysubsubsection{\texorpdfstring{f\_do()}{f\_do()}}
+{\footnotesize\ttfamily void emergency\+Stop\+State\+::f\+\_\+do (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+function that is called as long as the state is active 
+
+
+
+Implements \mbox{\hyperlink{class_state_a5b19102546d294f537bcb8fa7e45c760}{State}}.
+
+
+
+Definition at line 14 of file emergency\+Stop\+State.\+cpp.
+
+\mbox{\Hypertarget{classemergency_stop_state_a462eb33cdc57efa5db351f210acf9fcb}\label{classemergency_stop_state_a462eb33cdc57efa5db351f210acf9fcb}} 
+\index{emergencyStopState@{emergencyStopState}!f\_entry@{f\_entry}}
+\index{f\_entry@{f\_entry}!emergencyStopState@{emergencyStopState}}
+\doxysubsubsection{\texorpdfstring{f\_entry()}{f\_entry()}}
+{\footnotesize\ttfamily void emergency\+Stop\+State\+::f\+\_\+entry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+function that is called when the state is entered 
+
+
+
+Implements \mbox{\hyperlink{class_state_a3527189c052a46ea76801906829c43df}{State}}.
+
+
+
+Definition at line 3 of file emergency\+Stop\+State.\+cpp.
+
+\mbox{\Hypertarget{classemergency_stop_state_abb5c3685c2ea260099dc5d6b1ab06d64}\label{classemergency_stop_state_abb5c3685c2ea260099dc5d6b1ab06d64}} 
+\index{emergencyStopState@{emergencyStopState}!f\_exit@{f\_exit}}
+\index{f\_exit@{f\_exit}!emergencyStopState@{emergencyStopState}}
+\doxysubsubsection{\texorpdfstring{f\_exit()}{f\_exit()}}
+{\footnotesize\ttfamily void emergency\+Stop\+State\+::f\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+function that is called when the state is exited 
+
+
+
+Implements \mbox{\hyperlink{class_state_aca588de032e98a660f340fa45b20b82c}{State}}.
+
+
+
+Definition at line 18 of file emergency\+Stop\+State.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/hld/\mbox{\hyperlink{emergency_stop_state_8hpp}{emergency\+Stop\+State.\+hpp}}\item 
+src/hld/\mbox{\hyperlink{emergency_stop_state_8cpp}{emergency\+Stop\+State.\+cpp}}\end{DoxyCompactItemize}

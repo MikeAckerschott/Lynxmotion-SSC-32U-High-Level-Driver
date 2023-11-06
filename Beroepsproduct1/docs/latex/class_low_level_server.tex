@@ -1,0 +1,156 @@
+\hypertarget{class_low_level_server}{}\doxysection{Low\+Level\+Server Class Reference}
+\label{class_low_level_server}\index{LowLevelServer@{LowLevelServer}}
+
+
+Dynamically linked libray used by the HLD that implements the basic functionality of the robotic arm.  
+
+
+
+
+{\ttfamily \#include $<$low\+Level\+Server.\+hpp$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_low_level_server_a688fbb218c1e1d6e5d41b48bfa892da6}{single\+Servo\+Request}} (\mbox{\hyperlink{class_single_servo_command}{Single\+Servo\+Command}} command)
+\begin{DoxyCompactList}\small\item\em Sends a single\+Servo\+Request to the robotic arm. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_low_level_server_aaf1e77131e23b9f6c0dc8b9252877067}{multi\+Servo\+Request}} (\mbox{\hyperlink{class_multi_servo_command}{Multi\+Servo\+Command}} command)
+\begin{DoxyCompactList}\small\item\em Sends a multi\+Servo\+Command to the robotic arm. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_low_level_server_ada55b21589332cf88b874296d97216a9}{stop\+Current\+Movement}} (boost\+::asio\+::serial\+\_\+port \&serial\+\_\+)
+\begin{DoxyCompactList}\small\item\em Stops the current movement of the robotic arm. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_low_level_server_abc339034906bb5d8c165b36e574d51a3}{handle\+Programmed\+Position}} (std\+::string position, boost\+::asio\+::serial\+\_\+port \&serial\+\_\+)
+\begin{DoxyCompactList}\small\item\em Moves the robotic arm to the given position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Dynamically linked libray used by the HLD that implements the basic functionality of the robotic arm. 
+
+Definition at line 34 of file low\+Level\+Server.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_low_level_server_abc339034906bb5d8c165b36e574d51a3}\label{class_low_level_server_abc339034906bb5d8c165b36e574d51a3}} 
+\index{LowLevelServer@{LowLevelServer}!handleProgrammedPosition@{handleProgrammedPosition}}
+\index{handleProgrammedPosition@{handleProgrammedPosition}!LowLevelServer@{LowLevelServer}}
+\doxysubsubsection{\texorpdfstring{handleProgrammedPosition()}{handleProgrammedPosition()}}
+{\footnotesize\ttfamily void Low\+Level\+Server\+::handle\+Programmed\+Position (\begin{DoxyParamCaption}\item[{std\+::string}]{position,  }\item[{boost\+::asio\+::serial\+\_\+port \&}]{serial\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Moves the robotic arm to the given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position the robotic arm needs to move to \\
+\hline
+{\em serial\+\_\+} & The serial port that is used to communicate with the robotic arm \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 26 of file low\+Level\+Server.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_low_level_server_abc339034906bb5d8c165b36e574d51a3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_low_level_server_aaf1e77131e23b9f6c0dc8b9252877067}\label{class_low_level_server_aaf1e77131e23b9f6c0dc8b9252877067}} 
+\index{LowLevelServer@{LowLevelServer}!multiServoRequest@{multiServoRequest}}
+\index{multiServoRequest@{multiServoRequest}!LowLevelServer@{LowLevelServer}}
+\doxysubsubsection{\texorpdfstring{multiServoRequest()}{multiServoRequest()}}
+{\footnotesize\ttfamily void Low\+Level\+Server\+::multi\+Servo\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_multi_servo_command}{Multi\+Servo\+Command}}}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sends a multi\+Servo\+Command to the robotic arm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command that needs to be send to the robotic arm \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 12 of file low\+Level\+Server.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_low_level_server_aaf1e77131e23b9f6c0dc8b9252877067_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_low_level_server_a688fbb218c1e1d6e5d41b48bfa892da6}\label{class_low_level_server_a688fbb218c1e1d6e5d41b48bfa892da6}} 
+\index{LowLevelServer@{LowLevelServer}!singleServoRequest@{singleServoRequest}}
+\index{singleServoRequest@{singleServoRequest}!LowLevelServer@{LowLevelServer}}
+\doxysubsubsection{\texorpdfstring{singleServoRequest()}{singleServoRequest()}}
+{\footnotesize\ttfamily void Low\+Level\+Server\+::single\+Servo\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_single_servo_command}{Single\+Servo\+Command}}}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sends a single\+Servo\+Request to the robotic arm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command that needs to be send to the robotic arm \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 7 of file low\+Level\+Server.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_low_level_server_a688fbb218c1e1d6e5d41b48bfa892da6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_low_level_server_ada55b21589332cf88b874296d97216a9}\label{class_low_level_server_ada55b21589332cf88b874296d97216a9}} 
+\index{LowLevelServer@{LowLevelServer}!stopCurrentMovement@{stopCurrentMovement}}
+\index{stopCurrentMovement@{stopCurrentMovement}!LowLevelServer@{LowLevelServer}}
+\doxysubsubsection{\texorpdfstring{stopCurrentMovement()}{stopCurrentMovement()}}
+{\footnotesize\ttfamily void Low\+Level\+Server\+::stop\+Current\+Movement (\begin{DoxyParamCaption}\item[{boost\+::asio\+::serial\+\_\+port \&}]{serial\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Stops the current movement of the robotic arm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em serial\+\_\+} & The serial port that is used to communicate with the robotic arm \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 17 of file low\+Level\+Server.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_low_level_server_ada55b21589332cf88b874296d97216a9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_low_level_server_ada55b21589332cf88b874296d97216a9_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lld/\mbox{\hyperlink{low_level_server_8hpp}{low\+Level\+Server.\+hpp}}\item 
+src/lld/\mbox{\hyperlink{low_level_server_8cpp}{low\+Level\+Server.\+cpp}}\end{DoxyCompactItemize}

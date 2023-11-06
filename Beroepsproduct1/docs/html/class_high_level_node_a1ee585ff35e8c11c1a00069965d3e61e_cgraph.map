@@ -1,0 +1,5 @@
+<map id="HighLevelNode::handleSingleServoServiceRequest" name="HighLevelNode::handleSingleServoServiceRequest">
+<area shape="rect" id="node1" title="Handles client request for a single servo command and moves the selected servo if the request is vali..." alt="" coords="5,23,219,65"/>
+<area shape="rect" id="node2" href="$class_servo_utils.html#a175834b1c0a10247cc57f2c6aa1037b6" title="converts the degrees to pwm duration" alt="" coords="292,5,487,32"/>
+<area shape="rect" id="node3" href="$class_servo_utils.html#ac0afe8fdd8e145286c907e3c326aa202" title="verifies if the servo number and degrees are within the range of motion" alt="" coords="267,56,512,83"/>
+</map>

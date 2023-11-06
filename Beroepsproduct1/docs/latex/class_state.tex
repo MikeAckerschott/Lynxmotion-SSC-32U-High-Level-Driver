@@ -1,0 +1,214 @@
+\hypertarget{class_state}{}\doxysection{State Class Reference}
+\label{class_state}\index{State@{State}}
+
+
+{\ttfamily \#include $<$state.\+hpp$>$}
+
+
+
+Inheritance diagram for State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_state__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{class_state__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_state_afab438d92b90dc18d194dbd9c9c8bab3}{$\sim$\+State}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_state_acbbc4fabc40feae214fcd4a4e5680b9b}{set\+\_\+context}} (\mbox{\hyperlink{class_context}{Context}} $\ast$context)
+\begin{DoxyCompactList}\small\item\em Sets the context. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_state_a90c076865d9796423edd2175fed41cea}{check\+All\+Triggers}} ()=0
+\begin{DoxyCompactList}\small\item\em Checks if any trigger is activated. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_state_a3527189c052a46ea76801906829c43df}{f\+\_\+entry}} ()=0
+\begin{DoxyCompactList}\small\item\em function that is called when the state is entered \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_state_a5b19102546d294f537bcb8fa7e45c760}{f\+\_\+do}} ()=0
+\begin{DoxyCompactList}\small\item\em function that is called as long as the state is active \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_state_aca588de032e98a660f340fa45b20b82c}{f\+\_\+exit}} ()=0
+\begin{DoxyCompactList}\small\item\em function that is called when the state is exited \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_context}{Context}} $\ast$ \mbox{\hyperlink{class_state_a31131aea2f74d35fc3aee6ebad866528}{context\+\_\+}}
+\begin{DoxyCompactList}\small\item\em the context that is used to transition between states \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 10 of file state.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_state_afab438d92b90dc18d194dbd9c9c8bab3}\label{class_state_afab438d92b90dc18d194dbd9c9c8bab3}} 
+\index{State@{State}!````~State@{$\sim$State}}
+\index{````~State@{$\sim$State}!State@{State}}
+\doxysubsubsection{\texorpdfstring{$\sim$State()}{~State()}}
+{\footnotesize\ttfamily State\+::$\sim$\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 3 of file state.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_state_a90c076865d9796423edd2175fed41cea}\label{class_state_a90c076865d9796423edd2175fed41cea}} 
+\index{State@{State}!checkAllTriggers@{checkAllTriggers}}
+\index{checkAllTriggers@{checkAllTriggers}!State@{State}}
+\doxysubsubsection{\texorpdfstring{checkAllTriggers()}{checkAllTriggers()}}
+{\footnotesize\ttfamily virtual bool State\+::check\+All\+Triggers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Checks if any trigger is activated. 
+
+\begin{DoxyReturn}{Returns}
+True if the state should be exited, false if not 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classmoving_state_ad452c7d68f97db66435ea99e0853bebf}{moving\+State}}, \mbox{\hyperlink{classidle_state_a105ec4f03b14a3b85b809d3c7f90844d}{idle\+State}}, and \mbox{\hyperlink{classemergency_stop_state_a612b7b807a3d96c9a2fb9faf54e9faf1}{emergency\+Stop\+State}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_state_a90c076865d9796423edd2175fed41cea_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_state_a5b19102546d294f537bcb8fa7e45c760}\label{class_state_a5b19102546d294f537bcb8fa7e45c760}} 
+\index{State@{State}!f\_do@{f\_do}}
+\index{f\_do@{f\_do}!State@{State}}
+\doxysubsubsection{\texorpdfstring{f\_do()}{f\_do()}}
+{\footnotesize\ttfamily virtual void State\+::f\+\_\+do (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+function that is called as long as the state is active 
+
+
+
+Implemented in \mbox{\hyperlink{classmoving_state_a557fe2d861f3f93ad9de3d358bde6d16}{moving\+State}}, \mbox{\hyperlink{classidle_state_ac774bf4b3e25b3050d5373348dad55f8}{idle\+State}}, and \mbox{\hyperlink{classemergency_stop_state_ac3640b7006f1383fe732b87e58a2d703}{emergency\+Stop\+State}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_state_a5b19102546d294f537bcb8fa7e45c760_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_state_a3527189c052a46ea76801906829c43df}\label{class_state_a3527189c052a46ea76801906829c43df}} 
+\index{State@{State}!f\_entry@{f\_entry}}
+\index{f\_entry@{f\_entry}!State@{State}}
+\doxysubsubsection{\texorpdfstring{f\_entry()}{f\_entry()}}
+{\footnotesize\ttfamily virtual void State\+::f\+\_\+entry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+function that is called when the state is entered 
+
+
+
+Implemented in \mbox{\hyperlink{classmoving_state_adc1a27611fd8d18186941f26591bae1f}{moving\+State}}, \mbox{\hyperlink{classidle_state_ad9099d04f1d7132209b506d31410c1cc}{idle\+State}}, and \mbox{\hyperlink{classemergency_stop_state_a462eb33cdc57efa5db351f210acf9fcb}{emergency\+Stop\+State}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_state_a3527189c052a46ea76801906829c43df_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_state_aca588de032e98a660f340fa45b20b82c}\label{class_state_aca588de032e98a660f340fa45b20b82c}} 
+\index{State@{State}!f\_exit@{f\_exit}}
+\index{f\_exit@{f\_exit}!State@{State}}
+\doxysubsubsection{\texorpdfstring{f\_exit()}{f\_exit()}}
+{\footnotesize\ttfamily virtual void State\+::f\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+function that is called when the state is exited 
+
+
+
+Implemented in \mbox{\hyperlink{classmoving_state_a2fdaaccfe906bd352e616b30e669f127}{moving\+State}}, \mbox{\hyperlink{classidle_state_ac84e578c2bac02b6bccc35ac2509fe1b}{idle\+State}}, and \mbox{\hyperlink{classemergency_stop_state_abb5c3685c2ea260099dc5d6b1ab06d64}{emergency\+Stop\+State}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_state_aca588de032e98a660f340fa45b20b82c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_state_acbbc4fabc40feae214fcd4a4e5680b9b}\label{class_state_acbbc4fabc40feae214fcd4a4e5680b9b}} 
+\index{State@{State}!set\_context@{set\_context}}
+\index{set\_context@{set\_context}!State@{State}}
+\doxysubsubsection{\texorpdfstring{set\_context()}{set\_context()}}
+{\footnotesize\ttfamily void State\+::set\+\_\+context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_context}{Context}} $\ast$}]{context }\end{DoxyParamCaption})}
+
+
+
+Sets the context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & The context \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 7 of file state.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_state_acbbc4fabc40feae214fcd4a4e5680b9b_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_state_a31131aea2f74d35fc3aee6ebad866528}\label{class_state_a31131aea2f74d35fc3aee6ebad866528}} 
+\index{State@{State}!context\_@{context\_}}
+\index{context\_@{context\_}!State@{State}}
+\doxysubsubsection{\texorpdfstring{context\_}{context\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_context}{Context}}$\ast$ State\+::context\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+the context that is used to transition between states 
+
+
+
+Definition at line 17 of file state.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/hld/\mbox{\hyperlink{state_8hpp}{state.\+hpp}}\item 
+src/hld/\mbox{\hyperlink{state_8cpp}{state.\+cpp}}\end{DoxyCompactItemize}

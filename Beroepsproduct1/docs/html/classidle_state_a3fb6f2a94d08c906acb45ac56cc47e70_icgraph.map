@@ -1,0 +1,4 @@
+<map id="idleState::movementQueueNotEmpty" name="idleState::movementQueueNotEmpty">
+<area shape="rect" id="node1" title="A trigger that checks if the movement queue is not empty." alt="" coords="248,5,449,47"/>
+<area shape="rect" id="node2" href="$classidle_state.html#a105ec4f03b14a3b85b809d3c7f90844d" title="Checks if any trigger is activated." alt="" coords="5,13,200,39"/>
+</map>

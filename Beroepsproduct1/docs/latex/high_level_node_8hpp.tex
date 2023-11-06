@@ -1,0 +1,56 @@
+\hypertarget{high_level_node_8hpp}{}\doxysection{src/hld/high\+Level\+Node.hpp File Reference}
+\label{high_level_node_8hpp}\index{src/hld/highLevelNode.hpp@{src/hld/highLevelNode.hpp}}
+
+
+Contains the \mbox{\hyperlink{class_high_level_node}{High\+Level\+Node}} class that sends commands to the low level driver based on the input from the CLI.  
+
+
+{\ttfamily \#include \char`\"{}rclcpp/rclcpp.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}msg\+\_\+srv/srv/single\+\_\+servo\+\_\+command.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}msg\+\_\+srv/srv/multi\+\_\+servo\+\_\+command.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}msg\+\_\+srv/srv/emergency\+\_\+stop.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}msg\+\_\+srv/srv/move\+\_\+to\+\_\+position.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}msg\+\_\+srv/srv/skip.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}msg\+\_\+srv/srv/empty\+\_\+queue.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}msg\+\_\+srv/msg/move.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}msg\+\_\+srv/msg/servo\+\_\+command.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}msg\+\_\+srv/msg/programmed\+\_\+position.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../lld/command.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../lld/single\+Servo\+Command.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../lld/multi\+Servo\+Command.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../lld/low\+Level\+Server.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../lld/command\+Utils.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}servo\+Utils.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}context.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}idle\+State.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+Include dependency graph for high\+Level\+Node.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{high_level_node_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{high_level_node_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_high_level_node}{High\+Level\+Node}}
+\begin{DoxyCompactList}\small\item\em Sends commands to robotic arm based on input from the CLI. Uses the low level driver to send commands to the robotic arm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains the \mbox{\hyperlink{class_high_level_node}{High\+Level\+Node}} class that sends commands to the low level driver based on the input from the CLI. 
+

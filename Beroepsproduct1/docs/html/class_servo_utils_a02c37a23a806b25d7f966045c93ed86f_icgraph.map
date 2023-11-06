@@ -1,0 +1,5 @@
+<map id="ServoUtils::getMovementType" name="ServoUtils::getMovementType">
+<area shape="rect" id="node1" title="converts a string to a SingleServoCommand::movementType" alt="" coords="536,13,755,39"/>
+<area shape="rect" id="node2" href="$class_high_level_node.html#a61a0334988c480c6b5eea17452587c03" title="Handles client request for a multi servo command and moves the selected servos if the request is vali..." alt="" coords="281,5,488,47"/>
+<area shape="rect" id="node3" href="$class_high_level_node.html#aa27678104d27de84f3b27f4a9d5f0f22" title="Constructor." alt="" coords="5,13,233,39"/>
+</map>

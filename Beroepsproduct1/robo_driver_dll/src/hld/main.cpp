@@ -4,6 +4,9 @@
 
 #include "msg_srv/srv/single_servo_command.hpp"
 
+// TODO remove after testing
+#include "../lld/command.hpp"
+
 #include <chrono>
 #include <cstdlib>
 #include <iostream>
@@ -20,5 +23,6 @@ int main(int argc, char **argv)
   rclcpp::spin(highLevelServer);
 
   rclcpp::shutdown();
+
   return 0;
 }

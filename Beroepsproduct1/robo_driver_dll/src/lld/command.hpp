@@ -27,6 +27,8 @@ public:
    */
   Command(std::string command, boost::asio::serial_port &serial);
 
+  char readMostRecentChar();
+
   /**
    * @brief Destructor
    */

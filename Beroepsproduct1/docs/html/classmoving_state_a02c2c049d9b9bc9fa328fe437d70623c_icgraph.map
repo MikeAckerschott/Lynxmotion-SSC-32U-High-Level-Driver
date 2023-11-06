@@ -1,0 +1,5 @@
+<map id="movingState::isMovingDone" name="movingState::isMovingDone">
+<area shape="rect" id="node1" title="A trigger that checks if the current movement is done." alt="" coords="272,31,479,57"/>
+<area shape="rect" id="node2" href="$classmoving_state.html#ad452c7d68f97db66435ea99e0853bebf" title="Checks if any trigger is activated." alt="" coords="5,5,224,32"/>
+<area shape="rect" id="node3" href="$classmoving_state.html#a557fe2d861f3f93ad9de3d358bde6d16" title="function that is called as long as the state is active" alt="" coords="44,56,185,83"/>
+</map>

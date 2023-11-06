@@ -1,0 +1,272 @@
+\hypertarget{classidle_state}{}\doxysection{idle\+State Class Reference}
+\label{classidle_state}\index{idleState@{idleState}}
+
+
+The \mbox{\hyperlink{classidle_state}{idle\+State}} class is used to handle the idle state of the robotic arm.  
+
+
+
+
+{\ttfamily \#include $<$idle\+State.\+hpp$>$}
+
+
+
+Inheritance diagram for idle\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=140pt]{classidle_state__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for idle\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{classidle_state__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classidle_state_af792a7828b73ab4ea1358917077ff115}{idle\+State}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classidle_state_ad9099d04f1d7132209b506d31410c1cc}{f\+\_\+entry}} () override
+\begin{DoxyCompactList}\small\item\em function that is called when the state is entered \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classidle_state_ac774bf4b3e25b3050d5373348dad55f8}{f\+\_\+do}} () override
+\begin{DoxyCompactList}\small\item\em function that is called as long as the state is active \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classidle_state_ac84e578c2bac02b6bccc35ac2509fe1b}{f\+\_\+exit}} () override
+\begin{DoxyCompactList}\small\item\em function that is called when the state is exited \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classidle_state_a105ec4f03b14a3b85b809d3c7f90844d}{check\+All\+Triggers}} () override
+\begin{DoxyCompactList}\small\item\em Checks if any trigger is activated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classidle_state_ad61f6738369dbe91a9f4e482f8c80292}{single\+Servo\+Command\+Received}} ()
+\begin{DoxyCompactList}\small\item\em A trigger that checks if a single servo command has been received. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classidle_state_a29e3df389e3b43ef2905957d65a33259}{multi\+Servo\+Command\+Received}} ()
+\begin{DoxyCompactList}\small\item\em A trigger that checks if a multi servo command has been received. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classidle_state_a7c63358543cabf867f4e769d25e73d00}{emergency\+Stop\+Received}} ()
+\begin{DoxyCompactList}\small\item\em A trigger that checks if an emergency stop has been received. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classidle_state_a9ff21c46cdf28e106de3026d19ddc701}{programmed\+Position\+Command\+Received}} ()
+\begin{DoxyCompactList}\small\item\em A trigger that checks if a programmed position command has been received. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classidle_state_a3fb6f2a94d08c906acb45ac56cc47e70}{movement\+Queue\+Not\+Empty}} ()
+\begin{DoxyCompactList}\small\item\em A trigger that checks if the movement queue is not empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classidle_state}{idle\+State}} class is used to handle the idle state of the robotic arm. 
+
+Definition at line 17 of file idle\+State.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classidle_state_af792a7828b73ab4ea1358917077ff115}\label{classidle_state_af792a7828b73ab4ea1358917077ff115}} 
+\index{idleState@{idleState}!idleState@{idleState}}
+\index{idleState@{idleState}!idleState@{idleState}}
+\doxysubsubsection{\texorpdfstring{idleState()}{idleState()}}
+{\footnotesize\ttfamily idle\+State\+::idle\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 10 of file idle\+State.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classidle_state_a105ec4f03b14a3b85b809d3c7f90844d}\label{classidle_state_a105ec4f03b14a3b85b809d3c7f90844d}} 
+\index{idleState@{idleState}!checkAllTriggers@{checkAllTriggers}}
+\index{checkAllTriggers@{checkAllTriggers}!idleState@{idleState}}
+\doxysubsubsection{\texorpdfstring{checkAllTriggers()}{checkAllTriggers()}}
+{\footnotesize\ttfamily bool idle\+State\+::check\+All\+Triggers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if any trigger is activated. 
+
+\begin{DoxyReturn}{Returns}
+True if the state should be exited, false if not 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_state_a90c076865d9796423edd2175fed41cea}{State}}.
+
+
+
+Definition at line 48 of file idle\+State.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classidle_state_a105ec4f03b14a3b85b809d3c7f90844d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classidle_state_a7c63358543cabf867f4e769d25e73d00}\label{classidle_state_a7c63358543cabf867f4e769d25e73d00}} 
+\index{idleState@{idleState}!emergencyStopReceived@{emergencyStopReceived}}
+\index{emergencyStopReceived@{emergencyStopReceived}!idleState@{idleState}}
+\doxysubsubsection{\texorpdfstring{emergencyStopReceived()}{emergencyStopReceived()}}
+{\footnotesize\ttfamily bool idle\+State\+::emergency\+Stop\+Received (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A trigger that checks if an emergency stop has been received. 
+
+\begin{DoxyReturn}{Returns}
+True if the state should be exited, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 33 of file idle\+State.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classidle_state_a7c63358543cabf867f4e769d25e73d00_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classidle_state_ac774bf4b3e25b3050d5373348dad55f8}\label{classidle_state_ac774bf4b3e25b3050d5373348dad55f8}} 
+\index{idleState@{idleState}!f\_do@{f\_do}}
+\index{f\_do@{f\_do}!idleState@{idleState}}
+\doxysubsubsection{\texorpdfstring{f\_do()}{f\_do()}}
+{\footnotesize\ttfamily void idle\+State\+::f\+\_\+do (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+function that is called as long as the state is active 
+
+
+
+Implements \mbox{\hyperlink{class_state_a5b19102546d294f537bcb8fa7e45c760}{State}}.
+
+
+
+Definition at line 14 of file idle\+State.\+cpp.
+
+\mbox{\Hypertarget{classidle_state_ad9099d04f1d7132209b506d31410c1cc}\label{classidle_state_ad9099d04f1d7132209b506d31410c1cc}} 
+\index{idleState@{idleState}!f\_entry@{f\_entry}}
+\index{f\_entry@{f\_entry}!idleState@{idleState}}
+\doxysubsubsection{\texorpdfstring{f\_entry()}{f\_entry()}}
+{\footnotesize\ttfamily void idle\+State\+::f\+\_\+entry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+function that is called when the state is entered 
+
+
+
+Implements \mbox{\hyperlink{class_state_a3527189c052a46ea76801906829c43df}{State}}.
+
+
+
+Definition at line 5 of file idle\+State.\+cpp.
+
+\mbox{\Hypertarget{classidle_state_ac84e578c2bac02b6bccc35ac2509fe1b}\label{classidle_state_ac84e578c2bac02b6bccc35ac2509fe1b}} 
+\index{idleState@{idleState}!f\_exit@{f\_exit}}
+\index{f\_exit@{f\_exit}!idleState@{idleState}}
+\doxysubsubsection{\texorpdfstring{f\_exit()}{f\_exit()}}
+{\footnotesize\ttfamily void idle\+State\+::f\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+function that is called when the state is exited 
+
+
+
+Implements \mbox{\hyperlink{class_state_aca588de032e98a660f340fa45b20b82c}{State}}.
+
+
+
+Definition at line 18 of file idle\+State.\+cpp.
+
+\mbox{\Hypertarget{classidle_state_a3fb6f2a94d08c906acb45ac56cc47e70}\label{classidle_state_a3fb6f2a94d08c906acb45ac56cc47e70}} 
+\index{idleState@{idleState}!movementQueueNotEmpty@{movementQueueNotEmpty}}
+\index{movementQueueNotEmpty@{movementQueueNotEmpty}!idleState@{idleState}}
+\doxysubsubsection{\texorpdfstring{movementQueueNotEmpty()}{movementQueueNotEmpty()}}
+{\footnotesize\ttfamily bool idle\+State\+::movement\+Queue\+Not\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A trigger that checks if the movement queue is not empty. 
+
+\begin{DoxyReturn}{Returns}
+True if the state should be exited, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 43 of file idle\+State.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classidle_state_a3fb6f2a94d08c906acb45ac56cc47e70_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classidle_state_a29e3df389e3b43ef2905957d65a33259}\label{classidle_state_a29e3df389e3b43ef2905957d65a33259}} 
+\index{idleState@{idleState}!multiServoCommandReceived@{multiServoCommandReceived}}
+\index{multiServoCommandReceived@{multiServoCommandReceived}!idleState@{idleState}}
+\doxysubsubsection{\texorpdfstring{multiServoCommandReceived()}{multiServoCommandReceived()}}
+{\footnotesize\ttfamily bool idle\+State\+::multi\+Servo\+Command\+Received (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A trigger that checks if a multi servo command has been received. 
+
+\begin{DoxyReturn}{Returns}
+True if the state should be exited, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 28 of file idle\+State.\+cpp.
+
+\mbox{\Hypertarget{classidle_state_a9ff21c46cdf28e106de3026d19ddc701}\label{classidle_state_a9ff21c46cdf28e106de3026d19ddc701}} 
+\index{idleState@{idleState}!programmedPositionCommandReceived@{programmedPositionCommandReceived}}
+\index{programmedPositionCommandReceived@{programmedPositionCommandReceived}!idleState@{idleState}}
+\doxysubsubsection{\texorpdfstring{programmedPositionCommandReceived()}{programmedPositionCommandReceived()}}
+{\footnotesize\ttfamily bool idle\+State\+::programmed\+Position\+Command\+Received (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A trigger that checks if a programmed position command has been received. 
+
+\begin{DoxyReturn}{Returns}
+True if the state should be exited, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 38 of file idle\+State.\+cpp.
+
+\mbox{\Hypertarget{classidle_state_ad61f6738369dbe91a9f4e482f8c80292}\label{classidle_state_ad61f6738369dbe91a9f4e482f8c80292}} 
+\index{idleState@{idleState}!singleServoCommandReceived@{singleServoCommandReceived}}
+\index{singleServoCommandReceived@{singleServoCommandReceived}!idleState@{idleState}}
+\doxysubsubsection{\texorpdfstring{singleServoCommandReceived()}{singleServoCommandReceived()}}
+{\footnotesize\ttfamily bool idle\+State\+::single\+Servo\+Command\+Received (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A trigger that checks if a single servo command has been received. 
+
+\begin{DoxyReturn}{Returns}
+True if the state should be exited, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 23 of file idle\+State.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/hld/\mbox{\hyperlink{idle_state_8hpp}{idle\+State.\+hpp}}\item 
+src/hld/\mbox{\hyperlink{idle_state_8cpp}{idle\+State.\+cpp}}\end{DoxyCompactItemize}

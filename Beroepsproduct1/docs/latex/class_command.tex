@@ -1,0 +1,148 @@
+\hypertarget{class_command}{}\doxysection{Command Class Reference}
+\label{class_command}\index{Command@{Command}}
+
+
+Defines the syntax for a command to be sent over the serial port.  
+
+
+
+
+{\ttfamily \#include $<$command.\+hpp$>$}
+
+
+
+Inheritance diagram for Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_command__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_command_ad4d7f6fcc6cf74b349ed1c8d256fdc5a}{Command}} (std\+::string command, boost\+::asio\+::serial\+\_\+port \&serial)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_command_afa71d14f42e7212e4548e9d6736a9c49}{read\+Most\+Recent\+Char}} ()
+\item 
+virtual \mbox{\hyperlink{class_command_ab552bb3a07fdd1acbfd8ea76e69b2278}{$\sim$\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_command_a911de585d69707fce024dcbdd7bba32f}{send\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Sends the command over the serial port. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const char \mbox{\hyperlink{class_command_ac67f827b6f5e202c72c205b0bc3ffdd7}{cr}} = 13
+\begin{DoxyCompactList}\small\item\em The carriage return character. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the syntax for a command to be sent over the serial port. 
+
+Definition at line 20 of file command.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_command_ad4d7f6fcc6cf74b349ed1c8d256fdc5a}\label{class_command_ad4d7f6fcc6cf74b349ed1c8d256fdc5a}} 
+\index{Command@{Command}!Command@{Command}}
+\index{Command@{Command}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{Command()}{Command()}}
+{\footnotesize\ttfamily Command\+::\+Command (\begin{DoxyParamCaption}\item[{std\+::string}]{command,  }\item[{boost\+::asio\+::serial\+\_\+port \&}]{serial }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command to send over the serial port \\
+\hline
+{\em serial} & The serial port to send the command over \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3 of file command.\+cpp.
+
+\mbox{\Hypertarget{class_command_ab552bb3a07fdd1acbfd8ea76e69b2278}\label{class_command_ab552bb3a07fdd1acbfd8ea76e69b2278}} 
+\index{Command@{Command}!````~Command@{$\sim$Command}}
+\index{````~Command@{$\sim$Command}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{$\sim$Command()}{~Command()}}
+{\footnotesize\ttfamily Command\+::$\sim$\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 6 of file command.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_command_afa71d14f42e7212e4548e9d6736a9c49}\label{class_command_afa71d14f42e7212e4548e9d6736a9c49}} 
+\index{Command@{Command}!readMostRecentChar@{readMostRecentChar}}
+\index{readMostRecentChar@{readMostRecentChar}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{readMostRecentChar()}{readMostRecentChar()}}
+{\footnotesize\ttfamily char Command\+::read\+Most\+Recent\+Char (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 18 of file command.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_command_afa71d14f42e7212e4548e9d6736a9c49_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_command_a911de585d69707fce024dcbdd7bba32f}\label{class_command_a911de585d69707fce024dcbdd7bba32f}} 
+\index{Command@{Command}!sendCommand@{sendCommand}}
+\index{sendCommand@{sendCommand}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{sendCommand()}{sendCommand()}}
+{\footnotesize\ttfamily void Command\+::send\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sends the command over the serial port. 
+
+
+
+Definition at line 8 of file command.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_command_a911de585d69707fce024dcbdd7bba32f_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_command_ac67f827b6f5e202c72c205b0bc3ffdd7}\label{class_command_ac67f827b6f5e202c72c205b0bc3ffdd7}} 
+\index{Command@{Command}!cr@{cr}}
+\index{cr@{cr}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{cr}{cr}}
+{\footnotesize\ttfamily const char Command\+::cr = 13\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The carriage return character. 
+
+
+
+Definition at line 45 of file command.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lld/\mbox{\hyperlink{command_8hpp}{command.\+hpp}}\item 
+src/lld/\mbox{\hyperlink{command_8cpp}{command.\+cpp}}\end{DoxyCompactItemize}

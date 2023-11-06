@@ -1,0 +1,13 @@
+<map id="movingState::checkAllTriggers" name="movingState::checkAllTriggers">
+<area shape="rect" id="node1" title="Checks if any trigger is activated." alt="" coords="5,122,224,149"/>
+<area shape="rect" id="node2" href="$classmoving_state.html#a413f18fdd7bf9e88910d7047f949c525" title="A trigger that checks if an emergency stop has been received." alt="" coords="272,5,487,47"/>
+<area shape="rect" id="node3" href="$classmoving_state.html#a02c2c049d9b9bc9fa328fe437d70623c" title="A trigger that checks if the current movement is done." alt="" coords="276,71,483,98"/>
+<area shape="rect" id="node6" href="$classmoving_state.html#a211061a9b72364511046f834b9ee3a72" title="A trigger that checks if the commandQueue is empty." alt="" coords="275,122,483,149"/>
+<area shape="rect" id="node7" href="$class_low_level_server.html#ada55b21589332cf88b874296d97216a9" title="Stops the current movement of the robotic arm." alt="" coords="275,173,484,215"/>
+<area shape="rect" id="node8" href="$class_context.html#a3a2a6386414de3a5aa28784bb3c58b26" title="Transitions to a new state." alt="" coords="300,239,459,266"/>
+<area shape="rect" id="node4" href="$class_command.html#afa71d14f42e7212e4548e9d6736a9c49" title=" " alt="" coords="535,71,768,98"/>
+<area shape="rect" id="node5" href="$class_command.html#a911de585d69707fce024dcbdd7bba32f" title="Sends the command over the serial port." alt="" coords="554,130,749,157"/>
+<area shape="rect" id="node9" href="$class_state.html#a3527189c052a46ea76801906829c43df" title="function that is called when the state is entered" alt="" coords="596,189,707,215"/>
+<area shape="rect" id="node10" href="$class_state.html#aca588de032e98a660f340fa45b20b82c" title="function that is called when the state is exited" alt="" coords="601,239,702,266"/>
+<area shape="rect" id="node11" href="$class_state.html#acbbc4fabc40feae214fcd4a4e5680b9b" title="Sets the context." alt="" coords="581,290,721,317"/>
+</map>

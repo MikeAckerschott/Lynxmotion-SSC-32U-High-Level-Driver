@@ -1,0 +1,4 @@
+<map id="HighLevelNode::handleSkip" name="HighLevelNode::handleSkip">
+<area shape="rect" id="node1" title="Handles client request for a skip command and skips the next command in the queue if the request is v..." alt="" coords="281,5,483,32"/>
+<area shape="rect" id="node2" href="$class_high_level_node.html#aa27678104d27de84f3b27f4a9d5f0f22" title="Constructor." alt="" coords="5,5,233,32"/>
+</map>

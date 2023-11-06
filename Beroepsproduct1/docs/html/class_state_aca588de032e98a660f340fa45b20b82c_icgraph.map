@@ -1,0 +1,9 @@
+<map id="State::f_exit" name="State::f_exit">
+<area shape="rect" id="node1" title="function that is called when the state is exited" alt="" coords="479,71,580,98"/>
+<area shape="rect" id="node2" href="$class_context.html#a5b63a218d4bdc7e5ebb64dd2d59482ed" title="Calls the exit function of the current state." alt="" coords="292,46,411,73"/>
+<area shape="rect" id="node3" href="$class_context.html#a3a2a6386414de3a5aa28784bb3c58b26" title="Transitions to a new state." alt="" coords="272,97,431,123"/>
+<area shape="rect" id="node4" href="$classemergency_stop_state.html#a612b7b807a3d96c9a2fb9faf54e9faf1" title="Checks if any trigger is activated." alt="" coords="35,5,194,47"/>
+<area shape="rect" id="node5" href="$classidle_state.html#a105ec4f03b14a3b85b809d3c7f90844d" title="Checks if any trigger is activated." alt="" coords="17,71,212,98"/>
+<area shape="rect" id="node6" href="$classmoving_state.html#ad452c7d68f97db66435ea99e0853bebf" title="Checks if any trigger is activated." alt="" coords="5,122,224,149"/>
+<area shape="rect" id="node7" href="$class_context.html#a844463963bb3bc74d92e5ccc587cb066" title="Constructor." alt="" coords="49,173,181,199"/>
+</map>

@@ -1,0 +1,110 @@
+\hypertarget{class_command_utils}{}\doxysection{Command\+Utils Class Reference}
+\label{class_command_utils}\index{CommandUtils@{CommandUtils}}
+
+
+Provides helpful variables which make sending commands to the robotic arm easier.  
+
+
+
+
+{\ttfamily \#include $<$command\+Utils.\+hpp$>$}
+
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static char \mbox{\hyperlink{class_command_utils_a327c313573892c003428cada5f4aef5f}{cr}} = 13
+\begin{DoxyCompactList}\small\item\em The carraiage return character. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{class_command_utils_a73bd5447e31258980af4db844ba43979}{cancel}} = \char`\"{}STOP \char`\"{}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_command}{Command}} to send over the serial port to stop robotic arm movement. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{class_command_utils_aac1b39f61cc99523fb6e01b3df9111f0}{park}} = \char`\"{}\# 0 P1500 \# 1 P2055 \# 2 P1922 \# 3 P722 \# 4 P1944 \# 5 P1500 T3000\char`\"{}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_command}{Command}} to send over the serial port to move the robotic arm to the park position. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{class_command_utils_a1867acfc9e6833cba19d26742abb7df4}{ready}} = \char`\"{}\# 0 P1500 \# 1 P2111 \# 2 P1600 \# 3 P1055 \# 4 P944 \# 5 P1500 T3000\char`\"{}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_command}{Command}} to send over the serial port to move the robotic arm to the ready position. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{class_command_utils_af357d363ea435384be0beb5c3aa839bf}{straight\+Up}} = \char`\"{}\# 0 P1500 \# 1 P1500 \# 2 P655 \# 3 P1450 \# 4 P944 \# 5 P1450 T3000\char`\"{}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_command}{Command}} to send over the serial port to move the robotic arm to the straight-\/up position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides helpful variables which make sending commands to the robotic arm easier. 
+
+Definition at line 16 of file command\+Utils.\+hpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_command_utils_a73bd5447e31258980af4db844ba43979}\label{class_command_utils_a73bd5447e31258980af4db844ba43979}} 
+\index{CommandUtils@{CommandUtils}!cancel@{cancel}}
+\index{cancel@{cancel}!CommandUtils@{CommandUtils}}
+\doxysubsubsection{\texorpdfstring{cancel}{cancel}}
+{\footnotesize\ttfamily std\+::string Command\+Utils\+::cancel = \char`\"{}STOP \char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{class_command}{Command}} to send over the serial port to stop robotic arm movement. 
+
+
+
+Definition at line 26 of file command\+Utils.\+hpp.
+
+\mbox{\Hypertarget{class_command_utils_a327c313573892c003428cada5f4aef5f}\label{class_command_utils_a327c313573892c003428cada5f4aef5f}} 
+\index{CommandUtils@{CommandUtils}!cr@{cr}}
+\index{cr@{cr}!CommandUtils@{CommandUtils}}
+\doxysubsubsection{\texorpdfstring{cr}{cr}}
+{\footnotesize\ttfamily char Command\+Utils\+::cr = 13\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The carraiage return character. 
+
+
+
+Definition at line 21 of file command\+Utils.\+hpp.
+
+\mbox{\Hypertarget{class_command_utils_aac1b39f61cc99523fb6e01b3df9111f0}\label{class_command_utils_aac1b39f61cc99523fb6e01b3df9111f0}} 
+\index{CommandUtils@{CommandUtils}!park@{park}}
+\index{park@{park}!CommandUtils@{CommandUtils}}
+\doxysubsubsection{\texorpdfstring{park}{park}}
+{\footnotesize\ttfamily std\+::string Command\+Utils\+::park = \char`\"{}\# 0 P1500 \# 1 P2055 \# 2 P1922 \# 3 P722 \# 4 P1944 \# 5 P1500 T3000\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{class_command}{Command}} to send over the serial port to move the robotic arm to the park position. 
+
+
+
+Definition at line 31 of file command\+Utils.\+hpp.
+
+\mbox{\Hypertarget{class_command_utils_a1867acfc9e6833cba19d26742abb7df4}\label{class_command_utils_a1867acfc9e6833cba19d26742abb7df4}} 
+\index{CommandUtils@{CommandUtils}!ready@{ready}}
+\index{ready@{ready}!CommandUtils@{CommandUtils}}
+\doxysubsubsection{\texorpdfstring{ready}{ready}}
+{\footnotesize\ttfamily std\+::string Command\+Utils\+::ready = \char`\"{}\# 0 P1500 \# 1 P2111 \# 2 P1600 \# 3 P1055 \# 4 P944 \# 5 P1500 T3000\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{class_command}{Command}} to send over the serial port to move the robotic arm to the ready position. 
+
+
+
+Definition at line 36 of file command\+Utils.\+hpp.
+
+\mbox{\Hypertarget{class_command_utils_af357d363ea435384be0beb5c3aa839bf}\label{class_command_utils_af357d363ea435384be0beb5c3aa839bf}} 
+\index{CommandUtils@{CommandUtils}!straightUp@{straightUp}}
+\index{straightUp@{straightUp}!CommandUtils@{CommandUtils}}
+\doxysubsubsection{\texorpdfstring{straightUp}{straightUp}}
+{\footnotesize\ttfamily std\+::string Command\+Utils\+::straight\+Up = \char`\"{}\# 0 P1500 \# 1 P1500 \# 2 P655 \# 3 P1450 \# 4 P944 \# 5 P1450 T3000\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{class_command}{Command}} to send over the serial port to move the robotic arm to the straight-\/up position. 
+
+
+
+Definition at line 41 of file command\+Utils.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lld/\mbox{\hyperlink{command_utils_8hpp}{command\+Utils.\+hpp}}\item 
+src/lld/\mbox{\hyperlink{command_utils_8cpp}{command\+Utils.\+cpp}}\end{DoxyCompactItemize}

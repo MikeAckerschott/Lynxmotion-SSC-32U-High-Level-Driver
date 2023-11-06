@@ -1,0 +1,7 @@
+<map id="src/cli/communicatorNode.hpp" name="src/cli/communicatorNode.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="177,5,397,32"/>
+<area shape="rect" id="node2" href="$command_parser_8hpp.html" title="Parses the commands sent from the CLI and sends them to the low level driver." alt="" coords="53,80,249,107"/>
+<area shape="rect" id="node4" href="$cli_2main_8cpp.html" title=" " alt="" coords="225,155,349,181"/>
+<area shape="rect" id="node5" href="$communicator_node_8cpp.html" title=" " alt="" coords="324,80,543,107"/>
+<area shape="rect" id="node3" href="$command_parser_8cpp.html" title=" " alt="" coords="5,155,200,181"/>
+</map>

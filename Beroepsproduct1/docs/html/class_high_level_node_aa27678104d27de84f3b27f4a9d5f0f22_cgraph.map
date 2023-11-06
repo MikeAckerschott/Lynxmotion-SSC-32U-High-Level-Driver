@@ -1,0 +1,18 @@
+<map id="HighLevelNode::HighLevelNode" name="HighLevelNode::HighLevelNode">
+<area shape="rect" id="node1" title="Constructor." alt="" coords="5,205,233,232"/>
+<area shape="rect" id="node2" href="$class_context.html#ac78ed827f1c6a642382e24430ec85788" title="Calls the do function of the current state." alt="" coords="364,45,473,72"/>
+<area shape="rect" id="node6" href="$class_high_level_node.html#a415357f182894852d8ebdb6dd35a2516" title="Handles client request for an emergency stop and stops all servos." alt="" coords="281,147,556,173"/>
+<area shape="rect" id="node9" href="$class_high_level_node.html#af571f405ad9b60051b1b975103848bc6" title="Handles client request for an empty queue command and empties the queue and stops current movement if..." alt="" coords="311,198,526,239"/>
+<area shape="rect" id="node10" href="$class_high_level_node.html#a61a0334988c480c6b5eea17452587c03" title="Handles client request for a multi servo command and moves the selected servos if the request is vali..." alt="" coords="315,329,522,370"/>
+<area shape="rect" id="node14" href="$class_high_level_node.html#aba0d4b21f0f7c56fe18bad055fa21e54" title="Handles client request for a programmed position and moves the servos to the programmed position if t..." alt="" coords="290,394,547,435"/>
+<area shape="rect" id="node15" href="$class_high_level_node.html#a1ee585ff35e8c11c1a00069965d3e61e" title="Handles client request for a single servo command and moves the selected servo if the request is vali..." alt="" coords="312,263,525,305"/>
+<area shape="rect" id="node16" href="$class_high_level_node.html#a375dcb80d3b27baff41728ad5ba1cf89" title="Handles client request for a skip command and skips the next command in the queue if the request is v..." alt="" coords="318,96,519,123"/>
+<area shape="rect" id="node3" href="$class_context.html#a3560320b26b34decbff741fe66119c26" title="Calls the checkAllTriggers function of the current state." alt="" coords="633,5,820,32"/>
+<area shape="rect" id="node5" href="$class_state.html#a5b19102546d294f537bcb8fa7e45c760" title="function that is called as long as the state is active" alt="" coords="681,56,773,83"/>
+<area shape="rect" id="node4" href="$class_state.html#a90c076865d9796423edd2175fed41cea" title="Checks if any trigger is activated." alt="" coords="909,5,1080,32"/>
+<area shape="rect" id="node7" href="$class_low_level_server.html#ada55b21589332cf88b874296d97216a9" title="Stops the current movement of the robotic arm." alt="" coords="622,129,831,170"/>
+<area shape="rect" id="node8" href="$class_command.html#a911de585d69707fce024dcbdd7bba32f" title="Sends the command over the serial port." alt="" coords="897,136,1092,163"/>
+<area shape="rect" id="node11" href="$class_servo_utils.html#a175834b1c0a10247cc57f2c6aa1037b6" title="converts the degrees to pwm duration" alt="" coords="629,271,824,297"/>
+<area shape="rect" id="node12" href="$class_servo_utils.html#a02c37a23a806b25d7f966045c93ed86f" title="converts a string to a SingleServoCommand::movementType" alt="" coords="617,372,836,399"/>
+<area shape="rect" id="node13" href="$class_servo_utils.html#ac0afe8fdd8e145286c907e3c326aa202" title="verifies if the servo number and degrees are within the range of motion" alt="" coords="604,321,849,348"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="HighLevelNode::handleEmergencyStop" name="HighLevelNode::handleEmergencyStop">
+<area shape="rect" id="node1" title="Handles client request for an emergency stop and stops all servos." alt="" coords="281,5,556,32"/>
+<area shape="rect" id="node2" href="$class_high_level_node.html#aa27678104d27de84f3b27f4a9d5f0f22" title="Constructor." alt="" coords="5,5,233,32"/>
+</map>

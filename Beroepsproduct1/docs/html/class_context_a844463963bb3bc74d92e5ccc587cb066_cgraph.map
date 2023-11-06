@@ -1,0 +1,7 @@
+<map id="Context::Context" name="Context::Context">
+<area shape="rect" id="node1" title="Constructor." alt="" coords="5,56,137,83"/>
+<area shape="rect" id="node2" href="$class_context.html#a3a2a6386414de3a5aa28784bb3c58b26" title="Transitions to a new state." alt="" coords="185,56,344,83"/>
+<area shape="rect" id="node3" href="$class_state.html#a3527189c052a46ea76801906829c43df" title="function that is called when the state is entered" alt="" coords="407,5,517,32"/>
+<area shape="rect" id="node4" href="$class_state.html#aca588de032e98a660f340fa45b20b82c" title="function that is called when the state is exited" alt="" coords="411,56,513,83"/>
+<area shape="rect" id="node5" href="$class_state.html#acbbc4fabc40feae214fcd4a4e5680b9b" title="Sets the context." alt="" coords="392,107,532,133"/>
+</map>

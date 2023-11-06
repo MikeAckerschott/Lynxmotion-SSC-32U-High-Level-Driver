@@ -1,0 +1,339 @@
+\hypertarget{class_command_parser}{}\doxysection{Command\+Parser Class Reference}
+\label{class_command_parser}\index{CommandParser@{CommandParser}}
+
+
+Parses the commands sent from the CLI and sends them to the low level driver.  
+
+
+
+
+{\ttfamily \#include $<$command\+Parser.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_command_parser_a8b2e522423e78237694dcaecda9a7dd2}{Command\+Parser}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_communicator_node}{Communicator\+Node}} $>$ node)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_command_parser_aad541c0cf94d4a45e7b59003f64b16f3}{$\sim$\+Command\+Parser}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_command_parser_aad93f111dbc7a89029950a0473153ed3}{parse\+Command}} (std\+::string command)
+\begin{DoxyCompactList}\small\item\em Parses the command and sends correct command to the low level driver. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_command_parser_ae8d519b05f75d8c805113bc16e70c576}{parse\+Single\+Servo\+Command}} (std\+::string command\+Type, std\+::string command)
+\begin{DoxyCompactList}\small\item\em Parses the command and sends single\+Servo\+Command on successful parsing. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_command_parser_a4cdb5d4341edb3baf54903944f34930d}{parse\+Multi\+Servo\+Command}} (std\+::string command\+Type, std\+::string command)
+\begin{DoxyCompactList}\small\item\em Parses the command and sends multi\+Servo\+Command on successful parsing. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_command_parser_ab670b55765083d305e8a12cac910d069}{parse\+Stop\+Command}} (std\+::string command\+Type)
+\begin{DoxyCompactList}\small\item\em Parses the command and sends stop\+Command on successful parsing. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_command_parser_a2ae7854a8e5387fdc6ff5774f7649507}{parse\+Start\+Command}} (std\+::string command\+Type)
+\begin{DoxyCompactList}\small\item\em Parses the command and sends start\+Command on successful parsing. starting means that the HLD will exit the emergency stop state. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_command_parser_ad83c99e44ee7e5e6b833caeb48eccb6c}{parse\+Programmed\+Position\+Command}} (std\+::string command\+Type, std\+::string command)
+\begin{DoxyCompactList}\small\item\em Parses the command and sends programmed\+Position\+Command on successful parsing. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_command_parser_aefd811eed7f5517dcfabcf295a0373c9}{parse\+Skip\+Command}} (std\+::string command\+Type)
+\begin{DoxyCompactList}\small\item\em Parses the command and sends skip\+Command on successful parsing. skipping means that the HLD will skip the current movement and executes the next one in queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_command_parser_a5ae8167d82f831f1418a3503d83cfdfc}{parse\+Empty\+Queue\+Command}} (std\+::string command\+Type)
+\begin{DoxyCompactList}\small\item\em Parses the command and sends empty\+Queue\+Command on successful parsing. emptying means that the HLD will empty the queue of movements and stop the current movement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Parses the commands sent from the CLI and sends them to the low level driver. 
+
+Currently supports commands\+: single\+Servo, multi\+Servo, start, stop, programmed\+Position, skip and empty\+Queue 
+
+Definition at line 25 of file command\+Parser.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_command_parser_a8b2e522423e78237694dcaecda9a7dd2}\label{class_command_parser_a8b2e522423e78237694dcaecda9a7dd2}} 
+\index{CommandParser@{CommandParser}!CommandParser@{CommandParser}}
+\index{CommandParser@{CommandParser}!CommandParser@{CommandParser}}
+\doxysubsubsection{\texorpdfstring{CommandParser()}{CommandParser()}}
+{\footnotesize\ttfamily Command\+Parser\+::\+Command\+Parser (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_communicator_node}{Communicator\+Node}} $>$}]{node }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node that sends the command to the low level driver. also used for logging with RCLCPP\+\_\+\+INFO \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 6 of file command\+Parser.\+cpp.
+
+\mbox{\Hypertarget{class_command_parser_aad541c0cf94d4a45e7b59003f64b16f3}\label{class_command_parser_aad541c0cf94d4a45e7b59003f64b16f3}} 
+\index{CommandParser@{CommandParser}!````~CommandParser@{$\sim$CommandParser}}
+\index{````~CommandParser@{$\sim$CommandParser}!CommandParser@{CommandParser}}
+\doxysubsubsection{\texorpdfstring{$\sim$CommandParser()}{~CommandParser()}}
+{\footnotesize\ttfamily Command\+Parser\+::$\sim$\+Command\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+Definition at line 8 of file command\+Parser.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_command_parser_aad93f111dbc7a89029950a0473153ed3}\label{class_command_parser_aad93f111dbc7a89029950a0473153ed3}} 
+\index{CommandParser@{CommandParser}!parseCommand@{parseCommand}}
+\index{parseCommand@{parseCommand}!CommandParser@{CommandParser}}
+\doxysubsubsection{\texorpdfstring{parseCommand()}{parseCommand()}}
+{\footnotesize\ttfamily void Command\+Parser\+::parse\+Command (\begin{DoxyParamCaption}\item[{std\+::string}]{command }\end{DoxyParamCaption})}
+
+
+
+Parses the command and sends correct command to the low level driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command to parse (string from CLI) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 10 of file command\+Parser.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_command_parser_aad93f111dbc7a89029950a0473153ed3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_command_parser_aad93f111dbc7a89029950a0473153ed3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_command_parser_a5ae8167d82f831f1418a3503d83cfdfc}\label{class_command_parser_a5ae8167d82f831f1418a3503d83cfdfc}} 
+\index{CommandParser@{CommandParser}!parseEmptyQueueCommand@{parseEmptyQueueCommand}}
+\index{parseEmptyQueueCommand@{parseEmptyQueueCommand}!CommandParser@{CommandParser}}
+\doxysubsubsection{\texorpdfstring{parseEmptyQueueCommand()}{parseEmptyQueueCommand()}}
+{\footnotesize\ttfamily bool Command\+Parser\+::parse\+Empty\+Queue\+Command (\begin{DoxyParamCaption}\item[{std\+::string}]{command\+Type }\end{DoxyParamCaption})}
+
+
+
+Parses the command and sends empty\+Queue\+Command on successful parsing. emptying means that the HLD will empty the queue of movements and stop the current movement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+Type} & The type of command to parse (typically the first word sent from CLI) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the command was parsed correctly, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 245 of file command\+Parser.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_command_parser_a5ae8167d82f831f1418a3503d83cfdfc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_command_parser_a4cdb5d4341edb3baf54903944f34930d}\label{class_command_parser_a4cdb5d4341edb3baf54903944f34930d}} 
+\index{CommandParser@{CommandParser}!parseMultiServoCommand@{parseMultiServoCommand}}
+\index{parseMultiServoCommand@{parseMultiServoCommand}!CommandParser@{CommandParser}}
+\doxysubsubsection{\texorpdfstring{parseMultiServoCommand()}{parseMultiServoCommand()}}
+{\footnotesize\ttfamily bool Command\+Parser\+::parse\+Multi\+Servo\+Command (\begin{DoxyParamCaption}\item[{std\+::string}]{command\+Type,  }\item[{std\+::string}]{command }\end{DoxyParamCaption})}
+
+
+
+Parses the command and sends multi\+Servo\+Command on successful parsing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+Type} & The type of command to parse (typically the first word sent from CLI) \\
+\hline
+{\em command} & The command to parse (the entire string from CLI) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the command was parsed correctly, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 55 of file command\+Parser.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_command_parser_a4cdb5d4341edb3baf54903944f34930d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_command_parser_ad83c99e44ee7e5e6b833caeb48eccb6c}\label{class_command_parser_ad83c99e44ee7e5e6b833caeb48eccb6c}} 
+\index{CommandParser@{CommandParser}!parseProgrammedPositionCommand@{parseProgrammedPositionCommand}}
+\index{parseProgrammedPositionCommand@{parseProgrammedPositionCommand}!CommandParser@{CommandParser}}
+\doxysubsubsection{\texorpdfstring{parseProgrammedPositionCommand()}{parseProgrammedPositionCommand()}}
+{\footnotesize\ttfamily bool Command\+Parser\+::parse\+Programmed\+Position\+Command (\begin{DoxyParamCaption}\item[{std\+::string}]{command\+Type,  }\item[{std\+::string}]{command }\end{DoxyParamCaption})}
+
+
+
+Parses the command and sends programmed\+Position\+Command on successful parsing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+Type} & The type of command to parse (typically the first word sent from CLI) \\
+\hline
+{\em command} & The command to parse (the entire string from CLI) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the command was parsed correctly, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 128 of file command\+Parser.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_command_parser_ad83c99e44ee7e5e6b833caeb48eccb6c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_command_parser_ae8d519b05f75d8c805113bc16e70c576}\label{class_command_parser_ae8d519b05f75d8c805113bc16e70c576}} 
+\index{CommandParser@{CommandParser}!parseSingleServoCommand@{parseSingleServoCommand}}
+\index{parseSingleServoCommand@{parseSingleServoCommand}!CommandParser@{CommandParser}}
+\doxysubsubsection{\texorpdfstring{parseSingleServoCommand()}{parseSingleServoCommand()}}
+{\footnotesize\ttfamily bool Command\+Parser\+::parse\+Single\+Servo\+Command (\begin{DoxyParamCaption}\item[{std\+::string}]{command\+Type,  }\item[{std\+::string}]{command }\end{DoxyParamCaption})}
+
+
+
+Parses the command and sends single\+Servo\+Command on successful parsing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+Type} & The type of command to parse (typically the first word sent from CLI) \\
+\hline
+{\em command} & The command to parse (the entire string from CLI) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the command was parsed correctly, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 27 of file command\+Parser.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_command_parser_ae8d519b05f75d8c805113bc16e70c576_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_command_parser_aefd811eed7f5517dcfabcf295a0373c9}\label{class_command_parser_aefd811eed7f5517dcfabcf295a0373c9}} 
+\index{CommandParser@{CommandParser}!parseSkipCommand@{parseSkipCommand}}
+\index{parseSkipCommand@{parseSkipCommand}!CommandParser@{CommandParser}}
+\doxysubsubsection{\texorpdfstring{parseSkipCommand()}{parseSkipCommand()}}
+{\footnotesize\ttfamily bool Command\+Parser\+::parse\+Skip\+Command (\begin{DoxyParamCaption}\item[{std\+::string}]{command\+Type }\end{DoxyParamCaption})}
+
+
+
+Parses the command and sends skip\+Command on successful parsing. skipping means that the HLD will skip the current movement and executes the next one in queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+Type} & The type of command to parse (typically the first word sent from CLI) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the command was parsed correctly, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 147 of file command\+Parser.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_command_parser_aefd811eed7f5517dcfabcf295a0373c9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_command_parser_a2ae7854a8e5387fdc6ff5774f7649507}\label{class_command_parser_a2ae7854a8e5387fdc6ff5774f7649507}} 
+\index{CommandParser@{CommandParser}!parseStartCommand@{parseStartCommand}}
+\index{parseStartCommand@{parseStartCommand}!CommandParser@{CommandParser}}
+\doxysubsubsection{\texorpdfstring{parseStartCommand()}{parseStartCommand()}}
+{\footnotesize\ttfamily bool Command\+Parser\+::parse\+Start\+Command (\begin{DoxyParamCaption}\item[{std\+::string}]{command\+Type }\end{DoxyParamCaption})}
+
+
+
+Parses the command and sends start\+Command on successful parsing. starting means that the HLD will exit the emergency stop state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+Type} & The type of command to parse (typically the first word sent from CLI) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the command was parsed correctly, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 117 of file command\+Parser.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_command_parser_a2ae7854a8e5387fdc6ff5774f7649507_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_command_parser_ab670b55765083d305e8a12cac910d069}\label{class_command_parser_ab670b55765083d305e8a12cac910d069}} 
+\index{CommandParser@{CommandParser}!parseStopCommand@{parseStopCommand}}
+\index{parseStopCommand@{parseStopCommand}!CommandParser@{CommandParser}}
+\doxysubsubsection{\texorpdfstring{parseStopCommand()}{parseStopCommand()}}
+{\footnotesize\ttfamily bool Command\+Parser\+::parse\+Stop\+Command (\begin{DoxyParamCaption}\item[{std\+::string}]{command\+Type }\end{DoxyParamCaption})}
+
+
+
+Parses the command and sends stop\+Command on successful parsing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+Type} & The type of command to parse (typically the first word sent from CLI) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the command was parsed correctly, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 106 of file command\+Parser.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_command_parser_ab670b55765083d305e8a12cac910d069_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/cli/\mbox{\hyperlink{command_parser_8hpp}{command\+Parser.\+hpp}}\item 
+src/cli/\mbox{\hyperlink{command_parser_8cpp}{command\+Parser.\+cpp}}\end{DoxyCompactItemize}

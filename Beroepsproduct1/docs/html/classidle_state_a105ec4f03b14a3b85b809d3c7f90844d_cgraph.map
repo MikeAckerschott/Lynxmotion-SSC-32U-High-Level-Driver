@@ -1,0 +1,9 @@
+<map id="idleState::checkAllTriggers" name="idleState::checkAllTriggers">
+<area shape="rect" id="node1" title="Checks if any trigger is activated." alt="" coords="5,78,200,105"/>
+<area shape="rect" id="node2" href="$classidle_state.html#a7c63358543cabf867f4e769d25e73d00" title="A trigger that checks if an emergency stop has been received." alt="" coords="253,5,444,47"/>
+<area shape="rect" id="node3" href="$classidle_state.html#a3fb6f2a94d08c906acb45ac56cc47e70" title="A trigger that checks if the movement queue is not empty." alt="" coords="248,71,449,112"/>
+<area shape="rect" id="node4" href="$class_context.html#a3a2a6386414de3a5aa28784bb3c58b26" title="Transitions to a new state." alt="" coords="269,137,428,163"/>
+<area shape="rect" id="node5" href="$class_state.html#a3527189c052a46ea76801906829c43df" title="function that is called when the state is entered" alt="" coords="512,86,623,113"/>
+<area shape="rect" id="node6" href="$class_state.html#aca588de032e98a660f340fa45b20b82c" title="function that is called when the state is exited" alt="" coords="517,137,618,163"/>
+<area shape="rect" id="node7" href="$class_state.html#acbbc4fabc40feae214fcd4a4e5680b9b" title="Sets the context." alt="" coords="497,187,637,214"/>
+</map>
