@@ -234,8 +234,6 @@ bool CommandParser::getSingleServoCommandArguments(std::string commandArguments,
         movementType = "duration";
     }
 
-    std::cout << "servo: " << servoNumberString << " angle: " << angleString << " speed: " << speedString << " duration: " << durationString << std::endl;
-
     servoNumber = std::stoi(servoNumberString);
     angle = std::stoi(angleString);
 
