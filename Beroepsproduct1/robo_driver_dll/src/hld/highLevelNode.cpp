@@ -184,6 +184,41 @@ void HighLevelNode::handleProgrammedPosition(const std::shared_ptr<msg_srv::srv:
     commandAsString = CommandUtils::straightUp;
     commandAsString += Command::cr;
   }
+  else if (request->position.programmed_position == "wristLeft")
+  {
+    commandAsString = CommandUtils::wristLeft;
+    commandAsString += Command::cr;
+  }
+  else if (request->position.programmed_position == "wristRight")
+  {
+    commandAsString = CommandUtils::wristRight;
+    commandAsString += Command::cr;
+  }
+  else if (request->position.programmed_position == "wristMiddle")
+  {
+    commandAsString = CommandUtils::wristMiddle;
+    commandAsString += Command::cr;
+  }
+  else if (request->position.programmed_position == "parkLeft")
+  {
+    commandAsString = CommandUtils::parkLeft;
+    commandAsString += Command::cr;
+  }
+  else if (request->position.programmed_position == "parkRight")
+  {
+    commandAsString = CommandUtils::parkRight;
+    commandAsString += Command::cr;
+  }
+  else if (request->position.programmed_position == "elbowShakingUp")
+  {
+    commandAsString = CommandUtils::elbowShakingUp;
+    commandAsString += Command::cr;
+  }
+  else if (request->position.programmed_position == "elbowShakingDown")
+  {
+    commandAsString = CommandUtils::elbowShakingDown;
+    commandAsString += Command::cr;
+  }
   else
   {
     response->finished = false;

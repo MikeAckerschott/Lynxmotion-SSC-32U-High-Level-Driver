@@ -39,6 +39,16 @@ public:
   * @brief Command to send over the serial port to move the robotic arm to the straight-up position
   */
   static std::string straightUp;
+
+  static std::string wristLeft;
+  static std::string wristRight;
+  static std::string wristMiddle;
+
+  static std::string elbowShakingUp;
+  static std::string elbowShakingDown;
+
+  static std::string parkLeft;
+  static std::string parkRight;
 };
 
 #endif /* COMMANDUTILS_HPP_ */

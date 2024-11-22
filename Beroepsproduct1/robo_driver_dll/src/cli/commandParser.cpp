@@ -134,10 +134,35 @@ bool CommandParser::parseProgrammedPositionCommand(std::string commandType, std:
 
     std::string commandArguments = command.substr(command.find(" ") + 1, command.size());
 
-    if (commandArguments != "park" && commandArguments != "ready" && commandArguments != "straight-up")
+    if (commandArguments != "shakingYes" && commandArguments != "park" && commandArguments != "ready" && commandArguments != "straight-up" && commandArguments != "wristLeft" && commandArguments != "wristRight" && commandArguments != "wristMiddle" && commandArguments != "waving" && commandArguments != "parkLeft" && commandArguments != "parkRight" && commandArguments != "shakingNo" && commandArguments != "shakingYes")
     {
         RCLCPP_ERROR(communicatorNode_->get_logger(), "ProgrammedPosition not recognized, supported positions are: park, ready, straight-up");
         return false;
+    }
+    if (commandArguments == "waving")
+    {
+        communicatorNode_->sendProgrammedPositionCommand("wristLeft");
+        communicatorNode_->sendProgrammedPositionCommand("wristRight");
+        communicatorNode_->sendProgrammedPositionCommand("wristMiddle");
+        return true;
+    }
+    if (commandArguments == "shakingNo")
+    {
+        communicatorNode_->sendProgrammedPositionCommand("parkLeft");
+        communicatorNode_->sendProgrammedPositionCommand("parkRight");
+        communicatorNode_->sendProgrammedPositionCommand("parkLeft");
+        communicatorNode_->sendProgrammedPositionCommand("parkRight");
+        communicatorNode_->sendProgrammedPositionCommand("park");
+        return true;
+    }
+    if(commandArguments == "shakingYes")
+    {
+        communicatorNode_->sendProgrammedPositionCommand("elbowShakingUp");
+        communicatorNode_->sendProgrammedPositionCommand("elbowShakingDown");
+        communicatorNode_->sendProgrammedPositionCommand("elbowShakingUp");
+        communicatorNode_->sendProgrammedPositionCommand("elbowShakingDown");
+        communicatorNode_->sendProgrammedPositionCommand("ready");
+        return true;
     }
 
     communicatorNode_->sendProgrammedPositionCommand(commandArguments);

@@ -137,7 +137,7 @@ void CommunicatorNode::deactivateEmergencyStop()
 
 void CommunicatorNode::sendProgrammedPositionCommand(std::string programmedPosition)
 {
-    if (programmedPosition != "park" && programmedPosition != "ready" && programmedPosition != "straight-up")
+    if (programmedPosition != "elbowShakingUp" && programmedPosition != "elbowShakingDown" && programmedPosition != "park" && programmedPosition != "ready" && programmedPosition != "straight-up" && programmedPosition != "wristLeft" && programmedPosition != "wristRight" && programmedPosition != "wristMiddle" && programmedPosition != "parkLeft" && programmedPosition != "parkRight")
     {
         return;
     }
