@@ -1,6 +1,4 @@
-Interface beroepsproduct door Mike Ackerschott voor WoR Worlds 23/24 S1
-
-Bitbucket pagina: https://bitbucket.aimsites.nl/users/mtjk.ackerschott_student.han.nl/repos/interface-wor-worlds/browse
+Interface beroepsproduct door Mike Ackerschott
 
 <h1>Voor de documentatie, zie Beroepsproduct1/docs</h1> 
 
