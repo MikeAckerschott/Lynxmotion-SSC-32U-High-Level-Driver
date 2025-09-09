@@ -1,80 +1,131 @@
-Interface beroepsproduct door Mike Ackerschott
+````markdown
+# Interface beroepsproduct  
+**Auteur:** Mike Ackerschott  
 
-<h1>Voor de documentatie, zie Beroepsproduct1/docs</h1> 
+📖 Voor de documentatie, zie: [`Beroepsproduct1/docs`](./Beroepsproduct1/docs)  
 
-Dit project bestaat uit 2 packages, namelijk msg_srv (de custom service en message files) en robo_driver_dll (het programma zelf)
+---
 
-<h1> Builden van het project</h1>
+## 📦 Projectstructuur
+Dit project bestaat uit twee packages:
+- **`msg_srv`** → bevat de custom service- en message-files  
+- **`robo_driver_dll`** → het programma zelf  
 
-* Voer het volgende commando uit in de directory /Beroepsproduct1:
+---
 
+## ⚙️ Builden van het project
+Navigeer naar de directory `/Beroepsproduct1` en voer de volgende commando’s uit:
+
+```bash
 colcon build --packages-select msg_srv
-
 colcon build --packages-select robo_driver_dll
+````
 
-<h1> Uitvoeren van het project</h1>
+---
 
-<i> Op dit moment is het programma enkel werkend op linux vanwege de manier hoe USB-poorten worden afgehandelt op windows </i>
+## ▶️ Uitvoeren van het project
 
-* Zorg ervoor dat je na het builden in de /Beroepsproduct1 directory de workspace sourced. Open twee terminals en voer het volgende commando uit in beide terminals:
-. install/setup.bash
+> ℹ️ Het programma werkt momenteel alleen op **Linux**, vanwege de manier waarop USB-poorten in Windows worden afgehandeld.
 
-* Op de eerste terminal voer je het volgende commando uit:
-ros2 run robo_driver high_level_node
+1. **Sourcen van de workspace**
+   Na het builden, zorg dat je in de `/Beroepsproduct1` directory zit en source de workspace in **twee terminals**:
 
-* Op de andere terminal voer je het volgende commando uit:
-ros2 run robo_driver cli_communication
+   ```bash
+   . install/setup.bash
+   ```
 
-* open nu opnieuw de terminal waar je de cli_communication runt en begin met commando's uitvoeren!
+2. **Start de nodes**
 
-<b> Op dit moment zijn de volgende commando's supported:
+   * In de **eerste terminal**:
 
-singleServo int servo int degrees int speed int time
+     ```bash
+     ros2 run robo_driver high_level_node
+     ```
+   * In de **tweede terminal**:
 
-<i> zet de geselecteerde servo naar de aangegeven hoek met behulp van snelheid of duratie </i>
-* voorbeeld:
-* singleServoCommand servo:0 angle:45 duration:1000
-* singleServoCommand servo:0 angle:45 speed:100
+     ```bash
+     ros2 run robo_driver cli_communication
+     ```
 
-multiServo {int servo int degrees int speed int time} {int servo int degrees int speed int time} 
+3. **Uitvoeren van commando’s**
+   In de tweede terminal (met `cli_communication`) kun je de onderstaande commando’s gebruiken.
 
-<i> zet de geselecteerde servos naar de aangegeven hoek met behulp van snelheid of duratie </i>
+---
 
-* voorbeeld:
+## ⌨️ Beschikbare commando’s
 
-* multiServo {servo:0 angle:45 duration:4000} {servo:1 angle:60}
+### `singleServo int servo int degrees int speed|time`
 
+Zet de geselecteerde servo naar de aangegeven hoek, met **snelheid** of **duur**.
+
+**Voorbeelden:**
+
+```bash
+singleServoCommand servo:0 angle:45 duration:1000
+singleServoCommand servo:0 angle:45 speed:100
+```
+
+---
+
+### `multiServo {int servo int degrees int speed|time} ...`
+
+Zet meerdere servos naar de opgegeven hoeken, met snelheid of duur.
+
+**Voorbeeld:**
+
+```bash
+multiServo {servo:0 angle:45 duration:4000} {servo:1 angle:60}
+```
+
+---
+
+### `stop`
+
+Noodstop: stopt de beweging onmiddellijk en negeert verdere requests.
+
+**Voorbeeld:**
+
+```bash
 stop
+```
 
-<i> zet het systeem in noodstop. Stopt de beweging op het moment en voert geen inkomende requests meer uit </i>
+---
 
-* voorbeeld:
+### `start`
 
-* stop
+Haalt het systeem uit de noodstop en accepteert weer inkomende requests.
 
+**Voorbeeld:**
+
+```bash
 start
+```
 
-<i> haalt het systeem uit de noodstop. Zorgt ervoor dat er weer op inkomende requests gereageerd wordt</i>
+---
 
-* voorbeeld:
+### `programmedPosition string position`
 
-* start
+Verplaatst de robotarm naar een van de voorgeprogrammeerde posities:
+`park`, `ready` of `straightup`.
 
-programmedPosition string position
+**Voorbeelden:**
 
-<i> zet de robotarm naar een van de voorgeprogrammeerde posities (park, ready of straightup) </i>
-* voorbeeld:
+```bash
+programmedPosition park
+programmedPosition ready
+programmedPosition straight-up
+```
 
-* programmedPosition park
+---
 
-* programmedPosition ready
+### `skip`
 
-* programmedPosition straight-up 
+Slaat de huidige beweging over en gaat door met de volgende in de queue.
 
+**Voorbeeld:**
+
+```bash
 skip
+```
 
-<i> skipt de beweging die op dit moment wordt uitgevoerd en voert de volgende beweging uit in de queue.</i>
-* voorbeeld
-
-* skip </b>
-
+---
